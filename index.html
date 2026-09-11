@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackSprint '26 | National Level Hackathon · VCET IT</title>
+  <meta name="description" content="HackSprint '26 - 24-Hour Premier Cyberpunk Hackathon presented by the Department of Information Technology, Velammal College of Engineering & Technology (VCET), Madurai. August 28, 2026.">
+
+  <!-- Google Fonts: Outfit (Display), Plus Jakarta Sans (Body), JetBrains Mono (Tech/Counters) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow & Neat Star Canvas (Controlled, Pleasant, Never Clumsy) -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <canvas id="starfield-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================================= -->
+  <!-- 1. STICKY NAVBAR -->
+  <!-- ========================================================================= -->
+  <header id="main-header" class="navbar-wrapper">
+    <nav class="navbar container" id="navbar" aria-label="Main Navigation">
+      <!-- Brand Logo with Official VCET Emblem -->
+      <a href="#hero" class="brand-logo" aria-label="HackSprint '26 Home">
+        <div class="logo-symbol vcet-emblem-wrap">
+          <img src="vcet-logo.png" alt="VCET Emblem" class="vcet-brand-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">HACKSPRINT<span class="brand-year">'26</span></span>
+          <span class="brand-sub">VCET · DEPT OF IT</span>
+        </div>
+      </a>
+
+      <!-- Center Navigation Links with Morphing Indicator -->
+      <div class="nav-links-wrapper">
+        <ul class="nav-links" id="nav-links">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#countdown" class="nav-link" data-section="countdown">Countdown</a>
+          </li>
+          <li class="nav-item">
+            <a href="#tracks" class="nav-link" data-section="tracks">Tracks</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link" data-section="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#coordinators" class="nav-link" data-section="coordinators">Team</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+          </li>
+        </ul>
+        <!-- Smooth Morphing Sliding Underline -->
+        <span class="nav-morph-pill" id="nav-morph-pill" aria-hidden="true"></span>
+      </div>
+
+      <!-- Right Action CTA -->
+      <div class="nav-actions">
+        <button type="button" class="btn-pill-gold" id="btn-open-register">
+          <span>Register Now</span>
+          <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+            <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-inner">
+      <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
+      <a href="#countdown" class="mobile-nav-link" data-section="countdown">Countdown</a>
+      <a href="#tracks" class="mobile-nav-link" data-section="tracks">Tracks</a>
+      <a href="#about" class="mobile-nav-link" data-section="about">About</a>
+      <a href="#coordinators" class="mobile-nav-link" data-section="coordinators">Team</a>
+      <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
+      <button type="button" class="btn-pill-gold w-full mt-4" id="btn-mobile-register">
+        <span>Register Now →</span>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================= -->
+    <!-- 2. HERO SECTION -->
+    <!-- ========================================================================= -->
+    <section id="hero" class="hero-section">
+      <!-- Layered Cyberpunk Backdrop: City Skyline & Perspective Floor -->
+      <div class="hero-backdrop" aria-hidden="true">
+        <div class="skyline-silhouette"></div>
+        <div class="cyber-grid-floor"></div>
+        
+        <!-- Silhouetted Coder at Triple-Monitor Terminal SVG -->
+        <div class="coder-silhouette-wrapper">
+          <svg class="coder-svg" viewBox="0 0 900 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="screen-glow-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#0077ff" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="screen-glow-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#d946ef" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="screen-glow-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#ea580c" stop-opacity="0.2"/>
+              </linearGradient>
+              <radialGradient id="desk-glow" cx="50%" cy="40%" r="50%">
+                <stop offset="0%" stop-color="rgba(0, 240, 255, 0.25)"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Desk Ambient Aura -->
+            <ellipse cx="450" cy="380" rx="360" ry="80" fill="url(#desk-glow)"/>
+
+            <!-- Center Monitor -->
+            <g class="monitor-center">
+              <rect x="360" y="160" width="180" height="110" rx="6" fill="#0b1120" stroke="#00f0ff" stroke-width="2" filter="drop-shadow(0 0 12px rgba(0,240,255,0.4))"/>
+              <rect x="368" y="168" width="164" height="94" rx="3" fill="url(#screen-glow-cyan)" opacity="0.18"/>
+              <!-- Code Lines -->
+              <line x1="380" y1="185" x2="440" y2="185" stroke="#00f0ff" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="380" y1="198" x2="510" y2="198" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+              <line x1="395" y1="211" x2="490" y2="211" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+              <line x1="395" y1="224" x2="460" y2="224" stroke="#fbbf24" stroke-width="2" stroke-linecap="round"/>
+              <line x1="380" y1="237" x2="430" y2="237" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
+              <!-- Stand -->
+              <path d="M445 270L440 330H460L455 270" fill="#1e293b"/>
+              <rect x="420" y="328" width="60" height="6" rx="2" fill="#334155"/>
+            </g>
+
+            <!-- Left Angled Monitor -->
+            <g class="monitor-left" transform="rotate(7 260 200)">
+              <rect x="180" y="170" width="150" height="100" rx="6" fill="#0b1120" stroke="#a855f7" stroke-width="2" filter="drop-shadow(0 0 10px rgba(168,85,247,0.35))"/>
+              <rect x="188" y="178" width="134" height="84" rx="3" fill="url(#screen-glow-purple)" opacity="0.18"/>
+              <path d="M200 240L230 200L255 220L295 190" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="295" cy="190" r="3" fill="#fbbf24"/>
+              <path d="M250 270L247 325H263L260 270" fill="#1e293b"/>
+            </g>
+
+            <!-- Right Angled Monitor -->
+            <g class="monitor-right" transform="rotate(-7 640 200)">
+              <rect x="570" y="170" width="150" height="100" rx="6" fill="#0b1120" stroke="#f59e0b" stroke-width="2" filter="drop-shadow(0 0 10px rgba(245,158,11,0.35))"/>
+              <rect x="578" y="178" width="134" height="84" rx="3" fill="url(#screen-glow-amber)" opacity="0.18"/>
+              <rect x="590" y="192" width="50" height="30" rx="3" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+              <rect x="650" y="192" width="50" height="30" rx="3" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+              <path d="M640 270L637 325H653L650 270" fill="#1e293b"/>
+            </g>
+
+            <!-- Desk Surface -->
+            <path d="M120 334H780L730 360H170L120 334Z" fill="#090d16" stroke="rgba(0,240,255,0.3)" stroke-width="1.5"/>
+            <!-- Keyboard & Mouse glow -->
+            <rect x="380" y="340" width="140" height="14" rx="3" fill="#0f172a" stroke="#00f0ff" stroke-width="1" opacity="0.7"/>
+            <ellipse cx="560" cy="347" rx="8" ry="5" fill="#0f172a" stroke="#a855f7" stroke-width="1"/>
+
+            <!-- Silhouetted Coder Sitting -->
+            <g class="coder-figure">
+              <!-- Head with Headphones -->
+              <ellipse cx="450" cy="275" rx="26" ry="32" fill="#06080e"/>
+              <path d="M422 265C422 250 435 240 450 240C465 240 478 250 478 265" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+              <rect x="419" y="265" width="8" height="18" rx="3" fill="#00f0ff" filter="drop-shadow(0 0 6px #00f0ff)"/>
+              <rect x="473" y="265" width="8" height="18" rx="3" fill="#00f0ff" filter="drop-shadow(0 0 6px #00f0ff)"/>
+              <!-- Shoulders & Torso -->
+              <path d="M375 390C375 330 405 315 450 315C495 315 525 330 525 390H375Z" fill="#06080e"/>
+              <path d="M410 325L370 370H395L425 335" fill="#0a0f1d"/>
+              <path d="M490 325L530 370H505L475 335" fill="#0a0f1d"/>
+              <!-- Subtle rim light on coder's back -->
+              <path d="M380 385C385 340 410 320 450 320C490 320 515 340 520 385" stroke="url(#logo-grad)" stroke-width="1.5" fill="none" opacity="0.7"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content container">
+        <!-- Institution Tag -->
+        <div class="hero-badge-capsule">
+          <span class="pulse-beacon"></span>
+          <span class="capsule-text">VELAMMAL COLLEGE OF ENGINEERING & TECHNOLOGY · IT DEPT</span>
+        </div>
+
+        <!-- Glitch / RGB Split Logotype -->
+        <div class="glitch-wrapper">
+          <h1 class="hero-glitch-title" data-text="HACKSPRINT '26">
+            HACKSPRINT <span class="text-gold">'26</span>
+          </h1>
+        </div>
+
+        <!-- Tagline with Light-Trail Sweep -->
+        <div class="tagline-wrapper">
+          <p class="hero-tagline">
+            Innovate. Code. Conquer the Future.
+          </p>
+          <div class="light-trail-sweep"></div>
+        </div>
+
+        <!-- Subtitle & Location -->
+        <p class="hero-subtext">
+          Tamil Nadu's premier 24-hour national hackathon challenging visionary students to build production-ready software and hardware solutions.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <button type="button" class="btn-hero-primary" id="btn-hero-register">
+            <span>Claim Your Spot</span>
+            <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+              <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <a href="#tracks" class="btn-hero-secondary">
+            <span>Explore Tracks</span>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
+              <path d="M10 4.167v11.666M4.167 10.833l5.833 5 5.833-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Feature Icon Row (Staggered Neon-Sign Sequence) -->
+        <div class="feature-pills-row" id="feature-pills-row">
+          <div class="feature-pill" style="--stagger-delay: 0.1s">
+            <div class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="pill-title">24 HOURS</span>
+            <span class="pill-detail">Non-stop sprint</span>
+          </div>
+
+          <div class="feature-pill" style="--stagger-delay: 0.25s">
+            <div class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <span class="pill-title">BUILD</span>
+            <span class="pill-detail">Real prototypes</span>
+          </div>
+
+          <div class="feature-pill" style="--stagger-delay: 0.4s">
+            <div class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <span class="pill-title">SOLVE</span>
+            <span class="pill-detail">Industry problems</span>
+          </div>
+
+          <div class="feature-pill" style="--stagger-delay: 0.55s">
+            <div class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="pill-title">COLLABORATE</span>
+            <span class="pill-detail">Teams of 2-4</span>
+          </div>
+
+          <div class="feature-pill" style="--stagger-delay: 0.7s">
+            <div class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <span class="pill-title">NETWORK</span>
+            <span class="pill-detail">Mentors & VCs</span>
+          </div>
+        </div>
+
+        <!-- Bouncing Scroll Indicator -->
+        <a href="#countdown" class="hero-scroll-indicator" aria-label="Scroll to Countdown">
+          <div class="scroll-mouse">
+            <span class="mouse-wheel"></span>
+          </div>
+          <div class="scroll-text-group">
+            <span class="scroll-label">SCROLL</span>
+            <span class="pulse-dot"></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3. COUNTDOWN TIMER SECTION (CLEAN CONTRAST LIGHT PANEL) -->
+    <!-- ========================================================================= -->
+    <section id="countdown" class="countdown-contrast-panel">
+      <!-- Soft Warm Amber Glow at Top Edge -->
+      <div class="panel-top-glow" aria-hidden="true"></div>
+
+      <div class="container countdown-inner">
+        <!-- Date Capsule Tracking -->
+        <div class="countdown-eyebrow">
+          <span class="eyebrow-accent"></span>
+          <span class="eyebrow-text">SEPTEMBER 30, 2026 · 10:00 AM IST</span>
+          <span class="eyebrow-accent"></span>
+        </div>
+
+        <!-- Bold Heading -->
+        <h2 class="countdown-heading">
+          The hackathon begins in
+        </h2>
+        <p class="countdown-subheading">
+          Time is running. Assemble your crew, calibrate your ideas, and prepare for the 24-hour sprint.
+        </p>
+
+        <!-- Four Flip-Card Mechanical Counters -->
+        <div class="flip-clock-grid" id="flip-clock" role="timer" aria-live="polite">
+          <!-- DAYS -->
+          <div class="clock-unit-wrapper">
+            <div class="flip-card-unit" id="flip-days">
+              <div class="flip-card">
+                <div class="digit-roll-viewport">
+                  <div class="digit-slide slide-current">
+                    <span class="digit-text" data-unit="days">00</span>
+                  </div>
+                </div>
+                <!-- Mechanical Split Hinge Line -->
+                <div class="card-hinge"></div>
+              </div>
+            </div>
+            <span class="unit-label">DAYS</span>
+          </div>
+
+          <!-- HOURS -->
+          <div class="clock-unit-wrapper">
+            <div class="flip-card-unit" id="flip-hours">
+              <div class="flip-card">
+                <div class="digit-roll-viewport">
+                  <div class="digit-slide slide-current">
+                    <span class="digit-text" data-unit="hours">00</span>
+                  </div>
+                </div>
+                <div class="card-hinge"></div>
+              </div>
+            </div>
+            <span class="unit-label">HOURS</span>
+          </div>
+
+          <!-- MINUTES -->
+          <div class="clock-unit-wrapper">
+            <div class="flip-card-unit" id="flip-minutes">
+              <div class="flip-card">
+                <div class="digit-roll-viewport">
+                  <div class="digit-slide slide-current">
+                    <span class="digit-text" data-unit="minutes">00</span>
+                  </div>
+                </div>
+                <div class="card-hinge"></div>
+              </div>
+            </div>
+            <span class="unit-label">MINUTES</span>
+          </div>
+
+          <!-- SECONDS -->
+          <div class="clock-unit-wrapper">
+            <div class="flip-card-unit" id="flip-seconds">
+              <div class="flip-card">
+                <div class="digit-roll-viewport">
+                  <div class="digit-slide slide-current">
+                    <span class="digit-text" data-unit="seconds">00</span>
+                  </div>
+                </div>
+                <div class="card-hinge"></div>
+              </div>
+            </div>
+            <span class="unit-label">SECONDS</span>
+          </div>
+        </div>
+
+        <!-- Event Key Details Bar -->
+        <div class="event-meta-banner">
+          <div class="meta-item">
+            <span class="meta-label">VENUE</span>
+            <strong class="meta-value">VCET Campus, Madurai</strong>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <span class="meta-label">PRIZE POOL</span>
+            <strong class="meta-value text-gold-accent">₹1,00,000 (1 Lakh)</strong>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <span class="meta-label">REGISTRATION</span>
+            <strong class="meta-value">₹500 / Team · 2-4 Members</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. PROBLEM TRACKS — 3D COVERFLOW CAROUSEL -->
+    <!-- ========================================================================= -->
+    <section id="tracks" class="tracks-section">
+      <div class="container section-header-center">
+        <div class="section-tag">
+          <span class="tag-hash">#</span>
+          <span>CHALLENGE HORIZONS</span>
+        </div>
+        <h2 class="section-title">
+          Problem Tracks <span class="gradient-text">2026</span>
+        </h2>
+        <p class="section-subtitle">
+          Six multidisciplinary domains engineered for real-world social and industrial impact. Choose your arena.
+        </p>
+      </div>
+
+      <!-- 3D Coverflow Viewport -->
+      <div class="coverflow-wrapper">
+        <!-- Navigation Arrow Left -->
+        <button type="button" class="coverflow-arrow arrow-prev" id="track-prev" aria-label="Previous Track">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <!-- 3D Carousel Stage -->
+        <div class="coverflow-stage" id="coverflow-stage">
+          
+          <!-- TRACK 1: Education & EdTech -->
+          <article class="track-card" data-index="0" data-track-id="edtech">
+            <div class="track-card-inner">
+              <div class="card-visual visual-edtech">
+                <div class="card-overlay-badge">
+                  <span class="badge-dot"></span>
+                  <span>TRACK 01</span>
+                </div>
+                <div class="card-graphic-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="#00f0ff" stroke-width="2">
+                    <path d="M32 8L6 22L32 36L58 22L32 8Z"/>
+                    <path d="M14 26.5V42C14 42 22 48 32 48C42 48 50 42 50 42V26.5"/>
+                    <path d="M54 24V40"/>
+                    <circle cx="54" cy="42" r="2" fill="#00f0ff"/>
+                  </svg>
+                </div>
+                <div class="visual-gradient-mesh"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-category-pill">EDTECH & SKILLING</div>
+                <h3 class="card-title">Education & Adaptive Learning</h3>
+                <p class="card-desc">
+                  Architect AI-powered personalized tutoring, interactive vernacular learning, multimodal assessment tools, and accessible classrooms for neurodiverse learners.
+                </p>
+                <div class="card-footer-action">
+                  <span class="inspect-text">View Challenge Scope →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- TRACK 2: Open Innovation -->
+          <article class="track-card" data-index="1" data-track-id="open-innovation">
+            <div class="track-card-inner">
+              <div class="card-visual visual-open">
+                <div class="card-overlay-badge">
+                  <span class="badge-dot"></span>
+                  <span>TRACK 02</span>
+                </div>
+                <div class="card-graphic-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="#a855f7" stroke-width="2">
+                    <circle cx="32" cy="32" r="20"/>
+                    <path d="M32 12V2M32 62V52M12 32H2M62 32H52"/>
+                    <circle cx="32" cy="32" r="6" fill="#a855f7"/>
+                    <path d="M18 18L24 24M40 40L46 46M46 18L40 24M24 40L18 46"/>
+                  </svg>
+                </div>
+                <div class="visual-gradient-mesh"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-category-pill">DISRUPTIVE TECH</div>
+                <h3 class="card-title">Open Innovation & Web3</h3>
+                <p class="card-desc">
+                  Break boundaries with creative ideas spanning decentralized computing, generative agent frameworks, developer toolchains, smart drones, or zero-knowledge protocols.
+                </p>
+                <div class="card-footer-action">
+                  <span class="inspect-text">View Challenge Scope →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- TRACK 3: Agriculture & Agritech -->
+          <article class="track-card" data-index="2" data-track-id="agritech">
+            <div class="track-card-inner">
+              <div class="card-visual visual-agritech">
+                <div class="card-overlay-badge">
+                  <span class="badge-dot"></span>
+                  <span>TRACK 03</span>
+                </div>
+                <div class="card-graphic-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="#10b981" stroke-width="2">
+                    <path d="M12 52C12 52 14 36 26 28C38 20 52 22 52 22C52 22 50 38 38 46C26 54 12 52 12 52Z"/>
+                    <path d="M12 52C22 42 34 32 46 26"/>
+                    <path d="M22 14C22 14 26 18 24 24"/>
+                  </svg>
+                </div>
+                <div class="visual-gradient-mesh"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-category-pill">AGRITECH & SUSTAINABILITY</div>
+                <h3 class="card-title">Agriculture & Smart Farming</h3>
+                <p class="card-desc">
+                  Empower farmers through precision IoT soil telemetry, satellite crop health vision models, fair-market price prediction, and solar micro-irrigation automation.
+                </p>
+                <div class="card-footer-action">
+                  <span class="inspect-text">View Challenge Scope →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- TRACK 4: Industry 4.0 & 5.0 -->
+          <article class="track-card" data-index="3" data-track-id="industry">
+            <div class="track-card-inner">
+              <div class="card-visual visual-industry">
+                <div class="card-overlay-badge">
+                  <span class="badge-dot"></span>
+                  <span>TRACK 04</span>
+                </div>
+                <div class="card-graphic-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="#f59e0b" stroke-width="2">
+                    <rect x="14" y="24" width="36" height="28" rx="4"/>
+                    <path d="M24 24V14C24 11.79 25.79 10 28 10H36C38.21 10 40 11.79 40 14V24"/>
+                    <circle cx="32" cy="38" r="5" stroke="#f59e0b"/>
+                    <line x1="22" y1="32" x2="26" y2="32"/>
+                    <line x1="38" y1="32" x2="42" y2="32"/>
+                  </svg>
+                </div>
+                <div class="visual-gradient-mesh"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-category-pill">MANUFACTURING & ROBOTICS</div>
+                <h3 class="card-title">Industry 4.0 & 5.0</h3>
+                <p class="card-desc">
+                  Design industrial digital twins, acoustic predictive maintenance algorithms, autonomous guided robots (AGVs), supply chain tracking, and human-cobot interaction.
+                </p>
+                <div class="card-footer-action">
+                  <span class="inspect-text">View Challenge Scope →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- TRACK 5: Healthcare & MedTech -->
+          <article class="track-card" data-index="4" data-track-id="healthcare">
+            <div class="track-card-inner">
+              <div class="card-visual visual-healthcare">
+                <div class="card-overlay-badge">
+                  <span class="badge-dot"></span>
+                  <span>TRACK 05</span>
+                </div>
+                <div class="card-graphic-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="#ec4899" stroke-width="2">
+                    <path d="M32 54C32 54 8 40 8 22C8 14 14 8 22 8C27 8 30 11 32 14C34 11 37 8 42 8C50 8 56 14 56 22C56 40 32 54 32 54Z"/>
+                    <path d="M20 28H26L29 22L35 34L38 28H44" stroke="#ec4899" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="visual-gradient-mesh"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-category-pill">MEDTECH & LIFE SCIENCES</div>
+                <h3 class="card-title">Healthcare & Telemedicine</h3>
+                <p class="card-desc">
+                  Engineer edge diagnostic imaging models, emergency dispatch triage systems, wearable bio-signal alert rings, and privacy-preserving federated health records.
+                </p>
+                <div class="card-footer-action">
+                  <span class="inspect-text">View Challenge Scope →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- TRACK 6: Smart Governance & AI -->
+          <article class="track-card" data-index="5" data-track-id="governance">
+            <div class="track-card-inner">
+              <div class="card-visual visual-governance">
+                <div class="card-overlay-badge">
+                  <span class="badge-dot"></span>
+                  <span>TRACK 06</span>
+                </div>
+                <div class="card-graphic-icon">
+                  <svg viewBox="0 0 64 64" fill="none" stroke="#38bdf8" stroke-width="2">
+                    <path d="M32 6L8 16V28C8 42 18 53 32 58C46 53 56 42 56 28V16L32 6Z"/>
+                    <circle cx="32" cy="30" r="8"/>
+                    <path d="M24 44C24 39.58 27.58 36 32 36C36.42 36 40 39.58 40 44"/>
+                  </svg>
+                </div>
+                <div class="visual-gradient-mesh"></div>
+              </div>
+              <div class="card-body">
+                <div class="card-category-pill">CIVIC TECH & SECURITY</div>
+                <h3 class="card-title">Smart Governance & AI</h3>
+                <p class="card-desc">
+                  Develop transparent public service ticketing, civic feedback sentiment intelligence, disaster response coordination portals, and municipal infrastructure analytics.
+                </p>
+                <div class="card-footer-action">
+                  <span class="inspect-text">View Challenge Scope →</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Navigation Arrow Right -->
+        <button type="button" class="coverflow-arrow arrow-next" id="track-next" aria-label="Next Track">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Synchronized Indicator & Counter Bar -->
+      <div class="coverflow-controls container">
+        <div class="track-dots-container" id="track-dots" role="tablist" aria-label="Track Navigation">
+          <button class="track-dot active" data-index="0" aria-label="Track 1"></button>
+          <button class="track-dot" data-index="1" aria-label="Track 2"></button>
+          <button class="track-dot" data-index="2" aria-label="Track 3"></button>
+          <button class="track-dot" data-index="3" aria-label="Track 4"></button>
+          <button class="track-dot" data-index="4" aria-label="Track 5"></button>
+          <button class="track-dot" data-index="5" aria-label="Track 6"></button>
+        </div>
+
+        <div class="track-counter-box">
+          <span class="current-track-num" id="track-current-num">01</span>
+          <span class="track-num-sep">/</span>
+          <span class="total-track-num">06 TRACKS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. ABOUT SECTION (FULL-BLEED PARALLAX & COORDINATORS GRID) -->
+    <!-- ========================================================================= -->
+    <section id="about" class="about-section">
+      <!-- Parallax Hero Canvas -->
+      <div class="about-parallax-hero" id="about-parallax-hero">
+        <div class="parallax-bg-media" id="parallax-bg-media">
+          <!-- Stylized Drone Campus Silhouette & Tech Architecture -->
+          <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" class="campus-drone-art">
+            <defs>
+              <linearGradient id="campus-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#070a14"/>
+                <stop offset="60%" stop-color="#0f172a"/>
+                <stop offset="100%" stop-color="#090d1a"/>
+              </linearGradient>
+              <linearGradient id="grid-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.1"/>
+                <stop offset="50%" stop-color="#a855f7" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+            <rect width="1440" height="600" fill="url(#campus-sky)"/>
+            <!-- Campus Building Silhouettes -->
+            <polygon points="60,600 60,340 180,340 180,300 280,300 280,600" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
+            <polygon points="320,600 320,240 500,240 500,280 620,280 620,600" fill="#0a0f1d" stroke="rgba(0,240,255,0.2)" stroke-width="1.5"/>
+            <polygon points="650,600 650,210 740,160 830,210 830,600" fill="#0c1326" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
+            <polygon points="860,600 860,260 1020,260 1020,310 1140,310 1140,600" fill="#0a0f1d" stroke="rgba(168,85,247,0.2)" stroke-width="1.5"/>
+            <polygon points="1180,600 1180,350 1380,350 1380,600" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
+            <!-- Glowing Windows & Structural Lines -->
+            <line x1="0" y1="520" x2="1440" y2="520" stroke="url(#grid-glow)" stroke-width="2"/>
+            <line x1="0" y1="560" x2="1440" y2="560" stroke="url(#grid-glow)" stroke-width="1"/>
+            <!-- Radio Mast on VCET Tower -->
+            <line x1="740" y1="160" x2="740" y2="100" stroke="#00f0ff" stroke-width="2"/>
+            <circle cx="740" cy="98" r="4" fill="#00f0ff" filter="drop-shadow(0 0 6px #00f0ff)"/>
+          </svg>
+          <div class="parallax-overlay-shade"></div>
+        </div>
+
+        <div class="parallax-foreground container">
+          <div class="about-hero-tag">ESTABLISHED EXCELLENCE</div>
+          <h2 class="about-hero-title">ABOUT HACKSPRINT '26</h2>
+          <p class="about-hero-sub">
+            Organized by the Department of Information Technology, Velammal College of Engineering & Technology
+          </p>
+          <a href="#about-detail" class="btn-pill-gold mt-6" id="btn-discover-story">
+            <span>Discover Our Story ↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Crossing Paths Reveal Section: Circuit Graphic Left + Vision Text Right -->
+      <div id="about-detail" class="about-detail-wrapper container">
+        <div class="about-split-grid">
+          
+          <!-- Left: High-Tech Circuit Board Graphic -->
+          <div class="circuit-graphic-card" id="circuit-graphic-card">
+            <div class="circuit-inner">
+              <svg viewBox="0 0 480 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="circuit-svg">
+                <defs>
+                  <linearGradient id="trace-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00f0ff"/>
+                    <stop offset="100%" stop-color="#3b82f6"/>
+                  </linearGradient>
+                  <linearGradient id="chip-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0f172a"/>
+                    <stop offset="100%" stop-color="#1e293b"/>
+                  </linearGradient>
+                </defs>
+                <!-- Motherboard grid lines -->
+                <rect x="20" y="20" width="440" height="340" rx="16" fill="#060912" stroke="rgba(0,240,255,0.2)" stroke-width="1.5"/>
+                
+                <!-- Central Microprocessor: HACKSPRINT '26 CORE -->
+                <rect x="180" y="130" width="120" height="120" rx="10" fill="url(#chip-grad)" stroke="#00f0ff" stroke-width="2" filter="drop-shadow(0 0 16px rgba(0,240,255,0.3))"/>
+                <text x="240" y="185" fill="#00f0ff" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" text-anchor="middle" letter-spacing="2">HACKSPRINT</text>
+                <text x="240" y="205" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="16" text-anchor="middle">v2026.0</text>
+                <circle cx="240" cy="225" r="4" fill="#10b981"/>
+
+                <!-- Circuit Traces from Central Chip -->
+                <!-- Top traces -->
+                <path d="M210 130V60H120V40" stroke="url(#trace-cyan)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="120" cy="40" r="3" fill="#00f0ff"/>
+                <path d="M270 130V80H340V40" stroke="url(#trace-cyan)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="340" cy="40" r="3" fill="#00f0ff"/>
+                
+                <!-- Left traces -->
+                <path d="M180 160H80V220H50" stroke="#a855f7" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="50" cy="220" r="3" fill="#a855f7"/>
+                <path d="M180 200H100V280H60" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="60" cy="280" r="3" fill="#00f0ff"/>
+
+                <!-- Right traces -->
+                <path d="M300 170H380V120H420" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="420" cy="120" r="3" fill="#f59e0b"/>
+                <path d="M300 210H390V300H430" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="430" cy="300" r="3" fill="#00f0ff"/>
+
+                <!-- Bottom traces -->
+                <path d="M240 250V320H180V340" stroke="#ec4899" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="180" cy="340" r="3" fill="#ec4899"/>
+                <path d="M260 250V300H320V340" stroke="url(#trace-cyan)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="320" cy="340" r="3" fill="#00f0ff"/>
+
+                <!-- Pulsing node indicators -->
+                <circle cx="80" cy="160" r="5" fill="#00f0ff" opacity="0.8" class="pulse-circuit-node"/>
+                <circle cx="380" cy="170" r="5" fill="#f59e0b" opacity="0.8" class="pulse-circuit-node"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right: Heading and Vision Text -->
+          <div class="about-vision-copy" id="about-vision-copy">
+            <div class="section-tag">
+              <span class="tag-hash">#</span>
+              <span>MISSION & ARCHITECTURE</span>
+            </div>
+            <h3 class="split-heading">
+              A platform built for intelligent problem-solving.
+            </h3>
+            <p class="lead-text">
+              HackSprint '26 is the flagship national hackathon curated by the Department of Information Technology at Velammal College of Engineering & Technology, Madurai.
+            </p>
+            <p class="body-text">
+              We bring together 500+ handpicked software engineers, designers, AI researchers, and hardware builders. Over 24 intensive hours, teams collaborate under mentorship from prominent industry architects to build production-grade prototypes addressing critical societal challenges.
+            </p>
+            
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <span class="metric-number">24<span class="text-gold">H</span></span>
+                <span class="metric-label">High-Velocity Sprint</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-number">500<span class="text-cyan">+</span></span>
+                <span class="metric-label">Minds Participating</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-number">₹1<span class="text-pink">L</span></span>
+                <span class="metric-label">Prize Pool</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ========================================================================= -->
+      <!-- COORDINATORS GRID (FACULTY & STUDENT LEADS) -->
+      <!-- ========================================================================= -->
+      <div id="coordinators" class="coordinators-wrapper container">
+        <div class="section-header-center">
+          <div class="section-tag">
+            <span class="tag-hash">#</span>
+            <span>LEADERSHIP & MENTORSHIP</span>
+          </div>
+          <h2 class="section-title">Organizing Committee</h2>
+          <p class="section-subtitle">
+            Guiding HackSprint '26 with vision, technical excellence, and dedication.
+          </p>
+        </div>
+
+        <div class="coordinators-grid" id="coordinators-grid">
+          
+          <!-- Coordinator 1: Head of Department -->
+          <div class="coord-card">
+            <div class="coord-avatar-wrapper">
+              <div class="avatar-ring-glow"></div>
+              <div class="coord-avatar-inner">
+                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
+                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#00f0ff" stroke-width="2"/>
+                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
+                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
+                  <path d="M42 38L47 43L58 32" stroke="#00f0ff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="coord-badge-tag">CONVENER</span>
+            </div>
+            <h4 class="coord-name">Dr. R. Kavitha</h4>
+            <span class="coord-role">Head of Department · IT</span>
+            <span class="coord-inst">VCET, Madurai</span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- Coordinator 2: Faculty Coordinator -->
+          <div class="coord-card">
+            <div class="coord-avatar-wrapper">
+              <div class="avatar-ring-glow"></div>
+              <div class="coord-avatar-inner">
+                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
+                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#a855f7" stroke-width="2"/>
+                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
+                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
+                  <circle cx="50" cy="38" r="8" fill="#a855f7" opacity="0.3"/>
+                </svg>
+              </div>
+              <span class="coord-badge-tag">COORDINATOR</span>
+            </div>
+            <h4 class="coord-name">Prof. Raja Sudharsan</h4>
+            <span class="coord-role">Faculty Coordinator · IT</span>
+            <span class="coord-inst">VCET, Madurai</span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- Coordinator 3: Student Lead -->
+          <div class="coord-card">
+            <div class="coord-avatar-wrapper">
+              <div class="avatar-ring-glow"></div>
+              <div class="coord-avatar-inner">
+                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
+                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#fbbf24" stroke-width="2"/>
+                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
+                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
+                  <polygon points="50,26 53,34 61,34 55,39 57,47 50,42 43,47 45,39 39,34 47,34" fill="#fbbf24"/>
+                </svg>
+              </div>
+              <span class="coord-badge-tag tag-gold">STUDENT LEAD</span>
+            </div>
+            <h4 class="coord-name">Rithesh</h4>
+            <span class="coord-role">Student Lead · IV IT</span>
+            <span class="coord-inst">VCET, Madurai</span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+          <!-- Coordinator 4: Technical Head -->
+          <div class="coord-card">
+            <div class="coord-avatar-wrapper">
+              <div class="avatar-ring-glow"></div>
+              <div class="coord-avatar-inner">
+                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
+                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#00f0ff" stroke-width="2"/>
+                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
+                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
+                  <path d="M40 38L46 44L40 50M60 38L54 44L60 50" stroke="#00f0ff" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="coord-badge-tag">TECH LEAD</span>
+            </div>
+            <h4 class="coord-name">Hari Roshan</h4>
+            <span class="coord-role">Technical Lead · IV IT</span>
+            <span class="coord-inst">VCET, Madurai</span>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. FOOTER SECTION -->
+    <!-- ========================================================================= -->
+    <footer id="contact" class="footer-section">
+      <div class="container footer-top-grid">
+        
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-col footer-col-brand">
+          <div class="footer-logo">
+            <div class="footer-brand-lockup">
+              <img src="vcet-logo.png" alt="VCET Emblem" class="footer-vcet-logo">
+              <span class="brand-title">HACKSPRINT<span class="text-gold">'26</span></span>
+            </div>
+          </div>
+          <p class="footer-bio">
+            The national flagship 24-hour hackathon engineered by the Department of Information Technology at Velammal College of Engineering & Technology (VCET), Madurai.
+          </p>
+          <div class="footer-accreditation">
+            <span class="accred-dot"></span>
+            <span>NAAC 'A' Grade · NBA Accredited Department</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-link-list">
+            <li><a href="#hero">Home Terminal</a></li>
+            <li><a href="#countdown">Countdown Clocks</a></li>
+            <li><a href="#tracks">Problem Horizons</a></li>
+            <li><a href="#about">About VCET IT</a></li>
+            <li><a href="#coordinators">Leadership Team</a></li>
+            <li><a href="#btn-open-register" class="link-open-reg">Participant Registration</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Details (Pulsing Gold Icons) -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Reach Out</h4>
+          <ul class="footer-contact-list">
+            <li class="contact-item">
+              <div class="contact-icon pulse-gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-sub">Official Inquiries</span>
+                <a href="mailto:hacksprint26@vcet.ac.in">hacksprint26@vcet.ac.in</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon pulse-gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-sub">Helpdesk Coordinator</span>
+                <a href="tel:+919944122667">+91 99441 22667</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="contact-icon pulse-gold">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="contact-text">
+                <span class="contact-sub">Hackathon Support</span>
+                <span>24/7 Operations Desk</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Stay Updated Newsletter Input -->
+        <div class="footer-col footer-col-subscribe">
+          <h4 class="footer-heading">Stay Updated</h4>
+          <p class="footer-sub-text">
+            Receive track updates, mentor announcements, and problem statement drops.
+          </p>
+          <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
+            <div class="input-wrapper">
+              <input type="email" id="newsletter-email" placeholder="your.handle@domain.com" required aria-label="Email for newsletter">
+            </div>
+            <button type="submit" class="btn-pill-gold btn-newsletter" id="btn-subscribe">
+              <span>Subscribe</span>
+            </button>
+          </form>
+          <div class="newsletter-feedback" id="newsletter-feedback"></div>
+        </div>
+
+      </div>
+
+      <!-- Dark-Mode Styled Interactive Campus Map (VCET Madurai) -->
+      <div class="container map-section-container">
+        <div class="map-card-wrapper">
+          <div class="map-header">
+            <div class="map-title-row">
+              <span class="map-pin-pulse"></span>
+              <strong>HOST VENUE: Velammal College of Engineering & Technology</strong>
+            </div>
+            <span class="map-coord-tag">9.89388° N, 78.176088° E · Madurai, TN</span>
+          </div>
+
+          <!-- Stylized Dark Map Preview Canvas -->
+          <div class="map-canvas-visual" id="map-canvas-visual">
+            <iframe 
+              src="https://maps.google.com/maps?ll=9.89388,78.176088&amp;z=16&amp;t=m&amp;hl=en&amp;gl=IN&amp;mapclient=embed&amp;cid=1801179381751076763&amp;output=embed" 
+              class="map-iframe-embed"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Velammal College of Engineering and Technology Google Maps Location">
+            </iframe>
+
+            <!-- Floating Gold Get Directions Pill -->
+            <a href="https://www.google.com/maps?ll=9.89388,78.176088&amp;z=16&amp;t=m&amp;hl=en&amp;gl=IN&amp;mapclient=embed&amp;cid=1801179381751076763" target="_blank" rel="noopener noreferrer" class="btn-pill-gold btn-get-directions" id="btn-directions">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dir-icon">
+                <polygon points="3 11 22 2 13 21 11 13 3 11"/>
+              </svg>
+              <span>Get Directions</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Row & Social Icons -->
+      <div class="container footer-bottom-bar">
+        <div class="bottom-legal">
+          <p>© 2026 HackSprint. Organized by Department of Information Technology, VCET.</p>
+          <span class="legal-separator">·</span>
+          <a href="#" class="legal-link">Rules & Code of Conduct</a>
+          <span class="legal-separator">·</span>
+          <a href="#" class="legal-link">Privacy Policy</a>
+        </div>
+
+        <div class="bottom-socials">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/></svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 1: REGISTRATION MODAL -->
+  <!-- ========================================================================= -->
+  <div class="modal-backdrop" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Registration Modal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-tag">HACKSPRINT '26 · PARTICIPANT PORTAL</div>
+        <h3 id="modal-title" class="modal-heading">Register Your Squad</h3>
+        <p class="modal-desc">Secure your spot at VCET's flagship 24-hour hackathon. Registration fee: <strong>₹500 per team</strong> (Teams of 2 to 4 members).</p>
+      </div>
+
+      <form id="register-form" class="modal-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="team-name">Team Name <span class="required">*</span></label>
+            <input type="text" id="team-name" placeholder="e.g., CyberPulse Pioneers" required>
+            <span class="field-error" id="err-team-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="team-size">Team Size <span class="required">*</span></label>
+            <select id="team-size" required>
+              <option value="2">2 Hackers</option>
+              <option value="3" selected>3 Hackers</option>
+              <option value="4">4 Hackers</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lead-name">Team Lead Name <span class="required">*</span></label>
+            <input type="text" id="lead-name" placeholder="e.g., Rahul Sharma" required>
+            <span class="field-error" id="err-lead-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="lead-email">Lead Email <span class="required">*</span></label>
+            <input type="email" id="lead-email" placeholder="lead@college.edu" required>
+            <span class="field-error" id="err-lead-email"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="college-name">Institution / College Name <span class="required">*</span></label>
+            <input type="text" id="college-name" placeholder="e.g., Velammal College of Engineering & Tech" required>
+            <span class="field-error" id="err-college-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="track-preference">Preferred Problem Track <span class="required">*</span></label>
+            <select id="track-preference" required>
+              <option value="Education & Adaptive Learning">Track 01: Education & Adaptive Learning</option>
+              <option value="Open Innovation & Web3">Track 02: Open Innovation & Web3</option>
+              <option value="Agriculture & Smart Farming">Track 03: Agriculture & Smart Farming</option>
+              <option value="Industry 4.0 & 5.0">Track 04: Industry 4.0 & 5.0</option>
+              <option value="Healthcare & Telemedicine">Track 05: Healthcare & Telemedicine</option>
+              <option value="Smart Governance & AI">Track 06: Smart Governance & AI</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="project-pitch">Brief Concept Pitch (Optional)</label>
+          <textarea id="project-pitch" rows="3" placeholder="Tell us in 2-3 sentences what breakthrough you plan to engineer..."></textarea>
+        </div>
+
+        <div class="modal-form-actions">
+          <button type="submit" class="btn-pill-gold w-full" id="btn-submit-register">
+            <span>Confirm Registration →</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success Screen State -->
+      <div class="modal-success" id="modal-success" style="display: none;">
+        <div class="success-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Transmission Confirmed!</h3>
+        <p>Your registration for <strong id="success-team-display">HackSprint '26</strong> has been logged into the terminal. An official confirmation dossier and Discord invitation have been transmitted to your email.</p>
+        <button type="button" class="btn-hero-secondary mt-4" id="btn-close-success">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 2: TRACK DETAILS INSPECTOR -->
+  <!-- ========================================================================= -->
+  <div class="modal-backdrop" id="track-modal" role="dialog" aria-modal="true" aria-labelledby="track-modal-title">
+    <div class="modal-card modal-card-track">
+      <button class="modal-close-btn" id="track-modal-close" aria-label="Close Track Details">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <div class="track-modal-header">
+        <span class="track-modal-tag" id="track-modal-tag">TRACK 01 · EDTECH</span>
+        <h3 id="track-modal-title" class="track-modal-heading">Track Title</h3>
+      </div>
+
+      <div class="track-modal-body">
+        <div class="modal-section-block">
+          <h4>Problem Landscape</h4>
+          <p id="track-modal-overview">Detailed overview description...</p>
+        </div>
+
+        <div class="modal-section-block">
+          <h4>Sample Problem Statements</h4>
+          <ul id="track-modal-samples" class="sample-problem-list">
+            <!-- Populated dynamically via JS -->
+          </ul>
+        </div>
+
+        <div class="modal-section-block">
+          <h4>Suggested Technology Stack</h4>
+          <div id="track-modal-tech" class="tech-tags-wrap">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+      </div>
+
+      <div class="track-modal-footer">
+        <button type="button" class="btn-pill-gold" id="btn-select-track-reg">
+          <span>Register for this Track →</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Alert -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
