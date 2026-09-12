@@ -353,50 +353,34 @@ button {
   flex-direction: column;
   justify-content: center;
   min-width: 0;
-  line-height: 1.16;
-}
-
-/* Identical font size for VCET full name, Department of IT, and Hacksprint'26 */
-.brand-inst,
-.brand-dept,
-.brand-title {
-  font-family: var(--font-heading);
-  font-size: 0.81rem;
-  line-height: 1.22;
-  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .brand-inst {
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
   font-weight: 800;
-  letter-spacing: 0;
+  letter-spacing: 0.005em;
   color: #f8fafc;
   text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.25;
 }
 
 .brand-dept {
-  letter-spacing: 0.02em;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
   color: var(--cyan-primary);
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  white-space: nowrap;
+  line-height: 1.25;
+  margin-top: 2px;
 }
 
 .brand-title {
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-}
-
-.brand-year {
-  color: var(--gold-bright);
-}
-
-.brand-sub {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  color: var(--cyan-primary);
-  font-weight: 600;
+  display: none;
 }
 
 /* Dead-Center Nav Links with Morphing Indicator */
@@ -2990,23 +2974,35 @@ button {
   }
 
   .brand-logo {
-    gap: 10px;
+    gap: 8px;
     flex: 1;
     min-width: 0;
   }
 
   .vcet-emblem-wrap {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
   }
 
-  .brand-inst,
-  .brand-dept,
-  .brand-title {
-    font-size: 0.80rem !important; /* All 3 have identical font size */
-    white-space: normal;
-    line-height: 1.15;
-    max-width: 240px;
+  .brand-inst {
+    font-size: 0.74rem !important;
+    font-weight: 800;
+    line-height: 1.18;
+    color: #f8fafc;
+    text-transform: uppercase;
+    white-space: normal; /* Single or double line on mobile */
+    max-width: 215px;
+  }
+
+  .brand-dept {
+    font-size: 0.67rem !important;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--cyan-primary);
+    text-transform: uppercase;
+    white-space: nowrap !important; /* Strictly single line on mobile */
+    letter-spacing: 0.02em;
+    margin-top: 1px;
   }
 
   .nav-actions {
@@ -3116,17 +3112,23 @@ button {
 }
 
 @media (max-width: 640px) {
-  .brand-inst,
-  .brand-dept,
-  .brand-title {
-    font-size: 0.76rem !important; /* All 3 have identical font size */
-    max-width: 200px;
+  .brand-inst {
+    font-size: 0.70rem !important;
+    max-width: 195px;
     line-height: 1.15;
+    white-space: normal;
+  }
+
+  .brand-dept {
+    font-size: 0.63rem !important;
+    white-space: nowrap !important;
+    line-height: 1.2;
+    letter-spacing: 0.015em;
   }
 
   .btn-pill-gold {
-    padding: 7px 12px;
-    font-size: 0.76rem;
+    padding: 7px 11px;
+    font-size: 0.74rem;
   }
 
   .feature-pills-row {
