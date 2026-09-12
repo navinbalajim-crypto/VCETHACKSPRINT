@@ -18,6 +18,27 @@ const MIME = {
 const server = http.createServer((req, res) => {
   let reqPath = req.url.split('?')[0];
 
+  if (req.method === 'POST' && reqPath === '/api/save-logo') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const { data } = JSON.parse(body);
+        const b64 = data.replace(/^data:image\/\w+;base64,/, '');
+        const buffer = Buffer.from(b64, 'base64');
+        fs.writeFileSync(path.join(__dirname, 'assets', 'ieee_vcet_logo.png'), buffer);
+        fs.writeFileSync(path.join(__dirname, 'assets', 'ieee_logo.jpeg'), buffer);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true }));
+        console.log('IEEE VCET Logo successfully generated and written to disk!');
+      } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: e.message }));
+      }
+    });
+    return;
+  }
+
   // Direct redirection for decommissioned pages
   if (reqPath === '/register.html' || reqPath === '/register') {
     res.writeHead(302, { 'Location': 'https://forms.gle/RZVStZXULViDNjPQA' });
