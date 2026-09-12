@@ -283,10 +283,16 @@ button {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+.navbar-wrapper .container {
+  max-width: 1420px;
+  padding: 0 36px;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 32px;
 }
 
 /* Brand Lockup */
@@ -294,6 +300,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .logo-symbol {
@@ -367,8 +374,10 @@ button {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 9999px;
-  padding: 4px 8px;
+  padding: 4px 6px;
   backdrop-filter: blur(8px);
+  margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -377,6 +386,7 @@ button {
   list-style: none;
   position: relative;
   z-index: 2;
+  gap: 2px;
 }
 
 .nav-item {
@@ -385,8 +395,8 @@ button {
 
 .nav-link {
   display: inline-block;
-  padding: 8px 18px;
-  font-size: 0.9rem;
+  padding: 6px 13px;
+  font-size: 0.85rem;
   font-weight: 500;
   color: #94a3b8;
   border-radius: 9999px;
@@ -423,6 +433,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 /* Mobile Toggle */
@@ -960,35 +971,21 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 700px;
 }
 
-/* Authentic mechanical plate split lighting */
+/* Subtle continuous glossy sheen without center split or line */
 .flip-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 250, 252, 0.3) 100%);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 50%, rgba(15, 23, 42, 0.02) 100%);
   pointer-events: none;
   z-index: 4;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
 }
 
-.flip-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  z-index: 4;
-}
-
-/* Smooth Number-Roll Viewport */
+/* Smooth 3D Flip Viewport */
 .digit-roll-viewport {
   position: relative;
   width: 100%;
@@ -997,7 +994,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 700px;
+  transform-style: preserve-3d;
   z-index: 2;
+  border-radius: 16px;
 }
 
 .digit-slide {
@@ -1009,62 +1009,71 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  will-change: transform, opacity;
-  transition: transform 0.48s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+  background: #ffffff;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity, filter;
 }
 
 /* Current steady state */
 .digit-slide.slide-current {
-  transform: translateY(0%) scale(1);
+  transform: rotateX(0deg);
   opacity: 1;
+  filter: brightness(1);
+  z-index: 2;
 }
 
-/* Outgoing slide rolling down */
-.digit-slide.slide-exit {
-  transform: translateY(100%) scale(0.96);
+/* Outgoing slide flipping forward & down */
+.digit-slide.slide-flip-out {
+  animation: flipTileOut 0.28s cubic-bezier(0.4, 0, 0.7, 1) forwards;
+  z-index: 1;
+}
+
+/* Incoming slide flipping down into view from top */
+.digit-slide.slide-flip-in {
+  animation: flipTileIn 0.38s cubic-bezier(0.15, 1.15, 0.3, 1) 0.12s forwards;
+  transform: rotateX(90deg);
   opacity: 0;
+  z-index: 3;
 }
 
-/* Incoming slide pre-positioned above */
-.digit-slide.slide-enter-prepare {
-  transform: translateY(-100%) scale(0.96);
-  opacity: 0;
-  transition: none !important;
+@keyframes flipTileOut {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    transform: rotateX(-45deg);
+    opacity: 0.8;
+    filter: brightness(0.85);
+  }
+  100% {
+    transform: rotateX(-90deg);
+    opacity: 0;
+    filter: brightness(0.65);
+  }
 }
 
-/* Incoming slide glides into center */
-.digit-slide.slide-enter-active {
-  transform: translateY(0%) scale(1);
-  opacity: 1;
+@keyframes flipTileIn {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+    filter: brightness(1.2);
+  }
+  65% {
+    transform: rotateX(-6deg);
+    opacity: 1;
+    filter: brightness(0.96);
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+    filter: brightness(1);
+  }
 }
-
-/* Mechanical Center Hinge Line */
-.card-hinge {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #0f172a;
-  transform: translateY(-50%);
-  z-index: 10;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  pointer-events: none;
-}
-
-.card-hinge::before,
-.card-hinge::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  width: 6px;
-  height: 10px;
-  background: #64748b;
-  border-radius: 2px;
-}
-
-.card-hinge::before { left: 4px; }
-.card-hinge::after { right: 4px; }
 
 /* Bold Black Numerals */
 .digit-text {
@@ -2561,7 +2570,23 @@ button {
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1240px) {
+  .navbar-wrapper .container {
+    padding: 0 20px;
+  }
+  .navbar {
+    gap: 16px;
+  }
+  .nav-link {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  .brand-title {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 990px) {
   .nav-links-wrapper {
     display: none;
   }

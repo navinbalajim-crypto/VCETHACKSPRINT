@@ -280,35 +280,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentValSpan && currentValSpan.textContent === newValueStr) return;
 
     // Clean up any lingering transit slides
-    const existingTransits = viewport.querySelectorAll('.slide-enter-prepare, .slide-enter-active, .slide-exit');
+    const existingTransits = viewport.querySelectorAll('.slide-flip-out, .slide-flip-in');
     existingTransits.forEach(el => {
       if (el !== currentSlide) el.remove();
     });
 
-    // Create incoming slide positioned directly above
+    // Create incoming slide with 3D flip-in animation
     const incomingSlide = document.createElement('div');
-    incomingSlide.className = 'digit-slide slide-enter-prepare';
+    incomingSlide.className = 'digit-slide slide-flip-in';
     incomingSlide.innerHTML = `<span class="digit-text" data-unit="${unitName}">${newValueStr}</span>`;
     viewport.appendChild(incomingSlide);
 
     // Force browser reflow to register pre-positioning
     void incomingSlide.offsetWidth;
 
-    // Trigger seamless, natural lockstep roll
+    // Trigger 3D flip out on current slide
     currentSlide.classList.remove('slide-current');
-    currentSlide.classList.add('slide-exit');
-
-    incomingSlide.classList.remove('slide-enter-prepare');
-    incomingSlide.classList.add('slide-enter-active');
+    currentSlide.classList.add('slide-flip-out');
 
     // Settle transition state cleanly without frame discontinuity
     setTimeout(() => {
       if (currentSlide.parentNode === viewport) {
         viewport.removeChild(currentSlide);
       }
-      incomingSlide.classList.remove('slide-enter-active');
+      incomingSlide.classList.remove('slide-flip-in');
       incomingSlide.classList.add('slide-current');
-    }, 490);
+    }, 520);
   };
 
   const updateCountdown = () => {
