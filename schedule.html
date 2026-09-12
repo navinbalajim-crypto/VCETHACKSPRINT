@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24-Hour Run-of-Show Schedule | HackSprint '26 · VCET IT</title>
+  <meta name="description" content="Hour-by-hour schedule for HackSprint '26, the 24-hour national Agentic AI hackathon on September 30 - October 1, 2026 at VCET Madurai.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow & Starfield Canvas -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <canvas id="starfield-canvas" aria-hidden="true"></canvas>
+
+  <!-- Sticky Navbar -->
+  <header id="main-header" class="navbar-wrapper">
+    <nav class="navbar container" id="navbar" aria-label="Main Navigation">
+      <a href="index.html#hero" class="brand-logo" aria-label="HackSprint '26 Home">
+        <div class="logo-symbol vcet-emblem-wrap">
+          <img src="vcet-logo.png" alt="VCET Emblem" class="vcet-brand-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">HACKSPRINT<span class="brand-year">'26</span></span>
+          <span class="brand-sub">VCET · DEPT OF IT</span>
+        </div>
+      </a>
+
+      <div class="nav-links-wrapper">
+        <ul class="nav-links" id="nav-links">
+          <li class="nav-item"><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="index.html#theme-showcase" class="nav-link">Problem Statement</a></li>
+          <li class="nav-item"><a href="schedule.html" class="nav-link active">Schedule</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <span class="nav-morph-pill" id="nav-morph-pill" aria-hidden="true"></span>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold" id="btn-open-register">
+          <span>Register Now</span>
+          <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+            <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-inner">
+      <a href="index.html#hero" class="mobile-nav-link">Home</a>
+      <a href="index.html#theme-showcase" class="mobile-nav-link">Problem Statement (Agentic AI)</a>
+      <a href="schedule.html" class="mobile-nav-link active">24H Schedule</a>
+      <a href="faq.html" class="mobile-nav-link">FAQs</a>
+      <a href="sponsors.html" class="mobile-nav-link">Sponsors</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold w-full mt-4">
+        <span>Register Squad →</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Subpage Hero Banner -->
+    <section class="subpage-hero">
+      <div class="container">
+        <div class="subpage-badge-crumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>Operations Timeline</span>
+        </div>
+        <h1 class="subpage-title">
+          24-Hour <span class="gradient-text">Run-of-Show</span>
+        </h1>
+        <p class="subpage-lead">
+          From the initial opening ceremony to the 10:00 AM terminal shutdown and the ₹30,000 Grand Valedictory, here is your minute-by-minute blueprint for September 30 – October 1, 2026.
+        </p>
+      </div>
+    </section>
+
+    <!-- Schedule Timeline Section -->
+    <section class="container schedule-container">
+      
+      <!-- Filter Tabs -->
+      <div class="schedule-filter-tabs">
+        <button type="button" class="schedule-tab-btn active" data-filter="all">All Operations</button>
+        <button type="button" class="schedule-tab-btn" data-filter="day1">Day 1 (Sept 30)</button>
+        <button type="button" class="schedule-tab-btn" data-filter="day2">Day 2 (Oct 1)</button>
+        <button type="button" class="schedule-tab-btn" data-filter="milestone">Key Milestones</button>
+        <button type="button" class="schedule-tab-btn" data-filter="mentoring">Mentorship Rounds</button>
+      </div>
+
+      <!-- Timeline Stream -->
+      <!-- Run-of-show schedule transcribed directly from official document assets/image20.jpeg: 24-hour format from Sept 30 09:00 AM to Oct 1 10:00 AM, verified by human lead -->
+      <div class="schedule-timeline">
+
+        <!-- EVENT 1 -->
+        <div class="timeline-event-card" data-day="day1" data-category="general">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge">09:00 AM – 09:30 AM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Registration & Squad Check-in</h3>
+          <p class="timeline-event-desc">
+            Physical check-in at VCET Auditorium foyer. Verification of college ID cards, biometric verification, allocation of designated hardware workstations, and distribution of official HackSprint '26 kits.
+          </p>
+        </div>
+
+        <!-- EVENT 2 -->
+        <div class="timeline-event-card milestone" data-day="day1" data-category="milestone">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--gold-bright);">09:30 AM – 10:00 AM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Inauguration Ceremony</h3>
+          <p class="timeline-event-desc">
+            Grand formal inauguration presided over by Patron Dr. P. Alli (Principal, VCET), Convener Dr. R. Kavitha (HoD/IT), IEEE Student Branch dignitaries, and industry leaders from sponsor BSE-TEC.
+          </p>
+        </div>
+
+        <!-- EVENT 3 -->
+        <div class="timeline-event-card milestone" data-day="day1" data-category="milestone">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--cyan-primary);">10:00 AM · DAY 1 (30.09.2026) · CLOCK STARTS</div>
+          <h3 class="timeline-event-title">Hackathon Commences (24-Hour Non-Stop Sprint)</h3>
+          <p class="timeline-event-desc">
+            The 24-hour non-stop countdown begins! GitHub repositories initialized, compute clusters connected, agent architecture graphs activated, and multi-agent coordination loops deployed.
+          </p>
+        </div>
+
+        <!-- EVENT 4 -->
+        <div class="timeline-event-card" data-day="day1" data-category="general">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge">01:00 PM – 02:00 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Lunch Break</h3>
+          <p class="timeline-event-desc">
+            Grand multi-course networking lunch buffet served at the VCET Dining Hall. Recharge, connect with fellow builders, and review initial vector diagrams.
+          </p>
+        </div>
+
+        <!-- EVENT 5 -->
+        <div class="timeline-event-card" data-day="day1" data-category="general">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge">04:00 PM – 04:30 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Refreshment & High Tea</h3>
+          <p class="timeline-event-desc">
+            Evening hot coffee, tea, and savory energy snacks provided at the engineering arena. Quick technical standup for all squads.
+          </p>
+        </div>
+
+        <!-- EVENT 6 -->
+        <div class="timeline-event-card" data-day="day1" data-category="mentoring">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--purple-primary);">05:00 PM – 07:00 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Mentoring Round 1 (Idea & Architectural Review)</h3>
+          <p class="timeline-event-desc">
+            Senior faculty mentors, IEEE technical evaluators, and BSE-TEC system architects visit each workstation to assess architectural soundness, tool invocation safety, and problem scope alignment.
+          </p>
+        </div>
+
+        <!-- EVENT 7 -->
+        <div class="timeline-event-card" data-day="day1" data-category="general">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge">08:30 PM – 09:30 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Dinner Break</h3>
+          <p class="timeline-event-desc">
+            Wholesome dinner served at campus dining. Squads synchronize task pipelines and distribute overnight coding modules.
+          </p>
+        </div>
+
+        <!-- EVENT 8 -->
+        <div class="timeline-event-card milestone" data-day="day1" data-category="milestone">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--pink-primary);">11:30 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Midnight Energy Boost & Coffee Break</h3>
+          <p class="timeline-event-desc">
+            Fresh brewed artisanal filter coffee, energizing treats, and midnight music lounge to power squads through the deep overnight coding hours.
+          </p>
+        </div>
+
+        <!-- EVENT 9 -->
+        <div class="timeline-event-card" data-day="day2" data-category="mentoring">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--purple-primary);">01:00 AM – 03:00 AM · DAY 2 (01.10.2026)</div>
+          <h3 class="timeline-event-title">Mentoring Round 2 (Code Review & Progress Assessment)</h3>
+          <p class="timeline-event-desc">
+            Overnight code-level sanity check. Technical mentors inject edge-case scenarios to verify error-handling, tool recovery, and real-time execution resilience.
+          </p>
+        </div>
+
+        <!-- EVENT 10 -->
+        <div class="timeline-event-card" data-day="day2" data-category="general">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge">06:30 AM – 07:30 AM · DAY 2 (01.10.2026)</div>
+          <h3 class="timeline-event-title">Breakfast Break</h3>
+          <p class="timeline-event-desc">
+            Hot South Indian breakfast served. Teams run final build scripts, polish user interfaces, and finalize live demonstration pipelines.
+          </p>
+        </div>
+
+        <!-- EVENT 11 -->
+        <div class="timeline-event-card milestone" data-day="day2" data-category="milestone">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--cyan-primary);">08:30 AM – 09:30 AM · DAY 2 (01.10.2026)</div>
+          <h3 class="timeline-event-title">Final Presentation & Evaluation Round</h3>
+          <p class="timeline-event-desc">
+            Formal jury review before distinguished panels of industry and academic evaluators. Each squad demonstrates end-to-end agentic workflows and quantitative results.
+          </p>
+        </div>
+
+        <!-- EVENT 12 -->
+        <div class="timeline-event-card milestone" data-day="day2" data-category="milestone">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--pink-primary);">10:00 AM · DAY 2 (01.10.2026) · CLOCK STOPS</div>
+          <h3 class="timeline-event-title">Hackathon Concludes (Terminal Shutdown)</h3>
+          <p class="timeline-event-desc">
+            Official 24-hour sprint concludes! All repository commits locked; jury tallies final scores across innovation, technical execution, and autonomy.
+          </p>
+        </div>
+
+        <!-- EVENT 13 -->
+        <div class="timeline-event-card milestone" data-day="day2" data-category="milestone">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge" style="color: var(--gold-bright);">11:00 AM – 12:30 PM · DAY 2 (01.10.2026)</div>
+          <h3 class="timeline-event-title">Valedictory Ceremony & Prize Distribution</h3>
+          <p class="timeline-event-desc">
+            Grand presentation of the ₹30,000 Prize Pool (1st: ₹15,000, 2nd: ₹10,000, 3rd: ₹5,000), distribution of IEEE-backed certificates, and closing felicitations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="contact" class="footer-section">
+    <div class="container footer-top-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo">
+          <div class="footer-brand-lockup">
+            <img src="vcet-logo.png" alt="VCET Emblem" class="footer-vcet-logo">
+            <span class="brand-title">HACKSPRINT<span class="text-gold">'26</span></span>
+          </div>
+        </div>
+        <p class="footer-bio">
+          The national flagship 24-hour Agentic AI hackathon engineered by the Department of Information Technology at Velammal College of Engineering & Technology (VCET), Madurai.
+        </p>
+        <div class="footer-accreditation">
+          <span class="accred-dot"></span>
+          <span>NAAC 'A' Grade · NBA Accredited Department</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Sitemap</h4>
+        <ul class="footer-link-list">
+          <li><a href="index.html#hero">Home Terminal</a></li>
+          <li><a href="index.html#theme-showcase">Problem Statement (Agentic AI)</a></li>
+          <li><a href="schedule.html">24H Schedule</a></li>
+          <li><a href="faq.html">FAQs & Rules</a></li>
+          <li><a href="sponsors.html">Sponsors & Partners</a></li>
+          <li><a href="contact.html">Contact Directory</a></li>
+          <li><a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="link-open-reg">Participant Registration</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Reach Out</h4>
+        <ul class="footer-contact-list">
+          <li class="contact-item">
+            <div class="contact-icon pulse-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-text">
+              <span class="contact-sub">Official Inquiries</span>
+              <a href="mailto:hacksprint26@gmail.com">hacksprint26@gmail.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon pulse-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-text">
+              <span class="contact-sub">Helpdesk Coordinator</span>
+              <a href="tel:+919944122667">+91 99441 22667</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-subscribe">
+        <h4 class="footer-heading">Stay Updated</h4>
+        <p class="footer-sub-text">
+          Receive agentic track updates, tool drop announcements, and problem bulletins. Zero spam.
+        </p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
+          <div class="input-wrapper">
+            <input type="email" id="newsletter-email" placeholder="your.handle@domain.com" required aria-label="Email for newsletter">
+          </div>
+          <button type="submit" class="btn-pill-gold btn-newsletter" id="btn-subscribe">
+            <span>Subscribe</span>
+          </button>
+        </form>
+        <div class="newsletter-feedback" id="newsletter-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Legal Bar -->
+    <div class="container footer-bottom-bar">
+      <div class="bottom-legal">
+        <p>© 2026 HackSprint. Organized by Department of Information Technology, VCET.</p>
+        <span class="legal-separator">·</span>
+        <a href="faq.html" class="legal-link">Rules & Code of Conduct</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

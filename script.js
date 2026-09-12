@@ -12,82 +12,82 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   const TRACKS_DATA = [
     {
-      id: 'edtech',
+      id: 'multi-agent',
       num: '01',
-      tag: 'EDTECH & SKILLING',
-      title: 'Education & Adaptive Learning',
-      overview: 'Transform traditional pedagogies into hyper-personalized, multimodal learning journeys. Focus on vernacular AI comprehension, neurodiverse accessibility, and automated conceptual assessment.',
+      tag: 'MULTI-AGENT SYSTEMS',
+      title: 'Multi-Agent Swarms & Orchestration',
+      overview: 'Architect decentralized, multi-agent swarms with specialized agent roles, dynamic task delegation, consensus protocols, and peer-to-peer verification loops.',
       samples: [
-        'Multimodal AI tutor capable of explaining complex STEM theorems in regional Indian dialects with interactive visualizations.',
-        'Inclusive examination and workspace interface tailored for neurodiverse, visually impaired, or hearing-impaired students.',
-        'Decentralized skill verification registry linking continuous micro-credentials to verified GitHub/Kaggle project repositories.'
+        'Autonomous product development squad: Planner, Architect, Coder, and QA Critic collaborating to build functional web applications from high-level specs.',
+        'Decentralized disaster emergency response swarm coordinating drone search, supply logistics, and rescue dispatch without centralized bottlenecks.',
+        'Autonomous financial audit committee swarms cross-verifying balance sheets, vendor invoices, and compliance regulations in real-time.'
       ],
-      tech: ['Gemini / LLaMA 3', 'WebRTC Audio Stream', 'Whisper ASR', 'IndexedDB Offline Cache', 'Next.js / Svelte']
+      tech: ['CrewAI', 'Microsoft AutoGen', 'LangGraph', 'OpenAI Swarm', 'FastAPI', 'Redis Pub/Sub']
     },
     {
-      id: 'open-innovation',
+      id: 'autonomous-dev',
       num: '02',
-      tag: 'DISRUPTIVE TECH',
-      title: 'Open Innovation & Web3',
-      overview: 'Unleash unconstrained engineering creativity. Build novel autonomous AI agents, privacy-first zero-knowledge protocols, decentralized physical infrastructure networks (DePIN), or developer productivity tooling.',
+      tag: 'AGENTIC CODE ENGINEERING',
+      title: 'Autonomous Dev & Self-Healing Systems',
+      overview: 'Engineer proactive coding agents capable of reproducing issue reports, instrumenting sandboxes, synthesizing test suites, repairing regressions, and raising validated PRs.',
       samples: [
-        'Autonomous multi-agent swarms for proactive software bug hunting and self-healing pull request generation.',
-        'Zero-knowledge proof identity verification for privacy-preserving civic credential validation.',
-        'Decentralized mesh networking for low-latency emergency communications when cellular infrastructure fails.'
+        'Self-healing production monitor detecting runtime exceptions, reproducing the stack trace in an ephemeral container, and submitting a patch PR.',
+        'Automated legacy codebase migration agent that translates, refactors, and validates test coverage across modern frameworks.',
+        'Continuous AI security code auditor that writes deterministic exploits to verify vulnerabilities before generating verified patches.'
       ],
-      tech: ['LangChain / AutoGen', 'Rust / WebAssembly', 'ZK-SNARKs', 'Libp2p', 'FastAPI']
+      tech: ['Model Context Protocol (MCP)', 'Tree-sitter AST', 'Docker SDK', 'PyTest / Jest Sandboxes', 'LangChain', 'GitPython']
     },
     {
-      id: 'agritech',
+      id: 'computer-use',
       num: '03',
-      tag: 'AGRITECH & SUSTAINABILITY',
-      title: 'Agriculture & Smart Farming',
-      overview: 'Harness edge AI, computer vision, and IoT telemetry to optimize crop yields, eliminate pesticide overuse, predict weather volatility, and streamline agricultural supply chain equity.',
+      tag: 'AUTONOMOUS COMPUTER USE',
+      title: 'Computer-Use & Browser Automation',
+      overview: 'Pioneer vision-language agents capable of perceiving operating system GUIs, navigating complex SaaS interfaces, executing high-friction workflows, and validating multi-step form submissions.',
       samples: [
-        'Edge AI smartphone scanner for sub-millimeter early detection of crop leaf pathogens without requiring cellular connectivity.',
-        'Automated solar-powered drip irrigation controller adjusting water volume dynamically based on soil moisture and hyperlocal satellite rainfall forecasts.',
-        'Direct-to-consumer decentralized mandi pricing intelligence engine cutting out exploitative middlemen.'
+        'Autonomous desktop workflow agent navigating legacy government portals to submit multi-step bureaucratic filings from unstructured receipts.',
+        'Autonomous QA testing agent that visually clicks through responsive web designs, testing dynamic edge cases, and logging visual regression videos.',
+        'Cross-platform RPA agent extracting complex clinical documents and populating hospital electronic health records with zero API access.'
       ],
-      tech: ['TensorFlow Lite', 'ESP32 / LoRaWAN', 'Sentinel Satellite APIs', 'Python Edge', 'OpenCV']
+      tech: ['Anthropic Computer Use API', 'Playwright / Puppeteer', 'OmniParser Vision', 'OS-World', 'Python Desktop SDK', 'Tesseract OCR']
     },
     {
-      id: 'industry',
+      id: 'embodied-ai',
       num: '04',
-      tag: 'MANUFACTURING & ROBOTICS',
-      title: 'Industry 4.0 & 5.0',
-      overview: 'Bridge cyber-physical domains in smart manufacturing, autonomous robotic warehouse management, digital twins, and safety monitoring in hazardous industrial plants.',
+      tag: 'EMBODIED & PHYSICAL AGENTS',
+      title: 'Edge & Embodied Agentic AI',
+      overview: 'Deploy lightweight autonomous agents directly onto physical microcontrollers and robotic hardware, combining real-time sensory perception with spatial planning and edge actuation.',
       samples: [
-        'Acoustic vibration predictive maintenance model forecasting turbine failure hours before physical anomalies occur.',
-        'Autonomous indoor navigation and obstacle avoidance firmware for small warehouse automated guided vehicles (AGVs).',
-        'Computer vision PPE and ergonomics compliance monitor protecting factory floor technicians from injuries in real-time.'
+        'Autonomous micro-rover agent navigating agricultural rows to detect and spot-spray specific weed varieties using edge neural compute.',
+        'Drone surveillance agent conducting structural inspection of power pylons, adjusting flight vectors dynamically to capture defect anomalies.',
+        'Edge industrial Cobot agent that learns worker assembly cadences and dynamically hands tools to technicians safely.'
       ],
-      tech: ['ROS 2 (Robot OS)', 'PyTorch Acoustic Models', 'MQTT / OPC UA', 'Three.js Digital Twin', 'YOLOv10']
+      tech: ['ROS 2 (Robot Operating System)', 'TensorFlow Lite Edge', 'ESP32 / LoRaWAN', 'YOLOv10 Edge', 'OpenCV', 'MicroPython']
     },
     {
-      id: 'healthcare',
+      id: 'cyber-defense',
       num: '05',
-      tag: 'MEDTECH & LIFE SCIENCES',
-      title: 'Healthcare & Telemedicine',
-      overview: 'Democratize clinical diagnostics, accelerate emergency response triage, enable continuous remote patient telemetry, and secure patient records via federated learning architectures.',
+      tag: 'AUTONOMOUS CYBERSECURITY',
+      title: 'Cybersecurity & Autonomous Defense',
+      overview: 'Construct cognitive cybersecurity agents capable of real-time threat hunting, automated malware reverse-engineering, adversarial red-teaming, and dynamic perimeter firewall reconfiguration.',
       samples: [
-        'Rural clinic edge diagnostic assistant scanning smartphone retinal/skin imagery for early retinopathy and melanoma screening.',
-        'Continuous remote cardiac anomaly alert system utilizing commercial BLE smartwatches and edge ECG classification.',
-        'Voice-guided emergency triage assistant for dispatchers providing step-by-step CPR guidance while tracking emergency ambulance ETA.'
+        'Autonomous SIEM threat analyst investigating suspicious lateral network movement, validating false positives, and quarantining infected nodes.',
+        'Agentic web application penetration tester actively discovering business-logic vulnerabilities and zero-day authorization bypasses.',
+        'Automated firmware vulnerability hunting agent disassembling binary images, tracing memory corruption hazards, and drafting proof-of-concepts.'
       ],
-      tech: ['DICOM Processing', 'CoreML / TFLite', 'Federated Learning', 'WebSockets', 'HIPAA compliant schemas']
+      tech: ['Suricata / Zeek Logs', 'Ghidra Headless', 'Scapy Network Engine', 'Kali Linux Toolchains', 'Python Security SDK', 'Llama 3 Cyber']
     },
     {
-      id: 'governance',
+      id: 'decision-intel',
       num: '06',
-      tag: 'CIVIC TECH & SECURITY',
-      title: 'Smart Governance & AI',
-      overview: 'Empower municipal operations, citizen grievance workflows, disaster management logistics, and cybersecurity defence mechanisms across public digital infrastructure.',
+      tag: 'DEEP RESEARCH & COGNITION',
+      title: 'Deep Research & Decision Intelligence',
+      overview: 'Build autonomous investigative intelligence agents that ingest hundreds of disparate datasets, trace source citations, cross-corroborate conflicting accounts, and construct verified synthesis dossiers.',
       samples: [
-        'AI-driven municipal issue tracker automatically geolocating and routing road potholes, water leaks, and streetlight outages to field engineers.',
-        'Multi-agency flood and disaster relief logistics portal coordinating real-time boat deployments and food distribution during monsoons.',
-        'Automated deepfake and coordinated disinformation detection pipeline for municipal public notices.'
+        'Autonomous clinical literature synthesis agent extracting drug-drug interactions across thousands of PubMed papers for rare diseases.',
+        'Algorithmic market intelligence agent analyzing supply chain disruption news, satellite shipping container density, and trade filings.',
+        'Civic policy impact simulation agent evaluating urban planning proposals against historical zoning, traffic telemetry, and environmental models.'
       ],
-      tech: ['GeoJSON / Leaflet', 'NLP Intent Classification', 'PostGIS', 'Docker', 'FastAPI']
+      tech: ['RAG with Agentic Routing', 'ChromaDB / Pinecone', 'Qdrant Vector Engine', 'DuckDuckGo / Tavily Search API', 'FastAPI', 'Pandas / NumPy']
     }
   ];
 
@@ -657,8 +657,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Registration links navigate directly to official Google Form
   regTriggers.forEach((btn) => {
-    if (btn) btn.addEventListener('click', () => openRegisterModal());
+    if (btn && btn.getAttribute('href') === '#register-modal') {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openRegisterModal();
+      });
+    }
   });
 
   if (registerCloseBtn) registerCloseBtn.addEventListener('click', closeRegisterModal);
@@ -761,4 +767,53 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => toast.remove(), 300);
     }, 4000);
   };
-});
+
+  // =========================================================================
+  // 9. FAQ ACCORDION ENGINE (FOR faq.html & EMBEDDED FAQ)
+  // =========================================================================
+  const faqButtons = document.querySelectorAll('.faq-question-btn');
+  faqButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-accordion-item');
+      if (!item) return;
+      const wasActive = item.classList.contains('active');
+
+      // Optional: Close siblings in same category
+      const parentBlock = item.closest('.faq-category-block');
+      if (parentBlock) {
+        parentBlock.querySelectorAll('.faq-accordion-item').forEach((sibling) => {
+          sibling.classList.remove('active');
+        });
+      }
+
+      if (!wasActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // =========================================================================
+  // 10. 24-HOUR SCHEDULE FILTER TABS (FOR schedule.html)
+  // =========================================================================
+  const scheduleTabs = document.querySelectorAll('.schedule-tab-btn');
+  const scheduleEvents = document.querySelectorAll('.timeline-event-card');
+
+  scheduleTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      scheduleTabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.getAttribute('data-filter');
+      scheduleEvents.forEach((ev) => {
+        if (!filter || filter === 'all') {
+          ev.style.display = 'block';
+        } else if (ev.getAttribute('data-category') === filter || ev.getAttribute('data-day') === filter) {
+          ev.style.display = 'block';
+        } else {
+          ev.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  });

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HackSprint '26 | National Level Hackathon · VCET IT</title>
-  <meta name="description" content="HackSprint '26 - 24-Hour Premier Cyberpunk Hackathon presented by the Department of Information Technology, Velammal College of Engineering & Technology (VCET), Madurai. August 28, 2026.">
+  <title>HackSprint '26 | 24H National Level Agentic AI Hackathon · VCET IT</title>
+  <meta name="description" content="HackSprint '26 - 24-Hour Premier National Agentic AI Hackathon presented by the Department of Information Technology, Velammal College of Engineering & Technology (VCET), Madurai. September 30 – October 1, 2026.">
 
   <!-- Google Fonts: Outfit (Display), Plus Jakarta Sans (Body), JetBrains Mono (Tech/Counters) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
 </head>
 <body>
 
-  <!-- Background Ambient Glow & Neat Star Canvas (Controlled, Pleasant, Never Clumsy) -->
+  <!-- Background Ambient Glow & Neat Star Canvas -->
   <div class="ambient-glow glow-1"></div>
   <div class="ambient-glow glow-2"></div>
   <div class="ambient-glow glow-3"></div>
@@ -27,7 +27,7 @@
   <header id="main-header" class="navbar-wrapper">
     <nav class="navbar container" id="navbar" aria-label="Main Navigation">
       <!-- Brand Logo with Official VCET Emblem -->
-      <a href="#hero" class="brand-logo" aria-label="HackSprint '26 Home">
+      <a href="index.html#hero" class="brand-logo" aria-label="HackSprint '26 Home">
         <div class="logo-symbol vcet-emblem-wrap">
           <img src="vcet-logo.png" alt="VCET Emblem" class="vcet-brand-img">
         </div>
@@ -41,22 +41,28 @@
       <div class="nav-links-wrapper">
         <ul class="nav-links" id="nav-links">
           <li class="nav-item">
-            <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+            <a href="index.html#hero" class="nav-link active" data-section="hero">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#countdown" class="nav-link" data-section="countdown">Countdown</a>
+            <a href="#theme-showcase" class="nav-link" data-section="theme-showcase">Problem Statement</a>
           </li>
           <li class="nav-item">
-            <a href="#tracks" class="nav-link" data-section="tracks">Tracks</a>
+            <a href="#schedule" class="nav-link" data-section="schedule">Schedule</a>
           </li>
           <li class="nav-item">
-            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#committee" class="nav-link" data-section="committee">Committee</a>
           </li>
           <li class="nav-item">
-            <a href="#coordinators" class="nav-link" data-section="coordinators">Team</a>
+            <a href="#about" class="nav-link" data-section="about">About VCET</a>
           </li>
           <li class="nav-item">
-            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            <a href="faq.html" class="nav-link">FAQs</a>
+          </li>
+          <li class="nav-item">
+            <a href="sponsors.html" class="nav-link">Sponsors</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
           </li>
         </ul>
         <!-- Smooth Morphing Sliding Underline -->
@@ -65,12 +71,12 @@
 
       <!-- Right Action CTA -->
       <div class="nav-actions">
-        <button type="button" class="btn-pill-gold" id="btn-open-register">
+        <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold" id="btn-open-register">
           <span>Register Now</span>
           <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
             <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-        </button>
+        </a>
         <!-- Mobile Menu Toggle -->
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
           <span></span>
@@ -84,15 +90,17 @@
   <!-- Mobile Dropdown Navigation -->
   <div class="mobile-nav-drawer" id="mobile-nav-drawer">
     <div class="mobile-nav-inner">
-      <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
-      <a href="#countdown" class="mobile-nav-link" data-section="countdown">Countdown</a>
-      <a href="#tracks" class="mobile-nav-link" data-section="tracks">Tracks</a>
-      <a href="#about" class="mobile-nav-link" data-section="about">About</a>
-      <a href="#coordinators" class="mobile-nav-link" data-section="coordinators">Team</a>
-      <a href="#contact" class="mobile-nav-link" data-section="contact">Contact</a>
-      <button type="button" class="btn-pill-gold w-full mt-4" id="btn-mobile-register">
-        <span>Register Now →</span>
-      </button>
+      <a href="index.html#hero" class="mobile-nav-link active" data-section="hero">Home</a>
+      <a href="#theme-showcase" class="mobile-nav-link">Problem Statement (Agentic AI)</a>
+      <a href="#schedule" class="mobile-nav-link">24H Schedule</a>
+      <a href="#committee" class="mobile-nav-link">Committee</a>
+      <a href="#about" class="mobile-nav-link">About VCET</a>
+      <a href="faq.html" class="mobile-nav-link">FAQs</a>
+      <a href="sponsors.html" class="mobile-nav-link">Sponsors</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold w-full mt-4" id="btn-mobile-register">
+        <span>Register Squad →</span>
+      </a>
     </div>
   </div>
 
@@ -213,19 +221,13 @@
 
         <!-- Subtitle & Location -->
         <p class="hero-subtext">
-          Tamil Nadu's premier 24-hour national hackathon challenging visionary students to build production-ready software and hardware solutions.
+          Tamil Nadu's premier 24-hour national hackathon on <strong>30.09.2026 – 01.10.2026</strong> at VCET Madurai. Challenging visionary student developers to architect autonomous AI agents, multi-agent swarms, and self-healing cognitive intelligence.
         </p>
 
         <!-- CTA Buttons -->
         <div class="hero-cta-group">
-          <button type="button" class="btn-hero-primary" id="btn-hero-register">
-            <span>Claim Your Spot</span>
-            <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-              <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <a href="#tracks" class="btn-hero-secondary">
-            <span>Explore Tracks</span>
+          <a href="#theme-showcase" class="btn-hero-secondary">
+            <span>Explore Agentic AI Theme</span>
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
               <path d="M10 4.167v11.666M4.167 10.833l5.833 5 5.833-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -239,39 +241,47 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <span class="pill-title">24 HOURS</span>
-            <span class="pill-detail">Non-stop sprint</span>
+            <span class="pill-detail">30.09.2026 – 01.10.2026</span>
           </div>
 
-          <div class="feature-pill" style="--stagger-delay: 0.25s">
+          <div class="feature-pill" style="--stagger-delay: 0.2s">
             <div class="pill-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <span class="pill-title">BUILD</span>
-            <span class="pill-detail">Real prototypes</span>
+            <span class="pill-title">₹30,000</span>
+            <span class="pill-detail">1st ₹15K · 2nd ₹10K · 3rd ₹5K</span>
+          </div>
+
+          <div class="feature-pill" style="--stagger-delay: 0.3s">
+            <div class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <span class="pill-title">AGENTIC AI</span>
+            <span class="pill-detail">Sole Official Theme</span>
           </div>
 
           <div class="feature-pill" style="--stagger-delay: 0.4s">
             <div class="pill-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            </div>
-            <span class="pill-title">SOLVE</span>
-            <span class="pill-detail">Industry problems</span>
-          </div>
-
-          <div class="feature-pill" style="--stagger-delay: 0.55s">
-            <div class="pill-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <span class="pill-title">COLLABORATE</span>
-            <span class="pill-detail">Teams of 2-4</span>
+            <span class="pill-title">4 MEMBERS</span>
+            <span class="pill-detail">Fixed Squad Size</span>
           </div>
 
-          <div class="feature-pill" style="--stagger-delay: 0.7s">
+          <div class="feature-pill" style="--stagger-delay: 0.5s">
             <div class="pill-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
             </div>
-            <span class="pill-title">NETWORK</span>
-            <span class="pill-detail">Mentors & VCs</span>
+            <span class="pill-title">₹500 / HEAD</span>
+            <span class="pill-detail">₹500 Per Participant</span>
+          </div>
+
+          <div class="feature-pill" style="--stagger-delay: 0.6s">
+            <div class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="pill-title">VCET MADURAI</span>
+            <span class="pill-detail">Campus Terminal</span>
           </div>
         </div>
 
@@ -292,23 +302,23 @@
     <!-- 3. COUNTDOWN TIMER SECTION (CLEAN CONTRAST LIGHT PANEL) -->
     <!-- ========================================================================= -->
     <section id="countdown" class="countdown-contrast-panel">
-      <!-- Soft Warm Amber Glow at Top Edge -->
+      <!-- Soft Ambient Top Glow -->
       <div class="panel-top-glow" aria-hidden="true"></div>
 
       <div class="container countdown-inner">
         <!-- Date Capsule Tracking -->
         <div class="countdown-eyebrow">
           <span class="eyebrow-accent"></span>
-          <span class="eyebrow-text">SEPTEMBER 30, 2026 · 10:00 AM IST</span>
+          <span class="eyebrow-text">30.09.2026 – 01.10.2026 · 24-HOUR NON-STOP FORMAT</span>
           <span class="eyebrow-accent"></span>
         </div>
 
         <!-- Bold Heading -->
         <h2 class="countdown-heading">
-          The hackathon begins in
+          The Agentic AI hackathon begins in
         </h2>
         <p class="countdown-subheading">
-          Time is running. Assemble your crew, calibrate your ideas, and prepare for the 24-hour sprint.
+          Assemble your 4-member crew, calibrate your autonomous multi-agent pipelines, and prepare for the 24-hour national hackathon sprint.
         </p>
 
         <!-- Four Flip-Card Mechanical Counters -->
@@ -375,6 +385,14 @@
           </div>
         </div>
 
+        <!-- Supporting Date/Venue Line Beneath Clock -->
+        <div class="countdown-venue-support">
+          <span class="venue-pin" aria-hidden="true">📍</span>
+          <span class="venue-timing">30.09.2026 – 01.10.2026 · 9:00 AM Registration Check-in</span>
+          <span class="venue-sep" aria-hidden="true">&nbsp;|&nbsp;</span>
+          <span class="venue-location"><strong>VCET Campus, Madurai</strong> <span class="venue-coords">(9.89388° N, 78.176088° E)</span></span>
+        </div>
+
         <!-- Event Key Details Bar -->
         <div class="event-meta-banner">
           <div class="meta-item">
@@ -384,515 +402,736 @@
           <div class="meta-divider"></div>
           <div class="meta-item">
             <span class="meta-label">PRIZE POOL</span>
-            <strong class="meta-value text-gold-accent">₹1,00,000 (1 Lakh)</strong>
+            <strong class="meta-value text-gold-accent">₹30,000 (1st ₹15K · 2nd ₹10K · 3rd ₹5K)</strong>
           </div>
           <div class="meta-divider"></div>
           <div class="meta-item">
             <span class="meta-label">REGISTRATION</span>
-            <strong class="meta-value">₹500 / Team · 2-4 Members</strong>
+            <strong class="meta-value">₹500 / Participant (4 Members Fixed)</strong>
+          </div>
+          <div class="meta-divider"></div>
+          <div class="meta-item">
+            <span class="meta-label">TECH SUPPORT</span>
+            <strong class="meta-value">IEEE Student Branch</strong>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 4. PROBLEM TRACKS — 3D COVERFLOW CAROUSEL -->
+    <!-- 4. SINGLE THEME SHOWCASE: AGENTIC AI -->
     <!-- ========================================================================= -->
-    <section id="tracks" class="tracks-section">
+    <section id="theme-showcase" class="tracks-section">
       <div class="container section-header-center">
         <div class="section-tag">
           <span class="tag-hash">#</span>
-          <span>CHALLENGE HORIZONS</span>
+          <span>SOLE OFFICIAL THEME</span>
         </div>
         <h2 class="section-title">
-          Problem Tracks <span class="gradient-text">2026</span>
+          Theme: <span class="gradient-text">Agentic AI</span>
         </h2>
         <p class="section-subtitle">
-          Six multidisciplinary domains engineered for real-world social and industrial impact. Choose your arena.
+          Moving beyond conversational chatbots. HackSprint '26 challenges 4-member builder squads to architect autonomous software agents capable of proactive perception, multi-stage planning, sandboxed tool usage, and self-correcting execution.
         </p>
       </div>
 
-      <!-- 3D Coverflow Viewport -->
-      <div class="coverflow-wrapper">
-        <!-- Navigation Arrow Left -->
-        <button type="button" class="coverflow-arrow arrow-prev" id="track-prev" aria-label="Previous Track">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
+      <div class="container">
+        <!-- Theme Manifesto Card -->
+        <div class="theme-manifesto-card">
+          <div class="theme-manifesto-header">
+            <span class="theme-manifesto-badge">NATIONAL 24-HOUR AUTONOMOUS CODE SPRINT</span>
+            <h3 class="theme-manifesto-title">
+              The Autonomous Era: Architecting Intelligence That Reasons, Plans, and Acts
+            </h3>
+            <p class="theme-manifesto-text">
+              The paradigm of AI has shifted from text-generation prompts to autonomous multi-agent agency. In this nationwide 24-hour hackathon, participants will construct cognitive architectures that autonomously decompose problems, select and call external tools safely via protocols such as Model Context Protocol (MCP), inspect real-world feedback, and self-heal runtime failures.
+            </p>
+          </div>
 
-        <!-- 3D Carousel Stage -->
-        <div class="coverflow-stage" id="coverflow-stage">
-          
-          <!-- TRACK 1: Education & EdTech -->
-          <article class="track-card" data-index="0" data-track-id="edtech">
-            <div class="track-card-inner">
-              <div class="card-visual visual-edtech">
-                <div class="card-overlay-badge">
-                  <span class="badge-dot"></span>
-                  <span>TRACK 01</span>
-                </div>
-                <div class="card-graphic-icon">
-                  <svg viewBox="0 0 64 64" fill="none" stroke="#00f0ff" stroke-width="2">
-                    <path d="M32 8L6 22L32 36L58 22L32 8Z"/>
-                    <path d="M14 26.5V42C14 42 22 48 32 48C42 48 50 42 50 42V26.5"/>
-                    <path d="M54 24V40"/>
-                    <circle cx="54" cy="42" r="2" fill="#00f0ff"/>
-                  </svg>
-                </div>
-                <div class="visual-gradient-mesh"></div>
-              </div>
-              <div class="card-body">
-                <div class="card-category-pill">EDTECH & SKILLING</div>
-                <h3 class="card-title">Education & Adaptive Learning</h3>
-                <p class="card-desc">
-                  Architect AI-powered personalized tutoring, interactive vernacular learning, multimodal assessment tools, and accessible classrooms for neurodiverse learners.
-                </p>
-                <div class="card-footer-action">
-                  <span class="inspect-text">View Challenge Scope →</span>
-                </div>
-              </div>
+          <!-- 4 Core Pillars of Agentic AI -->
+          <div class="theme-pillars-grid">
+            <div class="theme-pillar-card">
+              <span class="pillar-number">PILLAR 01</span>
+              <h4 class="pillar-title">Multimodal Grounding</h4>
+              <p class="pillar-desc">Perceive unstructured environments, terminal streams, GUI windows, and code ASTs with grounded spatial and semantic context.</p>
             </div>
-          </article>
-
-          <!-- TRACK 2: Open Innovation -->
-          <article class="track-card" data-index="1" data-track-id="open-innovation">
-            <div class="track-card-inner">
-              <div class="card-visual visual-open">
-                <div class="card-overlay-badge">
-                  <span class="badge-dot"></span>
-                  <span>TRACK 02</span>
-                </div>
-                <div class="card-graphic-icon">
-                  <svg viewBox="0 0 64 64" fill="none" stroke="#a855f7" stroke-width="2">
-                    <circle cx="32" cy="32" r="20"/>
-                    <path d="M32 12V2M32 62V52M12 32H2M62 32H52"/>
-                    <circle cx="32" cy="32" r="6" fill="#a855f7"/>
-                    <path d="M18 18L24 24M40 40L46 46M46 18L40 24M24 40L18 46"/>
-                  </svg>
-                </div>
-                <div class="visual-gradient-mesh"></div>
-              </div>
-              <div class="card-body">
-                <div class="card-category-pill">DISRUPTIVE TECH</div>
-                <h3 class="card-title">Open Innovation & Web3</h3>
-                <p class="card-desc">
-                  Break boundaries with creative ideas spanning decentralized computing, generative agent frameworks, developer toolchains, smart drones, or zero-knowledge protocols.
-                </p>
-                <div class="card-footer-action">
-                  <span class="inspect-text">View Challenge Scope →</span>
-                </div>
-              </div>
+            <div class="theme-pillar-card">
+              <span class="pillar-number">PILLAR 02</span>
+              <h4 class="pillar-title">Cognitive Planning</h4>
+              <p class="pillar-desc">Formulate dynamic ReAct reasoning chains, hierarchical goal trees, and peer-to-peer delegation graphs without hardcoded scripts.</p>
             </div>
-          </article>
-
-          <!-- TRACK 3: Agriculture & Agritech -->
-          <article class="track-card" data-index="2" data-track-id="agritech">
-            <div class="track-card-inner">
-              <div class="card-visual visual-agritech">
-                <div class="card-overlay-badge">
-                  <span class="badge-dot"></span>
-                  <span>TRACK 03</span>
-                </div>
-                <div class="card-graphic-icon">
-                  <svg viewBox="0 0 64 64" fill="none" stroke="#10b981" stroke-width="2">
-                    <path d="M12 52C12 52 14 36 26 28C38 20 52 22 52 22C52 22 50 38 38 46C26 54 12 52 12 52Z"/>
-                    <path d="M12 52C22 42 34 32 46 26"/>
-                    <path d="M22 14C22 14 26 18 24 24"/>
-                  </svg>
-                </div>
-                <div class="visual-gradient-mesh"></div>
-              </div>
-              <div class="card-body">
-                <div class="card-category-pill">AGRITECH & SUSTAINABILITY</div>
-                <h3 class="card-title">Agriculture & Smart Farming</h3>
-                <p class="card-desc">
-                  Empower farmers through precision IoT soil telemetry, satellite crop health vision models, fair-market price prediction, and solar micro-irrigation automation.
-                </p>
-                <div class="card-footer-action">
-                  <span class="inspect-text">View Challenge Scope →</span>
-                </div>
-              </div>
+            <div class="theme-pillar-card">
+              <span class="pillar-number">PILLAR 03</span>
+              <h4 class="pillar-title">Sandboxed Tool Use</h4>
+              <p class="pillar-desc">Safely invoke local and cloud microservices, Docker testbeds, system terminals, and vector databases via standardized tool interfaces.</p>
             </div>
-          </article>
-
-          <!-- TRACK 4: Industry 4.0 & 5.0 -->
-          <article class="track-card" data-index="3" data-track-id="industry">
-            <div class="track-card-inner">
-              <div class="card-visual visual-industry">
-                <div class="card-overlay-badge">
-                  <span class="badge-dot"></span>
-                  <span>TRACK 04</span>
-                </div>
-                <div class="card-graphic-icon">
-                  <svg viewBox="0 0 64 64" fill="none" stroke="#f59e0b" stroke-width="2">
-                    <rect x="14" y="24" width="36" height="28" rx="4"/>
-                    <path d="M24 24V14C24 11.79 25.79 10 28 10H36C38.21 10 40 11.79 40 14V24"/>
-                    <circle cx="32" cy="38" r="5" stroke="#f59e0b"/>
-                    <line x1="22" y1="32" x2="26" y2="32"/>
-                    <line x1="38" y1="32" x2="42" y2="32"/>
-                  </svg>
-                </div>
-                <div class="visual-gradient-mesh"></div>
-              </div>
-              <div class="card-body">
-                <div class="card-category-pill">MANUFACTURING & ROBOTICS</div>
-                <h3 class="card-title">Industry 4.0 & 5.0</h3>
-                <p class="card-desc">
-                  Design industrial digital twins, acoustic predictive maintenance algorithms, autonomous guided robots (AGVs), supply chain tracking, and human-cobot interaction.
-                </p>
-                <div class="card-footer-action">
-                  <span class="inspect-text">View Challenge Scope →</span>
-                </div>
-              </div>
+            <div class="theme-pillar-card">
+              <span class="pillar-number">PILLAR 04</span>
+              <h4 class="pillar-title">Reflection & Self-Healing</h4>
+              <p class="pillar-desc">Inspect tool failure traces, reflect on sub-goal drift, synthesize regression tests, and autonomously correct errors before final output.</p>
             </div>
-          </article>
-
-          <!-- TRACK 5: Healthcare & MedTech -->
-          <article class="track-card" data-index="4" data-track-id="healthcare">
-            <div class="track-card-inner">
-              <div class="card-visual visual-healthcare">
-                <div class="card-overlay-badge">
-                  <span class="badge-dot"></span>
-                  <span>TRACK 05</span>
-                </div>
-                <div class="card-graphic-icon">
-                  <svg viewBox="0 0 64 64" fill="none" stroke="#ec4899" stroke-width="2">
-                    <path d="M32 54C32 54 8 40 8 22C8 14 14 8 22 8C27 8 30 11 32 14C34 11 37 8 42 8C50 8 56 14 56 22C56 40 32 54 32 54Z"/>
-                    <path d="M20 28H26L29 22L35 34L38 28H44" stroke="#ec4899" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-                <div class="visual-gradient-mesh"></div>
-              </div>
-              <div class="card-body">
-                <div class="card-category-pill">MEDTECH & LIFE SCIENCES</div>
-                <h3 class="card-title">Healthcare & Telemedicine</h3>
-                <p class="card-desc">
-                  Engineer edge diagnostic imaging models, emergency dispatch triage systems, wearable bio-signal alert rings, and privacy-preserving federated health records.
-                </p>
-                <div class="card-footer-action">
-                  <span class="inspect-text">View Challenge Scope →</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- TRACK 6: Smart Governance & AI -->
-          <article class="track-card" data-index="5" data-track-id="governance">
-            <div class="track-card-inner">
-              <div class="card-visual visual-governance">
-                <div class="card-overlay-badge">
-                  <span class="badge-dot"></span>
-                  <span>TRACK 06</span>
-                </div>
-                <div class="card-graphic-icon">
-                  <svg viewBox="0 0 64 64" fill="none" stroke="#38bdf8" stroke-width="2">
-                    <path d="M32 6L8 16V28C8 42 18 53 32 58C46 53 56 42 56 28V16L32 6Z"/>
-                    <circle cx="32" cy="30" r="8"/>
-                    <path d="M24 44C24 39.58 27.58 36 32 36C36.42 36 40 39.58 40 44"/>
-                  </svg>
-                </div>
-                <div class="visual-gradient-mesh"></div>
-              </div>
-              <div class="card-body">
-                <div class="card-category-pill">CIVIC TECH & SECURITY</div>
-                <h3 class="card-title">Smart Governance & AI</h3>
-                <p class="card-desc">
-                  Develop transparent public service ticketing, civic feedback sentiment intelligence, disaster response coordination portals, and municipal infrastructure analytics.
-                </p>
-                <div class="card-footer-action">
-                  <span class="inspect-text">View Challenge Scope →</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
+          </div>
         </div>
 
-        <!-- Navigation Arrow Right -->
-        <button type="button" class="coverflow-arrow arrow-next" id="track-next" aria-label="Next Track">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
+        <!-- 4 Curated Problem Vectors -->
+        <div class="agentic-vectors-grid">
+          <!-- Vector 1 -->
+          <article class="agentic-vector-card">
+            <div>
+              <span class="vector-badge-pill">VECTOR 01 · SWARM INTELLIGENCE</span>
+              <h3 class="vector-card-title">Multi-Agent Swarms & Dynamic Orchestration</h3>
+              <p class="vector-card-desc">
+                Architect decentralized multi-agent topologies where specialized agents (Planner, Coder, Critic, Auditor) negotiate roles, verify intermediate deliverables, and resolve consensus conflicts.
+              </p>
+              <div class="vector-samples-box">
+                <span class="vector-samples-label">Sample Challenge Vectors:</span>
+                <ul class="vector-samples-list">
+                  <li>Autonomous full-stack squad: PM, Architect, Coder, and QA critic building working webapps from PRDs.</li>
+                  <li>Decentralized disaster rescue swarm coordinating drone routes, supply drops, and sensor telemetry.</li>
+                  <li>Autonomous real-time corporate financial audit committee reconciling ledgers against compliance laws.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="vector-tech-stack">
+              <span class="vector-tech-chip">CrewAI</span>
+              <span class="vector-tech-chip">AutoGen</span>
+              <span class="vector-tech-chip">LangGraph</span>
+              <span class="vector-tech-chip">OpenAI Swarms</span>
+              <span class="vector-tech-chip">FastAPI</span>
+            </div>
+          </article>
 
-      <!-- Synchronized Indicator & Counter Bar -->
-      <div class="coverflow-controls container">
-        <div class="track-dots-container" id="track-dots" role="tablist" aria-label="Track Navigation">
-          <button class="track-dot active" data-index="0" aria-label="Track 1"></button>
-          <button class="track-dot" data-index="1" aria-label="Track 2"></button>
-          <button class="track-dot" data-index="2" aria-label="Track 3"></button>
-          <button class="track-dot" data-index="3" aria-label="Track 4"></button>
-          <button class="track-dot" data-index="4" aria-label="Track 5"></button>
-          <button class="track-dot" data-index="5" aria-label="Track 6"></button>
+          <!-- Vector 2 -->
+          <article class="agentic-vector-card">
+            <div>
+              <span class="vector-badge-pill">VECTOR 02 · CODE AUTOMATION</span>
+              <h3 class="vector-card-title">Self-Healing Code & Proactive Dev Engineering</h3>
+              <p class="vector-card-desc">
+                Engineer proactive coding agents that monitor live applications, ingest crash logs, reproduce failures in containerized sandboxes, synthesize test suites, and generate verified GitHub pull requests.
+              </p>
+              <div class="vector-samples-box">
+                <span class="vector-samples-label">Sample Challenge Vectors:</span>
+                <ul class="vector-samples-list">
+                  <li>Self-healing production monitor diagnosing uncaught exceptions and raising bug-fix PRs automatically.</li>
+                  <li>Automated legacy codebase migration agent refactoring procedural code into modern microservices.</li>
+                  <li>Deterministic security exploit tester discovering zero-day auth bypasses and applying verifiable patches.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="vector-tech-stack">
+              <span class="vector-tech-chip">Model Context Protocol (MCP)</span>
+              <span class="vector-tech-chip">Tree-sitter</span>
+              <span class="vector-tech-chip">Docker SDK</span>
+              <span class="vector-tech-chip">GitPython</span>
+              <span class="vector-tech-chip">PyTest Sandboxes</span>
+            </div>
+          </article>
+
+          <!-- Vector 3 -->
+          <article class="agentic-vector-card">
+            <div>
+              <span class="vector-badge-pill">VECTOR 03 · COMPUTER-USE</span>
+              <h3 class="vector-card-title">Vision-Based Computer-Use & Browser Automation</h3>
+              <p class="vector-card-desc">
+                Pioneer vision-language agents capable of perceiving operating system desktops and browser windows, interpreting complex SaaS UIs, clicking, typing, and orchestrating multi-step workflows with zero API access.
+              </p>
+              <div class="vector-samples-box">
+                <span class="vector-samples-label">Sample Challenge Vectors:</span>
+                <ul class="vector-samples-list">
+                  <li>Autonomous bureaucratic agent filing multi-step tax and regulatory submissions from scanned receipts.</li>
+                  <li>Autonomous visual QA agent testing dynamic responsive web apps and generating annotated bug recordings.</li>
+                  <li>Clinical EHR ingestion agent extracting complex handwritten medical records into electronic databases.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="vector-tech-stack">
+              <span class="vector-tech-chip">Anthropic Computer Use</span>
+              <span class="vector-tech-chip">Playwright</span>
+              <span class="vector-tech-chip">OmniParser</span>
+              <span class="vector-tech-chip">OS-World</span>
+              <span class="vector-tech-chip">Python Desktop SDK</span>
+            </div>
+          </article>
+
+          <!-- Vector 4 -->
+          <article class="agentic-vector-card">
+            <div>
+              <span class="vector-badge-pill">VECTOR 04 · EMBODIED ROBOTICS</span>
+              <h3 class="vector-card-title">Embodied Edge AI & Cyber-Physical Swarms</h3>
+              <p class="vector-card-desc">
+                Deploy ultra-lightweight autonomous reasoning agents onto microcontrollers, drones, and edge robotics, merging sensory input with spatial planning and physical actuation.
+              </p>
+              <div class="vector-samples-box">
+                <span class="vector-samples-label">Sample Challenge Vectors:</span>
+                <ul class="vector-samples-list">
+                  <li>Autonomous agricultural rover detecting weeds and micro-actuating selective spray nozzles in real-time.</li>
+                  <li>Drone surveillance fleet inspecting transmission power lines, evaluating surface corrosion dynamically.</li>
+                  <li>Edge industrial cobot agent learning assembly lines and safely handing components to factory technicians.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="vector-tech-stack">
+              <span class="vector-tech-chip">ROS 2</span>
+              <span class="vector-tech-chip">TFLite Edge</span>
+              <span class="vector-tech-chip">ESP32 / LoRa</span>
+              <span class="vector-tech-chip">YOLOv10 Edge</span>
+              <span class="vector-tech-chip">MicroPython</span>
+            </div>
+          </article>
         </div>
 
-        <div class="track-counter-box">
-          <span class="current-track-num" id="track-current-num">01</span>
-          <span class="track-num-sep">/</span>
-          <span class="total-track-num">06 TRACKS</span>
+        <!-- Section CTA Bar -->
+        <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
+          <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold">
+            <span>Register Squad for Agentic AI →</span>
+            <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+              <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 5. ABOUT SECTION (FULL-BLEED PARALLAX & COORDINATORS GRID) -->
+    <!-- 5. 24-HOUR RUN-OF-SHOW EVENT SCHEDULE -->
     <!-- ========================================================================= -->
-    <section id="about" class="about-section">
-      <!-- Parallax Hero Canvas -->
-      <div class="about-parallax-hero" id="about-parallax-hero">
-        <div class="parallax-bg-media" id="parallax-bg-media">
-          <!-- Stylized Drone Campus Silhouette & Tech Architecture -->
-          <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" class="campus-drone-art">
-            <defs>
-              <linearGradient id="campus-sky" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#070a14"/>
-                <stop offset="60%" stop-color="#0f172a"/>
-                <stop offset="100%" stop-color="#090d1a"/>
-              </linearGradient>
-              <linearGradient id="grid-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.1"/>
-                <stop offset="50%" stop-color="#a855f7" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.1"/>
-              </linearGradient>
-            </defs>
-            <rect width="1440" height="600" fill="url(#campus-sky)"/>
-            <!-- Campus Building Silhouettes -->
-            <polygon points="60,600 60,340 180,340 180,300 280,300 280,600" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
-            <polygon points="320,600 320,240 500,240 500,280 620,280 620,600" fill="#0a0f1d" stroke="rgba(0,240,255,0.2)" stroke-width="1.5"/>
-            <polygon points="650,600 650,210 740,160 830,210 830,600" fill="#0c1326" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
-            <polygon points="860,600 860,260 1020,260 1020,310 1140,310 1140,600" fill="#0a0f1d" stroke="rgba(168,85,247,0.2)" stroke-width="1.5"/>
-            <polygon points="1180,600 1180,350 1380,350 1380,600" fill="#0b1120" stroke="#1e293b" stroke-width="1.5"/>
-            <!-- Glowing Windows & Structural Lines -->
-            <line x1="0" y1="520" x2="1440" y2="520" stroke="url(#grid-glow)" stroke-width="2"/>
-            <line x1="0" y1="560" x2="1440" y2="560" stroke="url(#grid-glow)" stroke-width="1"/>
-            <!-- Radio Mast on VCET Tower -->
-            <line x1="740" y1="160" x2="740" y2="100" stroke="#00f0ff" stroke-width="2"/>
-            <circle cx="740" cy="98" r="4" fill="#00f0ff" filter="drop-shadow(0 0 6px #00f0ff)"/>
-          </svg>
-          <div class="parallax-overlay-shade"></div>
+    <section id="schedule" class="schedule-section" style="padding: 80px 0;">
+      <div class="container section-header-center">
+        <div class="section-tag">
+          <span class="tag-hash">#</span>
+          <span>OFFICIAL TIMELINE</span>
         </div>
-
-        <div class="parallax-foreground container">
-          <div class="about-hero-tag">ESTABLISHED EXCELLENCE</div>
-          <h2 class="about-hero-title">ABOUT HACKSPRINT '26</h2>
-          <p class="about-hero-sub">
-            Organized by the Department of Information Technology, Velammal College of Engineering & Technology
-          </p>
-          <a href="#about-detail" class="btn-pill-gold mt-6" id="btn-discover-story">
-            <span>Discover Our Story ↓</span>
-          </a>
-        </div>
+        <h2 class="section-title">
+          24-Hour <span class="gradient-text">Event Schedule</span>
+        </h2>
+        <p class="section-subtitle">
+          From participant check-in to project evaluation and the ₹30,000 valedictory ceremony. Spans two calendar days: September 30 – October 1, 2026.
+        </p>
       </div>
 
-      <!-- Crossing Paths Reveal Section: Circuit Graphic Left + Vision Text Right -->
-      <div id="about-detail" class="about-detail-wrapper container">
-        <div class="about-split-grid">
-          
-          <!-- Left: High-Tech Circuit Board Graphic -->
-          <div class="circuit-graphic-card" id="circuit-graphic-card">
-            <div class="circuit-inner">
-              <svg viewBox="0 0 480 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="circuit-svg">
-                <defs>
-                  <linearGradient id="trace-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#00f0ff"/>
-                    <stop offset="100%" stop-color="#3b82f6"/>
-                  </linearGradient>
-                  <linearGradient id="chip-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#0f172a"/>
-                    <stop offset="100%" stop-color="#1e293b"/>
-                  </linearGradient>
-                </defs>
-                <!-- Motherboard grid lines -->
-                <rect x="20" y="20" width="440" height="340" rx="16" fill="#060912" stroke="rgba(0,240,255,0.2)" stroke-width="1.5"/>
-                
-                <!-- Central Microprocessor: HACKSPRINT '26 CORE -->
-                <rect x="180" y="130" width="120" height="120" rx="10" fill="url(#chip-grad)" stroke="#00f0ff" stroke-width="2" filter="drop-shadow(0 0 16px rgba(0,240,255,0.3))"/>
-                <text x="240" y="185" fill="#00f0ff" font-family="'Outfit', sans-serif" font-weight="800" font-size="14" text-anchor="middle" letter-spacing="2">HACKSPRINT</text>
-                <text x="240" y="205" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="16" text-anchor="middle">v2026.0</text>
-                <circle cx="240" cy="225" r="4" fill="#10b981"/>
+      <div class="container schedule-stepper-wrapper">
+        <!-- Human Verification Flag: Transcribed from photographed official run-of-show table (INFO.docx). Verify exact times before publishing. -->
 
-                <!-- Circuit Traces from Central Chip -->
-                <!-- Top traces -->
-                <path d="M210 130V60H120V40" stroke="url(#trace-cyan)" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="120" cy="40" r="3" fill="#00f0ff"/>
-                <path d="M270 130V80H340V40" stroke="url(#trace-cyan)" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="340" cy="40" r="3" fill="#00f0ff"/>
-                
-                <!-- Left traces -->
-                <path d="M180 160H80V220H50" stroke="#a855f7" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="50" cy="220" r="3" fill="#a855f7"/>
-                <path d="M180 200H100V280H60" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="60" cy="280" r="3" fill="#00f0ff"/>
+        <!-- Day 1 Header -->
+        <div class="schedule-day-heading">
+          <span>📅 DAY 1 · 30.09.2026 (INAUGURATION & DEVELOPMENT)</span>
+        </div>
 
-                <!-- Right traces -->
-                <path d="M300 170H380V120H420" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="420" cy="120" r="3" fill="#f59e0b"/>
-                <path d="M300 210H390V300H430" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="430" cy="300" r="3" fill="#00f0ff"/>
-
-                <!-- Bottom traces -->
-                <path d="M240 250V320H180V340" stroke="#ec4899" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="180" cy="340" r="3" fill="#ec4899"/>
-                <path d="M260 250V300H320V340" stroke="url(#trace-cyan)" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="320" cy="340" r="3" fill="#00f0ff"/>
-
-                <!-- Pulsing node indicators -->
-                <circle cx="80" cy="160" r="5" fill="#00f0ff" opacity="0.8" class="pulse-circuit-node"/>
-                <circle cx="380" cy="170" r="5" fill="#f59e0b" opacity="0.8" class="pulse-circuit-node"/>
-              </svg>
+        <div class="stepper-timeline">
+          <!-- 1 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">09:00 – 10:00 AM · 30.09.2026</span>
+              <h4 class="stepper-activity">Participant Registration & Kit Distribution</h4>
+              <p class="stepper-note">Check-in at VCET Auditorium foyer. Hardware badge allocation, WiFi credentials & welcome kits.</p>
             </div>
           </div>
 
-          <!-- Right: Heading and Vision Text -->
-          <div class="about-vision-copy" id="about-vision-copy">
-            <div class="section-tag">
-              <span class="tag-hash">#</span>
-              <span>MISSION & ARCHITECTURE</span>
-            </div>
-            <h3 class="split-heading">
-              A platform built for intelligent problem-solving.
-            </h3>
-            <p class="lead-text">
-              HackSprint '26 is the flagship national hackathon curated by the Department of Information Technology at Velammal College of Engineering & Technology, Madurai.
-            </p>
-            <p class="body-text">
-              We bring together 500+ handpicked software engineers, designers, AI researchers, and hardware builders. Over 24 intensive hours, teams collaborate under mentorship from prominent industry architects to build production-grade prototypes addressing critical societal challenges.
-            </p>
-            
-            <div class="metrics-grid">
-              <div class="metric-card">
-                <span class="metric-number">24<span class="text-gold">H</span></span>
-                <span class="metric-label">High-Velocity Sprint</span>
-              </div>
-              <div class="metric-card">
-                <span class="metric-number">500<span class="text-cyan">+</span></span>
-                <span class="metric-label">Minds Participating</span>
-              </div>
-              <div class="metric-card">
-                <span class="metric-number">₹1<span class="text-pink">L</span></span>
-                <span class="metric-label">Prize Pool</span>
-              </div>
+          <!-- 2 -->
+          <div class="stepper-item milestone">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">10:00 – 10:30 AM · 30.09.2026</span>
+              <h4 class="stepper-activity">Inauguration & Welcome Address</h4>
+              <p class="stepper-note">Official commencement with institutional leadership, patrons, and keynote guests.</p>
             </div>
           </div>
 
+          <!-- 3 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">10:30 – 11:00 AM · 30.09.2026</span>
+              <h4 class="stepper-activity">Theme, Problem Statements, Rules & Guidelines Briefing</h4>
+              <p class="stepper-note">Detailed orientation on the Agentic AI challenge vectors, evaluation criteria, and sandbox rules.</p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">11:00 AM – 01:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Ideation Phase of Selected Problem Statements</h4>
+              <p class="stepper-note">Squads finalize agent architectures, tool pipelines, and initial feasibility plans.</p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">01:00 – 02:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Lunch Break</h4>
+              <p class="stepper-note">Buffet lunch provided for all participants and mentors at VCET dining facility.</p>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">02:00 – 04:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Development Phase – I</h4>
+              <p class="stepper-note">Environment setup, toolchains initialized, baseline agent planning graphs established.</p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="stepper-item milestone">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">04:00 – 06:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Mentor Interaction – Idea / Architecture Review</h4>
+              <p class="stepper-note">Senior technical mentors review system architecture diagrams, safety boundaries, and APIs.</p>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">06:00 – 06:30 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Tea & Refreshments</h4>
+              <p class="stepper-note">Evening tea and snacks break to recharge squads.</p>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">06:30 – 08:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Development Phase – II</h4>
+              <p class="stepper-note">Core tool integration, agent memory setup, and function calling execution loops.</p>
+            </div>
+          </div>
+
+          <!-- 10 -->
+          <div class="stepper-item milestone">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">08:00 – 10:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Progress Review & Technical Mentoring</h4>
+              <p class="stepper-note">Deep technical review by domain specialists on multi-agent consensus and error handling.</p>
+            </div>
+          </div>
+
+          <!-- 11 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">10:00 – 11:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Dinner Break</h4>
+              <p class="stepper-note">Full dinner buffet served at campus dining hall.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Overnight Header -->
+        <div class="schedule-day-heading">
+          <span>🌙 OVERNIGHT · 30.09.2026 – 01.10.2026 (SPRINT & TESTING)</span>
+        </div>
+
+        <div class="stepper-timeline">
+          <!-- 12 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">11:00 PM – 01:00 AM · 30.09.2026 – 01.10.2026</span>
+              <h4 class="stepper-activity">Development Phase – III</h4>
+              <p class="stepper-note">Late-night intensive sprint: complex sub-goal execution and autonomous self-healing loops.</p>
+            </div>
+          </div>
+
+          <!-- 13 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">01:00 – 01:30 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Midnight Refreshments</h4>
+              <p class="stepper-note">Coffee, tea, and energy snacks to keep the late-night hacking energized.</p>
+            </div>
+          </div>
+
+          <!-- 14 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">01:30 – 05:00 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Development Phase – IV</h4>
+              <p class="stepper-note">Overnight sprint: integrating user interfaces, multi-agent communication, and edge testbeds.</p>
+            </div>
+          </div>
+
+          <!-- 15 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">05:00 – 05:30 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Morning Tea / Refreshments</h4>
+              <p class="stepper-note">Dawn tea service as squads head toward the home stretch.</p>
+            </div>
+          </div>
+
+          <!-- 16 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">05:30 – 07:30 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Final Development, Integration & Testing</h4>
+              <p class="stepper-note">End-to-end sandbox verification, automated test runs, and prototype hardening.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 Header -->
+        <div class="schedule-day-heading">
+          <span>🏆 DAY 2 · 01.10.2026 (SUBMISSION & JURY EVALUATION)</span>
+        </div>
+
+        <div class="stepper-timeline">
+          <!-- 17 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">07:30 – 08:00 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Breakfast</h4>
+              <p class="stepper-note">Hot campus breakfast served for all participants.</p>
+            </div>
+          </div>
+
+          <!-- 18 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">08:00 – 08:30 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Final Debugging & Documentation</h4>
+              <p class="stepper-note">README finalization, demo video recording, presentation slide deck compilation.</p>
+            </div>
+          </div>
+
+          <!-- 19 -->
+          <div class="stepper-item milestone">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">08:30 – 09:00 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Final Submission (Code Freeze)</h4>
+              <p class="stepper-note">All GitHub repositories frozen and final project submission portal locked.</p>
+            </div>
+          </div>
+
+          <!-- 20 -->
+          <div class="stepper-item milestone">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">09:00 – 09:45 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Project Demo & Jury Evaluation</h4>
+              <p class="stepper-note">Live autonomous agent demonstrations before the distinguished jury panel.</p>
+            </div>
+          </div>
+
+          <!-- 21 -->
+          <div class="stepper-item milestone">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">09:45 – 10:00 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Results / Valedictory Function</h4>
+              <p class="stepper-note">Announcement of winners, distribution of the ₹30,000 prize pool, certificates, and closing ceremony.</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- ========================================================================= -->
-      <!-- COORDINATORS GRID (FACULTY & STUDENT LEADS) -->
-      <!-- ========================================================================= -->
-      <div id="coordinators" class="coordinators-wrapper container">
-        <div class="section-header-center">
-          <div class="section-tag">
-            <span class="tag-hash">#</span>
-            <span>LEADERSHIP & MENTORSHIP</span>
+    <!-- ========================================================================= -->
+    <!-- 6. ABOUT VCET & IT DEPARTMENT (REAL INSTITUTIONAL DATA & STATS) -->
+    <!-- ========================================================================= -->
+    <section id="about" class="about-section" style="padding: 80px 0;">
+      <div class="container section-header-center">
+        <div class="section-tag">
+          <span class="tag-hash">#</span>
+          <span>ESTABLISHED EXCELLENCE</span>
+        </div>
+        <h2 class="section-title">
+          About <span class="gradient-text">VCET</span>
+        </h2>
+        <p class="section-subtitle">
+          Velammal College of Engineering & Technology, Madurai (An Autonomous Institution | Affiliated to Anna University | Accredited by NAAC with 'A' Grade | NBA Accredited Programmes).
+        </p>
+      </div>
+
+      <div class="container">
+        <!-- 4 Stat Counters (Official Data) -->
+        <div class="vcet-stats-grid">
+          <div class="vcet-stat-card">
+            <span class="vcet-stat-val">190<span class="stat-suffix">+</span></span>
+            <span class="vcet-stat-lbl">Faculty Members</span>
           </div>
-          <h2 class="section-title">Organizing Committee</h2>
-          <p class="section-subtitle">
-            Guiding HackSprint '26 with vision, technical excellence, and dedication.
-          </p>
+          <div class="vcet-stat-card">
+            <span class="vcet-stat-val">84<span class="stat-suffix">+</span></span>
+            <span class="vcet-stat-lbl">Ph.D. Holders</span>
+          </div>
+          <div class="vcet-stat-card">
+            <span class="vcet-stat-val">3,293</span>
+            <span class="vcet-stat-lbl">Enrolled Students</span>
+          </div>
+          <div class="vcet-stat-card">
+            <span class="vcet-stat-val">83.64<span class="stat-suffix">%</span></span>
+            <span class="vcet-stat-lbl">Placement Record</span>
+          </div>
         </div>
 
-        <div class="coordinators-grid" id="coordinators-grid">
-          
-          <!-- Coordinator 1: Head of Department -->
-          <div class="coord-card">
-            <div class="coord-avatar-wrapper">
-              <div class="avatar-ring-glow"></div>
-              <div class="coord-avatar-inner">
-                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
-                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#00f0ff" stroke-width="2"/>
-                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
-                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
-                  <path d="M42 38L47 43L58 32" stroke="#00f0ff" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+        <!-- Vision & Mission Grid -->
+        <div class="vm-cards-grid">
+          <div class="vm-card">
+            <div class="vm-header">
+              <div class="vm-icon-bubble">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
               </div>
-              <span class="coord-badge-tag">CONVENER</span>
+              <h3 class="vm-title">Our Vision</h3>
             </div>
-            <h4 class="coord-name">Dr. R. Kavitha</h4>
-            <span class="coord-role">Head of Department · IT</span>
-            <span class="coord-inst">VCET, Madurai</span>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
+            <p class="vm-text">
+              "To emerge and sustain as a center of excellence for technical and managerial education upholding social values."
+            </p>
           </div>
 
-          <!-- Coordinator 2: Faculty Coordinator -->
-          <div class="coord-card">
-            <div class="coord-avatar-wrapper">
-              <div class="avatar-ring-glow"></div>
-              <div class="coord-avatar-inner">
-                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
-                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#a855f7" stroke-width="2"/>
-                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
-                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
-                  <circle cx="50" cy="38" r="8" fill="#a855f7" opacity="0.3"/>
-                </svg>
+          <div class="vm-card">
+            <div class="vm-header">
+              <div class="vm-icon-bubble bubble-pink">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
               </div>
-              <span class="coord-badge-tag">COORDINATOR</span>
+              <h3 class="vm-title">Our Mission</h3>
             </div>
-            <h4 class="coord-name">Prof. Raja Sudharsan</h4>
-            <span class="coord-role">Faculty Coordinator · IT</span>
-            <span class="coord-inst">VCET, Madurai</span>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
+            <ul class="vm-bullets">
+              <li>Our aspirants are imparted with comprehensive, innovative and value-based education.</li>
+              <li>Exposed to technical, managerial and soft-skill resources with emphasis on research and professionalism.</li>
+              <li>Inculcated with the need for a disciplined, happy, and peaceful life.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Distinct About IT Department Callout Block -->
+        <div class="dept-callout-box">
+          <h3 class="dept-callout-title">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--pink-primary)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            About the Department of Information Technology
+          </h3>
+          <p class="vm-text" style="margin-bottom: 16px;">
+            The Department of Information Technology at VCET stands at the vanguard of technical pedagogy and cutting-edge software research. NBA-accredited and equipped with high-throughput compute infrastructure, advanced artificial intelligence laboratories, and dedicated incubation cells, the department fosters an ecosystem where students build enterprise-ready engineering innovations.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <span class="vector-tech-chip">NBA Accredited Department</span>
+            <span class="vector-tech-chip">Autonomous Curriculum</span>
+            <span class="vector-tech-chip">High-Performance AI & Cloud Labs</span>
+            <span class="vector-tech-chip">Industry Research Tie-ups</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 7. ORGANIZING COMMITTEE (FULL HIERARCHY) -->
+    <!-- ========================================================================= -->
+    <section id="committee" class="committee-hierarchy-section">
+      <div class="container section-header-center">
+        <div class="section-tag">
+          <span class="tag-hash">#</span>
+          <span>LEADERSHIP & MENTORSHIP</span>
+        </div>
+        <h2 class="section-title">
+          Organizing <span class="gradient-text">Committee</span>
+        </h2>
+        <p class="section-subtitle">
+          Distinguished academic leaders, faculty conveners, and student coordinators spearheading HackSprint '26.
+        </p>
+      </div>
+
+      <div class="container">
+        <!-- Tier 1: Patron (Muthuramalingam is the only patron) -->
+        <div class="committee-tier-block">
+          <div class="committee-tier-title">Patron</div>
+          <div class="committee-grid-chief" style="grid-template-columns: minmax(320px, 640px); justify-content: center;">
+            <div class="comm-member-card patron-card">
+              <div class="comm-avatar-frame">
+                <img src="assets/muthuramalingam.jpeg" alt="Shri. M. V. Muthuramalingam" class="comm-avatar-img">
+              </div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">PATRON</span>
+                <h3 class="comm-member-name">Shri. M. V. Muthuramalingam</h3>
+                <span class="comm-member-desc">Chairman, Velammal Educational Trust (VET)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 2: Conveners (Dr. P. Alli & Dr. R. Kavitha) -->
+        <div class="committee-tier-block">
+          <div class="committee-tier-title">Conveners</div>
+          <div class="committee-grid-chief" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            <div class="comm-member-card convener-card">
+              <div class="comm-avatar-frame">
+                <img src="assets/dr_p_alli.jpeg" alt="Dr. P. Alli" class="comm-avatar-img">
+              </div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">CONVENER</span>
+                <h3 class="comm-member-name">Dr. P. Alli</h3>
+                <span class="comm-member-desc">Principal, Velammal College of Engineering & Technology</span>
+              </div>
+            </div>
+
+            <div class="comm-member-card convener-card">
+              <div class="comm-avatar-frame">
+                <img src="assets/dr_r_kavitha.jpeg" alt="Dr. R. Kavitha" class="comm-avatar-img">
+              </div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">CONVENER</span>
+                <h3 class="comm-member-name">Dr. R. Kavitha</h3>
+                <span class="comm-member-desc">Professor & Head, Department of Information Technology</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 3: Faculty Coordinators with images -->
+        <div class="committee-tier-block">
+          <div class="committee-tier-title">Faculty Coordinators (Department of IT)</div>
+          <div class="committee-grid-coords">
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">
+                <img src="assets/dr_raja_sudharsan.jpeg" alt="Dr. R. Raja Sudharsan" class="comm-avatar-img">
+              </div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">COORDINATOR</span>
+                <h3 class="comm-member-name">Dr. R. Raja Sudharsan</h3>
+                <span class="comm-member-desc">Associate Professor / IT (ASP/IT)</span>
+              </div>
+            </div>
+
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">
+                <img src="assets/mr_jegadeesan.jpeg" alt="Mr. S. Jegadeesan" class="comm-avatar-img">
+              </div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">COORDINATOR</span>
+                <h3 class="comm-member-name">Mr. S. Jegadeesan</h3>
+                <span class="comm-member-desc">Assistant Professor (AP-II/IT)</span>
+              </div>
+            </div>
+
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">
+                <img src="assets/ms_sivakarthi.jpeg" alt="Ms. G. Sivakarthi" class="comm-avatar-img">
+              </div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">COORDINATOR</span>
+                <h3 class="comm-member-name">Ms. G. Sivakarthi</h3>
+                <span class="comm-member-desc">Assistant Professor (AP-III/IT)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 4: Student Coordinators -->
+        <div class="committee-tier-block">
+          <div class="committee-tier-title">Student Coordinators</div>
+          <div class="committee-grid-students">
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">RN</div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">STUDENT LEAD</span>
+                <h4 class="comm-member-name">Rithesh R N</h4>
+                <span class="comm-member-desc">Department of IT</span>
+              </div>
+            </div>
+
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">VM</div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">STUDENT COORDINATOR</span>
+                <h4 class="comm-member-name">Viswaksena M</h4>
+                <span class="comm-member-desc">Department of IT</span>
+              </div>
+            </div>
+
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">HR</div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">TECH LEAD</span>
+                <h4 class="comm-member-name">Hari Roshan B G</h4>
+                <span class="comm-member-desc">Department of IT</span>
+              </div>
+            </div>
+
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">RS</div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">STUDENT COORDINATOR</span>
+                <h4 class="comm-member-name">Rehana Sitthika M S</h4>
+                <span class="comm-member-desc">Department of IT</span>
+              </div>
+            </div>
+
+            <div class="comm-member-card">
+              <div class="comm-avatar-frame">RR</div>
+              <div class="comm-member-info">
+                <span class="comm-role-badge">STUDENT COORDINATOR</span>
+                <h4 class="comm-member-name">Rithanaya R</h4>
+                <span class="comm-member-desc">Department of IT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 8. OFFICIAL SPONSOR & TECHNICAL SUPPORT -->
+    <!-- ========================================================================= -->
+    <section id="sponsors" style="padding: 40px 0 80px;">
+      <div class="container section-header-center">
+        <div class="section-tag">
+          <span class="tag-hash">#</span>
+          <span>ALLIANCE & SPONSORSHIP</span>
+        </div>
+        <h2 class="section-title">
+          Official <span class="gradient-text">Partners</span>
+        </h2>
+        <p class="section-subtitle">
+          Backed by leading industry innovators and premier global engineering bodies.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="official-partners-card">
+          <!-- Official Uploaded Sponsor & Support Banner -->
+          <div class="official-sponsor-banner-frame">
+            <img src="assets/sponsors_banner.png" alt="Technical Support from IEEE Student Branch and Sponsored by BSE-TEC" class="official-sponsor-banner-img">
           </div>
 
-          <!-- Coordinator 3: Student Lead -->
-          <div class="coord-card">
-            <div class="coord-avatar-wrapper">
-              <div class="avatar-ring-glow"></div>
-              <div class="coord-avatar-inner">
-                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
-                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#fbbf24" stroke-width="2"/>
-                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
-                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
-                  <polygon points="50,26 53,34 61,34 55,39 57,47 50,42 43,47 45,39 39,34 47,34" fill="#fbbf24"/>
-                </svg>
-              </div>
-              <span class="coord-badge-tag tag-gold">STUDENT LEAD</span>
+          <div class="official-sponsor-details-row">
+            <!-- Sponsor: BSE-TEC -->
+            <div class="partner-box">
+              <span class="partner-type-tag">OFFICIAL INDUSTRY SPONSOR</span>
+              <h3 class="partner-brand-name">BSE-TEC</h3>
+              <p class="partner-tagline">"Quality through Research"</p>
+              <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">
+                Leading digital solutions and software engineering enterprise, powering HackSprint '26 innovators with industry backing and research mentorship.
+              </p>
             </div>
-            <h4 class="coord-name">Rithesh</h4>
-            <span class="coord-role">Student Lead · IV IT</span>
-            <span class="coord-inst">VCET, Madurai</span>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
-          </div>
 
-          <!-- Coordinator 4: Technical Head -->
-          <div class="coord-card">
-            <div class="coord-avatar-wrapper">
-              <div class="avatar-ring-glow"></div>
-              <div class="coord-avatar-inner">
-                <svg viewBox="0 0 100 100" class="avatar-svg" fill="none">
-                  <circle cx="50" cy="50" r="48" fill="#0b1329" stroke="#00f0ff" stroke-width="2"/>
-                  <circle cx="50" cy="38" r="18" fill="#1e293b"/>
-                  <path d="M22 84C22 68 35 58 50 58C65 58 78 68 78 84" fill="#1e293b"/>
-                  <path d="M40 38L46 44L40 50M60 38L54 44L60 50" stroke="#00f0ff" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <span class="coord-badge-tag">TECH LEAD</span>
+            <!-- Technical Support: IEEE Student Branch -->
+            <div class="partner-box">
+              <span class="partner-type-tag">TECHNICAL SUPPORT</span>
+              <h3 class="partner-brand-name">IEEE Student Branch</h3>
+              <p class="partner-tagline">Global Technical & Academic Excellence</p>
+              <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">
+                Providing international engineering benchmarking, technical evaluation standards, and academic rigor for the 24-hour national hackathon.
+              </p>
             </div>
-            <h4 class="coord-name">Hari Roshan</h4>
-            <span class="coord-role">Technical Lead · IV IT</span>
-            <span class="coord-inst">VCET, Madurai</span>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin-pill">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="in-icon">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28z"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
           </div>
-
         </div>
       </div>
     </section>
@@ -912,7 +1151,7 @@
             </div>
           </div>
           <p class="footer-bio">
-            The national flagship 24-hour hackathon engineered by the Department of Information Technology at Velammal College of Engineering & Technology (VCET), Madurai.
+            The national flagship 24-hour Agentic AI hackathon engineered by the Department of Information Technology at Velammal College of Engineering & Technology (VCET), Madurai.
           </p>
           <div class="footer-accreditation">
             <span class="accred-dot"></span>
@@ -920,16 +1159,17 @@
           </div>
         </div>
 
-        <!-- Col 2: Quick Links -->
+        <!-- Col 2: Quick Links (Full Sitemap) -->
         <div class="footer-col">
-          <h4 class="footer-heading">Quick Links</h4>
+          <h4 class="footer-heading">Sitemap</h4>
           <ul class="footer-link-list">
-            <li><a href="#hero">Home Terminal</a></li>
-            <li><a href="#countdown">Countdown Clocks</a></li>
-            <li><a href="#tracks">Problem Horizons</a></li>
-            <li><a href="#about">About VCET IT</a></li>
-            <li><a href="#coordinators">Leadership Team</a></li>
-            <li><a href="#btn-open-register" class="link-open-reg">Participant Registration</a></li>
+            <li><a href="index.html#hero">Home Terminal</a></li>
+            <li><a href="#theme-showcase">Problem Statement (Agentic AI)</a></li>
+            <li><a href="schedule.html">24H Schedule</a></li>
+            <li><a href="faq.html">FAQs & Rules</a></li>
+            <li><a href="sponsors.html">Sponsors & Partners</a></li>
+            <li><a href="contact.html">Contact Directory</a></li>
+            <li><a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer">Participant Registration</a></li>
           </ul>
         </div>
 
@@ -943,7 +1183,7 @@
               </div>
               <div class="contact-text">
                 <span class="contact-sub">Official Inquiries</span>
-                <a href="mailto:hacksprint26@vcet.ac.in">hacksprint26@vcet.ac.in</a>
+                <a href="mailto:hacksprint26@gmail.com">hacksprint26@gmail.com</a>
               </div>
             </li>
             <li class="contact-item">
@@ -960,8 +1200,8 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
               <div class="contact-text">
-                <span class="contact-sub">Hackathon Support</span>
-                <span>24/7 Operations Desk</span>
+                <span class="contact-sub">Official Portal</span>
+                <a href="https://www.vcet.ac.in" target="_blank" rel="noopener noreferrer">www.vcet.ac.in</a>
               </div>
             </li>
           </ul>
@@ -971,7 +1211,7 @@
         <div class="footer-col footer-col-subscribe">
           <h4 class="footer-heading">Stay Updated</h4>
           <p class="footer-sub-text">
-            Receive track updates, mentor announcements, and problem statement drops.
+            Receive agentic track updates, tool drop announcements, and problem bulletins. Zero spam.
           </p>
           <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
             <div class="input-wrapper">
@@ -994,7 +1234,7 @@
               <span class="map-pin-pulse"></span>
               <strong>HOST VENUE: Velammal College of Engineering & Technology</strong>
             </div>
-            <span class="map-coord-tag">9.89388° N, 78.176088° E · Madurai, TN</span>
+            <span class="map-coord-tag">Madurai–Rameshwaram Highway, Viraganoor, Madurai – 625 009, Tamil Nadu</span>
           </div>
 
           <!-- Stylized Dark Map Preview Canvas -->
@@ -1009,7 +1249,7 @@
             </iframe>
 
             <!-- Floating Gold Get Directions Pill -->
-            <a href="https://www.google.com/maps?ll=9.89388,78.176088&amp;z=16&amp;t=m&amp;hl=en&amp;gl=IN&amp;mapclient=embed&amp;cid=1801179381751076763" target="_blank" rel="noopener noreferrer" class="btn-pill-gold btn-get-directions" id="btn-directions">
+            <a href="https://maps.app.goo.gl/NzrXARGoVX9TNccr5?g_st=aw" target="_blank" rel="noopener noreferrer" class="btn-pill-gold btn-get-directions" id="btn-directions">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dir-icon">
                 <polygon points="3 11 22 2 13 21 11 13 3 11"/>
               </svg>
@@ -1024,7 +1264,7 @@
         <div class="bottom-legal">
           <p>© 2026 HackSprint. Organized by Department of Information Technology, VCET.</p>
           <span class="legal-separator">·</span>
-          <a href="#" class="legal-link">Rules & Code of Conduct</a>
+          <a href="faq.html" class="legal-link">Rules & Code of Conduct</a>
           <span class="legal-separator">·</span>
           <a href="#" class="legal-link">Privacy Policy</a>
         </div>
@@ -1048,7 +1288,7 @@
   </main>
 
   <!-- ========================================================================= -->
-  <!-- MODAL 1: REGISTRATION MODAL -->
+  <!-- MODAL 1: REGISTRATION MODAL (FALLBACK PORTAL TO OFFICIAL FORM) -->
   <!-- ========================================================================= -->
   <div class="modal-backdrop" id="register-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-card">
@@ -1057,83 +1297,18 @@
       </button>
 
       <div class="modal-header">
-        <div class="modal-tag">HACKSPRINT '26 · PARTICIPANT PORTAL</div>
+        <div class="modal-tag">HACKSPRINT '26 · OFFICIAL REGISTRATION</div>
         <h3 id="modal-title" class="modal-heading">Register Your Squad</h3>
-        <p class="modal-desc">Secure your spot at VCET's flagship 24-hour hackathon. Registration fee: <strong>₹500 per team</strong> (Teams of 2 to 4 members).</p>
+        <p class="modal-desc">Secure your spot at VCET's flagship 24-hour Agentic AI hackathon. Grand Prize Pool: <strong>₹30,000</strong>. Registration fee: <strong>₹500 / participant</strong> (Squad size: <strong>4 Members</strong>).</p>
       </div>
 
-      <form id="register-form" class="modal-form" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="team-name">Team Name <span class="required">*</span></label>
-            <input type="text" id="team-name" placeholder="e.g., CyberPulse Pioneers" required>
-            <span class="field-error" id="err-team-name"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="team-size">Team Size <span class="required">*</span></label>
-            <select id="team-size" required>
-              <option value="2">2 Hackers</option>
-              <option value="3" selected>3 Hackers</option>
-              <option value="4">4 Hackers</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="lead-name">Team Lead Name <span class="required">*</span></label>
-            <input type="text" id="lead-name" placeholder="e.g., Rahul Sharma" required>
-            <span class="field-error" id="err-lead-name"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="lead-email">Lead Email <span class="required">*</span></label>
-            <input type="email" id="lead-email" placeholder="lead@college.edu" required>
-            <span class="field-error" id="err-lead-email"></span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="college-name">Institution / College Name <span class="required">*</span></label>
-            <input type="text" id="college-name" placeholder="e.g., Velammal College of Engineering & Tech" required>
-            <span class="field-error" id="err-college-name"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="track-preference">Preferred Problem Track <span class="required">*</span></label>
-            <select id="track-preference" required>
-              <option value="Education & Adaptive Learning">Track 01: Education & Adaptive Learning</option>
-              <option value="Open Innovation & Web3">Track 02: Open Innovation & Web3</option>
-              <option value="Agriculture & Smart Farming">Track 03: Agriculture & Smart Farming</option>
-              <option value="Industry 4.0 & 5.0">Track 04: Industry 4.0 & 5.0</option>
-              <option value="Healthcare & Telemedicine">Track 05: Healthcare & Telemedicine</option>
-              <option value="Smart Governance & AI">Track 06: Smart Governance & AI</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="project-pitch">Brief Concept Pitch (Optional)</label>
-          <textarea id="project-pitch" rows="3" placeholder="Tell us in 2-3 sentences what breakthrough you plan to engineer..."></textarea>
-        </div>
-
-        <div class="modal-form-actions">
-          <button type="submit" class="btn-pill-gold w-full" id="btn-submit-register">
-            <span>Confirm Registration →</span>
-          </button>
-        </div>
-      </form>
-
-      <!-- Success Screen State -->
-      <div class="modal-success" id="modal-success" style="display: none;">
-        <div class="success-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3>Transmission Confirmed!</h3>
-        <p>Your registration for <strong id="success-team-display">HackSprint '26</strong> has been logged into the terminal. An official confirmation dossier and Discord invitation have been transmitted to your email.</p>
-        <button type="button" class="btn-hero-secondary mt-4" id="btn-close-success">Done</button>
+      <div style="padding: 20px 0; text-align: center;">
+        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+          Registrations are officially managed through Google Forms. Click the button below to submit your team details, member credentials, and payment transaction screenshot.
+        </p>
+        <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold" style="display: inline-block; padding: 14px 32px; font-size: 1rem;">
+          <span>Open Official Google Registration Form ↗</span>
+        </a>
       </div>
     </div>
   </div>
@@ -1148,25 +1323,25 @@
       </button>
 
       <div class="track-modal-header">
-        <span class="track-modal-tag" id="track-modal-tag">TRACK 01 · EDTECH</span>
-        <h3 id="track-modal-title" class="track-modal-heading">Track Title</h3>
+        <span class="track-modal-tag" id="track-modal-tag">AGENTIC AI · ARCHITECTURAL VECTOR</span>
+        <h3 id="track-modal-title" class="track-modal-heading">Vector Title</h3>
       </div>
 
       <div class="track-modal-body">
         <div class="modal-section-block">
-          <h4>Problem Landscape</h4>
+          <h4>Agent Architecture Landscape</h4>
           <p id="track-modal-overview">Detailed overview description...</p>
         </div>
 
         <div class="modal-section-block">
-          <h4>Sample Problem Statements</h4>
+          <h4>Sample Challenge Statements</h4>
           <ul id="track-modal-samples" class="sample-problem-list">
             <!-- Populated dynamically via JS -->
           </ul>
         </div>
 
         <div class="modal-section-block">
-          <h4>Suggested Technology Stack</h4>
+          <h4>Suggested Agentic Toolchain</h4>
           <div id="track-modal-tech" class="tech-tags-wrap">
             <!-- Populated dynamically via JS -->
           </div>
@@ -1174,9 +1349,9 @@
       </div>
 
       <div class="track-modal-footer">
-        <button type="button" class="btn-pill-gold" id="btn-select-track-reg">
-          <span>Register for this Track →</span>
-        </button>
+        <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold" id="btn-select-track-reg">
+          <span>Register Squad for Agentic AI ↗</span>
+        </a>
       </div>
     </div>
   </div>

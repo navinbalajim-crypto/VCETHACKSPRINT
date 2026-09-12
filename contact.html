@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Venue Guide | HackSprint '26 · VCET IT</title>
+  <meta name="description" content="Reach the HackSprint '26 organizing desk at VCET Madurai. Faculty conveners, student coordinators, transit directions, and 24/7 helpdesk contact.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow & Starfield Canvas -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <canvas id="starfield-canvas" aria-hidden="true"></canvas>
+
+  <!-- Sticky Navbar -->
+  <header id="main-header" class="navbar-wrapper">
+    <nav class="navbar container" id="navbar" aria-label="Main Navigation">
+      <a href="index.html#hero" class="brand-logo" aria-label="HackSprint '26 Home">
+        <div class="logo-symbol vcet-emblem-wrap">
+          <img src="vcet-logo.png" alt="VCET Emblem" class="vcet-brand-img">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">HACKSPRINT<span class="brand-year">'26</span></span>
+          <span class="brand-sub">VCET · DEPT OF IT</span>
+        </div>
+      </a>
+
+      <div class="nav-links-wrapper">
+        <ul class="nav-links" id="nav-links">
+          <li class="nav-item"><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="index.html#theme-showcase" class="nav-link">Problem Statement</a></li>
+          <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
+          <li class="nav-item"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+        <span class="nav-morph-pill" id="nav-morph-pill" aria-hidden="true"></span>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold" id="btn-open-register">
+          <span>Register Now</span>
+          <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+            <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-inner">
+      <a href="index.html#hero" class="mobile-nav-link">Home</a>
+      <a href="index.html#theme-showcase" class="mobile-nav-link">Problem Statement (Agentic AI)</a>
+      <a href="schedule.html" class="mobile-nav-link">24H Schedule</a>
+      <a href="faq.html" class="mobile-nav-link">FAQs</a>
+      <a href="sponsors.html" class="mobile-nav-link">Sponsors</a>
+      <a href="contact.html" class="mobile-nav-link active">Contact</a>
+      <a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer" class="btn-pill-gold w-full mt-4">
+        <span>Register Squad →</span>
+      </a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- Subpage Hero Banner -->
+    <section class="subpage-hero-banner">
+      <div class="container">
+        <div class="hero-badge-pill">
+          <span class="badge-dot"></span>
+          <span>COMMUNICATIONS DESK · 24/7 HELPLINE</span>
+        </div>
+        <h1 class="subpage-title">Contact & <span class="gradient-gold-text">Venue Logistics</span></h1>
+        <p class="subpage-lead">
+          Connect with the HackSprint '26 steering committee, faculty conveners, and student organizers at Velammal College of Engineering & Technology, Madurai.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Grid Section -->
+    <section class="container" style="padding: 40px 0 80px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-bottom: 60px;">
+
+        <!-- Left Column: Organizing Directory -->
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan-primary)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Organizing Hierarchy
+          </h2>
+
+          <!-- Tier 1: Patron (Muthuramalingam is the only patron) -->
+          <div class="card-high-gloss mb-3" style="background: rgba(14, 20, 38, 0.85); border: 1px solid var(--gold-bright); border-radius: 16px; padding: 18px; display: flex; gap: 16px; align-items: center;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--gold-bright); overflow: hidden; flex-shrink: 0; box-shadow: 0 0 15px rgba(245,158,11,0.4);">
+              <img src="assets/muthuramalingam.jpeg" alt="Shri. M. V. Muthuramalingam" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+            </div>
+            <div>
+              <span class="badge-tag-gold" style="font-size: 0.65rem; padding: 2px 8px; border-radius: 9999px; background: rgba(245,158,11,0.15); border: 1px solid var(--gold-bright); color: var(--gold-bright); font-family: var(--font-mono); font-weight: 800;">PATRON</span>
+              <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #ffffff; margin: 3px 0 1px;">Shri. M. V. Muthuramalingam</h3>
+              <p style="font-size: 0.82rem; color: #cbd5e1; margin: 0;">Chairman, Velammal Educational Trust (VET)</p>
+            </div>
+          </div>
+
+          <!-- Tier 2: Conveners (Dr. P. Alli & Dr. R. Kavitha) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+            <div class="card-high-gloss" style="background: rgba(14, 20, 38, 0.8); border: 1px solid rgba(0, 240, 255, 0.3); border-radius: 14px; padding: 14px; display: flex; gap: 12px; align-items: center;">
+              <div style="width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--cyan-primary); overflow: hidden; flex-shrink: 0;">
+                <img src="assets/dr_p_alli.jpeg" alt="Dr. P. Alli" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--cyan-primary); font-weight: 800; display: block;">CONVENER</span>
+                <h4 style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: #ffffff; margin: 2px 0;">Dr. P. Alli</h4>
+                <p style="font-size: 0.74rem; color: #94a3b8; margin: 0;">Principal, VCET</p>
+              </div>
+            </div>
+
+            <div class="card-high-gloss" style="background: rgba(14, 20, 38, 0.8); border: 1px solid rgba(0, 240, 255, 0.3); border-radius: 14px; padding: 14px; display: flex; gap: 12px; align-items: center;">
+              <div style="width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--cyan-primary); overflow: hidden; flex-shrink: 0;">
+                <img src="assets/dr_r_kavitha.jpeg" alt="Dr. R. Kavitha" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+              </div>
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.62rem; color: var(--cyan-primary); font-weight: 800; display: block;">CONVENER</span>
+                <h4 style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: #ffffff; margin: 2px 0;">Dr. R. Kavitha</h4>
+                <p style="font-size: 0.74rem; color: #94a3b8; margin: 0;">HoD / IT, VCET</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 3: Faculty Coordinators with photos -->
+          <div style="background: rgba(14, 20, 38, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 16px; margin-bottom: 12px;">
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #cbd5e1; font-weight: 800; display: block; margin-bottom: 10px;">FACULTY COORDINATORS (DEPT OF IT)</span>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--cyan-primary); overflow: hidden; flex-shrink: 0;">
+                  <img src="assets/dr_raja_sudharsan.jpeg" alt="Dr. R. Raja Sudharsan" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex-grow: 1;">
+                  <div style="color: #ffffff; font-weight: 700; font-size: 0.9rem;">Dr. R. Raja Sudharsan</div>
+                  <div style="color: #94a3b8; font-size: 0.75rem;">Associate Professor / IT (ASP/IT)</div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--cyan-primary); overflow: hidden; flex-shrink: 0;">
+                  <img src="assets/mr_jegadeesan.jpeg" alt="Mr. S. Jegadeesan" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex-grow: 1;">
+                  <div style="color: #ffffff; font-weight: 700; font-size: 0.9rem;">Mr. S. Jegadeesan</div>
+                  <div style="color: #94a3b8; font-size: 0.75rem;">Assistant Professor (AP-II/IT)</div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--cyan-primary); overflow: hidden; flex-shrink: 0;">
+                  <img src="assets/ms_sivakarthi.jpeg" alt="Ms. G. Sivakarthi" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex-grow: 1;">
+                  <div style="color: #ffffff; font-weight: 700; font-size: 0.9rem;">Ms. G. Sivakarthi</div>
+                  <div style="color: #94a3b8; font-size: 0.75rem;">Assistant Professor (AP-III/IT)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Student Coordinators -->
+          <div style="background: rgba(14, 20, 38, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 14px; margin-bottom: 16px;">
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #cbd5e1; font-weight: 800; display: block; margin-bottom: 8px;">STUDENT COORDINATORS</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span style="background: rgba(0, 240, 255, 0.1); border: 1px solid rgba(0, 240, 255, 0.25); color: #ffffff; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem;">Rithesh R N (Lead)</span>
+              <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem;">Viswaksena M</span>
+              <span style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #ffffff; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem;">Hari Roshan B G (Tech Lead)</span>
+              <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem;">Rehana Sitthika M S</span>
+              <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem;">Rithanaya R</span>
+            </div>
+          </div>
+
+          <!-- Direct Inquiries Card -->
+          <div style="padding: 18px; background: rgba(0, 240, 255, 0.04); border: 1px dashed rgba(0, 240, 255, 0.3); border-radius: 16px;">
+            <div style="font-size: 0.84rem; color: #94a3b8; line-height: 1.6;">
+              <div>📧 Email: <a href="mailto:hacksprint26@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">hacksprint26@gmail.com</a></div>
+              <div>📞 Helpline: <a href="tel:+919944122667" style="color: var(--cyan-primary); text-decoration: none;">+91 99441 22667</a></div>
+              <div>🌐 Website: <a href="https://www.vcet.ac.in" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: none;">www.vcet.ac.in</a></div>
+              <div>📍 Address: Velammal College of Engineering and Technology, Madurai–Rameshwaram Highway, Viraganoor, Madurai – 625 009, Tamil Nadu</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Dispatch Message Form -->
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Send an Official Transmission
+          </h2>
+
+          <div class="card-high-gloss" style="background: rgba(14, 20, 38, 0.8); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 20px; padding: 32px;">
+            <form id="contact-transmission-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-group mb-4">
+                <label for="contact-name" class="form-label">Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Arun Kumar" required>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" class="mb-4">
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address *</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="arun@domain.edu" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone" class="form-label">Phone Number *</label>
+                  <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <label for="contact-category" class="form-label">Inquiry Category *</label>
+                <select id="contact-category" class="form-input" style="background: #090e1c; color: #ffffff;" required>
+                  <option value="registration">Team Registration & Fee Payment</option>
+                  <option value="tracks">Agentic AI Problem Tracks & Compute</option>
+                  <option value="accommodation">Campus Stay & Overnight Logistics</option>
+                  <option value="sponsorship">Corporate Sponsorship & Recruitment</option>
+                  <option value="other">General Inquiries / Emergency Assistance</option>
+                </select>
+              </div>
+
+              <div class="form-group mb-4">
+                <label for="contact-message" class="form-label">Message Dossier *</label>
+                <textarea id="contact-message" class="form-input" rows="4" placeholder="Detail your question or requirement with squad ID if registered..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-pill-gold w-full" style="justify-content: center;">
+                <span>Transmit Message to Committee</span>
+                <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                  <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <div id="contact-form-feedback" style="display: none; margin-top: 16px; padding: 14px; border-radius: 12px; font-family: var(--font-mono); font-size: 0.85rem; text-align: center;"></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Transit & Route Guide -->
+      <div style="margin: 60px 0 40px;">
+        <div class="text-center mb-10">
+          <span class="sub-label">GETTING TO VCET CAMPUS</span>
+          <h2 class="section-title">Travel & <span class="gradient-gold-text">Transit Guide</span></h2>
+          <p class="section-subtitle">Convenient multimodal transit connectivity to VCET Madurai campus from all major hubs.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 48px;">
+          <div class="card-high-gloss p-6" style="background: rgba(14, 20, 38, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 24px;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(0, 240, 255, 0.1); border: 1px solid var(--cyan-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+              ✈️
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px;">Madurai Airport (IXM)</h3>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--cyan-primary); font-weight: 700; display: block; margin-bottom: 10px;">11 KM · ~18 MINS</span>
+            <p style="font-size: 0.86rem; color: #94a3b8; line-height: 1.6;">
+              Direct flight connections from Chennai, Bengaluru, Mumbai, Hyderabad, New Delhi, and Colombo. Ola/Uber and pre-paid airport taxis provide hassle-free direct transit via Madurai Ring Road.
+            </p>
+          </div>
+
+          <div class="card-high-gloss p-6" style="background: rgba(14, 20, 38, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 24px;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--gold-bright); display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+              🚆
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px;">Madurai Junction (MDU)</h3>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-bright); font-weight: 700; display: block; margin-bottom: 10px;">9 KM · ~20 MINS</span>
+            <p style="font-size: 0.86rem; color: #94a3b8; line-height: 1.6;">
+              Major railway junction with daily express and Vande Bharat connectivity from across India. Auto rickshaws and app cabs are available 24/7 right outside the main railway concourse.
+            </p>
+          </div>
+
+          <div class="card-high-gloss p-6" style="background: rgba(14, 20, 38, 0.7); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 24px;">
+            <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--emerald-primary); display: flex; align-items: center; justify-content: center; margin-bottom: 14px;">
+              🚌
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-bottom: 6px;">MGR Bus Stand (Mattuthavani)</h3>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--emerald-primary); font-weight: 700; display: block; margin-bottom: 10px;">8 KM · ~15 MINS</span>
+            <p style="font-size: 0.86rem; color: #94a3b8; line-height: 1.6;">
+              Central inter-state bus terminus with SETC and private omnibus services. Regular city buses (Lines 10, 75, Ring Road routes) stop directly at the VCET Viraganoor Ring Road gate.
+            </p>
+          </div>
+        </div>
+
+        <!-- Embedded Dark Mode Map -->
+        <div style="border-radius: 20px; overflow: hidden; border: 1px solid rgba(0, 240, 255, 0.3); box-shadow: 0 20px 50px rgba(0,0,0,0.6); position: relative; height: 400px; background: #070a14;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.5097486842777!2d78.1738993!3d9.89388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c50406fc2889%3A0xbcf045437d0db4d0!2sVelammal%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(120%);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="VCET Madurai Campus Map Location">
+          </iframe>
+          <!-- Floating Coordinates Badge -->
+          <div style="position: absolute; bottom: 20px; left: 20px; background: rgba(9, 14, 28, 0.9); border: 1px solid var(--cyan-primary); padding: 10px 18px; border-radius: 12px; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 8px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--cyan-primary); box-shadow: 0 0 10px var(--cyan-primary);"></span>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: #ffffff; font-weight: 700;">GPS: 9.89388° N, 78.176088° E · VCET IT Complex</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer-section" id="contact" role="contentinfo">
+    <div class="container footer-top-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-lockup">
+          <div class="logo-symbol vcet-emblem-wrap">
+            <img src="vcet-logo.png" alt="VCET Emblem" class="vcet-brand-img">
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">HACKSPRINT<span class="brand-year">'26</span></span>
+            <span class="brand-sub">VCET · DEPT OF IT</span>
+          </div>
+        </div>
+        <p class="footer-bio">
+          Velammal College of Engineering & Technology (Autonomous), Madurai. National 24-Hour Agentic AI Hackathon shaping next-generation autonomous software systems.
+        </p>
+        <div class="accreditation-footer-pill">
+          <span>NAAC 'A' ACCREDITED</span>
+          <span class="dot-sep">·</span>
+          <span>NBA ACCREDITED IT DEPT</span>
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-links">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="tracks.html">Agentic AI Tracks</a></li>
+          <li><a href="schedule.html">24H Schedule</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="https://forms.gle/RZVStZXULViDNjPQA" target="_blank" rel="noopener noreferrer">Register Team</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-contact">
+        <h4 class="footer-heading">Organizing Desk</h4>
+        <ul class="footer-contact-list">
+          <li class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-text">
+              <span class="contact-sub">Venue</span>
+              <p>Department of Information Technology, VCET, Madurai - 625 009, Tamil Nadu</p>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-text">
+              <span class="contact-sub">Official Email</span>
+              <a href="mailto:hacksprint26@gmail.com">hacksprint26@gmail.com</a>
+            </div>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon pulse-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-text">
+              <span class="contact-sub">Helpdesk Coordinator</span>
+              <a href="tel:+919944122667">+91 99441 22667</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-subscribe">
+        <h4 class="footer-heading">Stay Updated</h4>
+        <p class="footer-sub-text">
+          Receive agentic track updates, tool drop announcements, and problem bulletins. Zero spam.
+        </p>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
+          <div class="input-wrapper">
+            <input type="email" id="newsletter-email" placeholder="your.handle@domain.com" required aria-label="Email for newsletter">
+          </div>
+          <button type="submit" class="btn-pill-gold btn-newsletter" id="btn-subscribe">
+            <span>Subscribe</span>
+          </button>
+        </form>
+        <div class="newsletter-feedback" id="newsletter-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Legal Bar -->
+    <div class="container footer-bottom-bar">
+      <div class="bottom-legal">
+        <p>© 2026 HackSprint. Organized by Department of Information Technology, VCET.</p>
+        <span class="legal-separator">·</span>
+        <a href="faq.html" class="legal-link">Rules & Code of Conduct</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('contact-form-feedback');
+      const name = document.getElementById('contact-name').value;
+      feedback.style.display = 'block';
+      feedback.style.background = 'rgba(16, 185, 129, 0.15)';
+      feedback.style.border = '1px solid #10b981';
+      feedback.style.color = '#34d399';
+      feedback.innerHTML = `✓ Transmission dispatched successfully, ${name}! Reference #COMM-${Math.floor(1000 + Math.random() * 9000)}. Our committee will reply to your registered email shortly.`;
+      document.getElementById('contact-transmission-form').reset();
+    }
+  </script>
+</body>
+</html>
