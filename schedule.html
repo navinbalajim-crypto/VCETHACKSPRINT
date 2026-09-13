@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
         </div>
         <div class="brand-text">
           <span class="brand-inst">VELAMMAL COLLEGE OF ENGINEERING &amp; TECHNOLOGY</span>
-          <span class="brand-dept">DEPARTMENT OF INFORMATION TECHNOLOGY</span>
+          <span class="brand-dept"><span class="dept-prefix">DEPARTMENT OF</span> <span class="dept-name">INFORMATION TECHNOLOGY</span></span>
         </div>
       </a>
 
@@ -308,9 +308,12 @@
         <p class="footer-sub-text">
           Receive agentic track updates, tool drop announcements, and problem bulletins. Zero spam.
         </p>
-        <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
+        <form class="newsletter-form" id="newsletter-form" action="https://formsubmit.co/0ed0b155382f669d131a5e78e0a83bd9" method="POST">
+          <input type="hidden" name="_subject" value="HackSprint '26: New Newsletter Subscriber">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="input-wrapper">
-            <input type="email" id="newsletter-email" placeholder="your.handle@domain.com" required aria-label="Email for newsletter">
+            <input type="email" id="newsletter-email" name="subscriber_email" placeholder="your.handle@domain.com" required aria-label="Email for newsletter">
           </div>
           <button type="submit" class="btn-pill-gold btn-newsletter" id="btn-subscribe">
             <span>Subscribe</span>

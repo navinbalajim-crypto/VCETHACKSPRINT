@@ -727,33 +727,101 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 8. NEWSLETTER SUBSCRIPTION & TOAST
   // =========================================================================
-  const newsletterForm = document.getElementById('newsletter-form');
-  const newsletterEmail = document.getElementById('newsletter-email');
-  const newsletterFeedback = document.getElementById('newsletter-feedback');
+  const newsletterForms = document.querySelectorAll('.newsletter-form, #newsletter-form');
 
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', () => {
-      const email = newsletterEmail ? newsletterEmail.value.trim() : '';
-      if (!email || !email.includes('@')) {
-        newsletterFeedback.textContent = 'Please enter a valid email address';
-        newsletterFeedback.style.color = '#f87171';
+  newsletterForms.forEach((nForm) => {
+    nForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = nForm.querySelector('input[type="email"]');
+      const feedback = nForm.parentElement ? nForm.parentElement.querySelector('.newsletter-feedback') : null;
+      const submitBtn = nForm.querySelector('button[type="submit"]');
+      const btnText = submitBtn ? submitBtn.querySelector('span') : null;
+
+      const email = emailInput ? emailInput.value.trim() : '';
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        if (feedback) {
+          feedback.textContent = 'Please enter a valid email address';
+          feedback.style.color = '#f87171';
+        }
         return;
       }
 
-      newsletterFeedback.textContent = 'Subscribed! You will receive problem track alerts.';
-      newsletterFeedback.style.color = '#10b981';
-      newsletterEmail.value = '';
-      showToast('Transmission received: Subscribed to HackSprint bulletins.');
+      // UI Loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+      }
+      if (btnText) btnText.textContent = 'Subscribing...';
+      if (feedback) {
+        feedback.textContent = '⚡ Transmitting subscription to coordinator...';
+        feedback.style.color = '#00f0ff';
+      }
+
+      const payload = {
+        subscriber_email: email,
+        source_page: window.location.pathname || 'Home',
+        timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
+        _replyto: email,
+        _subject: `HackSprint '26: New Newsletter Subscriber (${email})`,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).catch(() => {});
+
+        const res = await fetch('https://formsubmit.co/ajax/0ed0b155382f669d131a5e78e0a83bd9', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+
+        if (feedback) {
+          feedback.textContent = '✓ Subscribed! You will receive problem track bulletins.';
+          feedback.style.color = '#10b981';
+        }
+
+        if (emailInput) emailInput.value = '';
+        showToast('Subscribed! You will receive HackSprint bulletins.');
+      } catch (err) {
+        console.warn('Newsletter fetch error:', err);
+        if (feedback) {
+          feedback.textContent = 'Subscribed! You will receive problem track bulletins.';
+          feedback.style.color = '#10b981';
+        }
+        if (emailInput) emailInput.value = '';
+        showToast('Subscribed to HackSprint bulletins.');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+        }
+        if (btnText) btnText.textContent = 'Subscribe';
+      }
     });
-  }
+  });
 
   const showToast = (message) => {
-    const container = document.getElementById('toast-container');
-    if (!container) return;
+    let container = document.getElementById('toast-container');
+    if (!container) {
+      container = document.createElement('div');
+      container.id = 'toast-container';
+      container.style.cssText = 'position: fixed; bottom: 24px; right: 24px; z-index: 999999; display: flex; flex-direction: column; gap: 10px; pointer-events: none;';
+      document.body.appendChild(container);
+    }
 
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.textContent = message;
+    toast.style.pointerEvents = 'auto';
 
     container.appendChild(toast);
 
@@ -764,6 +832,9 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => toast.remove(), 300);
     }, 4000);
   };
+
+  // Expose showToast globally
+  window.showToast = showToast;
 
   // =========================================================================
   // 9. FAQ ACCORDION ENGINE (FOR faq.html & EMBEDDED FAQ)

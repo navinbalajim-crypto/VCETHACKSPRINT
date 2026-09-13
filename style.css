@@ -294,7 +294,35 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   width: 100%;
+}
+
+@media (min-width: 1081px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .brand-logo {
+    justify-self: start;
+    flex-shrink: 0;
+  }
+
+  .nav-links-wrapper {
+    justify-self: center;
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto;
+  }
+
+  .nav-actions {
+    justify-self: end;
+    flex-shrink: 0;
+  }
 }
 
 /* Brand Lockup */
@@ -379,15 +407,18 @@ button {
   margin-top: 2px;
 }
 
+.dept-prefix,
+.dept-name {
+  display: inline;
+}
+
 .brand-title {
   display: none;
 }
 
-/* Dead-Center Nav Links with Morphing Indicator */
+/* Centered Nav Links with Morphing Indicator */
 .nav-links-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 9999px;
@@ -2929,8 +2960,12 @@ button {
     font-size: 0.77rem;
   }
   .nav-link {
-    padding: 5px 8px;
-    font-size: 0.78rem;
+    padding: 5px 7px;
+    font-size: 0.77rem;
+  }
+  .btn-pill-gold {
+    padding: 7px 14px;
+    font-size: 0.80rem;
   }
 }
 
@@ -2939,20 +2974,24 @@ button {
     padding: 0 16px;
   }
   .navbar {
-    gap: 10px;
+    gap: 12px;
   }
   .nav-link {
-    padding: 5px 8px;
-    font-size: 0.77rem;
+    padding: 4px 6px;
+    font-size: 0.75rem;
   }
   .brand-inst,
   .brand-dept,
   .brand-title {
+    font-size: 0.74rem;
+  }
+  .btn-pill-gold {
+    padding: 6px 12px;
     font-size: 0.76rem;
   }
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1080px) {
   .navbar-wrapper {
     padding: 10px 0 8px;
     background: rgba(9, 12, 23, 0.95);
@@ -2997,12 +3036,22 @@ button {
   .brand-dept {
     font-size: 0.67rem !important;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
     color: var(--cyan-primary);
     text-transform: uppercase;
-    white-space: nowrap !important; /* Strictly single line on mobile */
+    white-space: normal !important;
     letter-spacing: 0.02em;
-    margin-top: 1px;
+    margin-top: 2px;
+  }
+
+  .dept-prefix {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .dept-name {
+    display: block;
+    white-space: nowrap;
   }
 
   .nav-actions {
@@ -3120,10 +3169,21 @@ button {
   }
 
   .brand-dept {
-    font-size: 0.63rem !important;
-    white-space: nowrap !important;
-    line-height: 1.2;
+    font-size: 0.62rem !important;
+    white-space: normal !important;
+    line-height: 1.25;
     letter-spacing: 0.015em;
+    margin-top: 1px;
+  }
+
+  .dept-prefix {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .dept-name {
+    display: block;
+    white-space: nowrap;
   }
 
   .btn-pill-gold {
@@ -3133,33 +3193,63 @@ button {
 
   .feature-pills-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
     width: 100%;
+    max-width: 100%;
     margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 0;
   }
 
   .feature-pill {
+    min-width: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 6px;
+    row-gap: 2px;
     padding: 8px 10px;
-    gap: 8px;
     border-radius: 10px;
+    align-items: center;
+    background: rgba(14, 20, 38, 0.75);
   }
 
   .pill-icon {
-    width: 18px;
-    height: 18px;
+    grid-row: 1;
+    grid-column: 1;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .pill-title {
-    font-size: 0.78rem;
-    white-space: nowrap;
-  }
-
-  .pill-detail {
-    font-size: 0.68rem;
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 0.75rem;
+    font-weight: 700;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+
+  .pill-detail {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    font-size: 0.64rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-left: none !important;
+    padding-left: 0 !important;
+    color: #94a3b8;
+    line-height: 1.2;
   }
 
   .flip-clock-grid {
@@ -3836,6 +3926,71 @@ button {
   line-height: 1.6;
 }
 
+/* Mobile View: High-Visibility Timeline Line & Glowing Node Circles */
+@media (max-width: 768px) {
+  .schedule-container {
+    padding: 30px 16px 80px;
+    box-sizing: border-box;
+  }
+
+  .schedule-timeline {
+    margin-left: 20px;
+    padding-left: 26px;
+    border-left: 3px solid var(--cyan-primary);
+    box-shadow: -2px 0 14px rgba(0, 240, 255, 0.6);
+  }
+
+  .timeline-event-card {
+    padding: 18px 16px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+  }
+
+  .timeline-node {
+    left: -37px;
+    top: 22px;
+    width: 22px;
+    height: 22px;
+    background: #00f0ff !important;
+    border: 3px solid #030611 !important;
+    box-shadow: 0 0 0 2px var(--cyan-primary), 0 0 16px var(--cyan-primary) !important;
+  }
+
+  .timeline-event-card.milestone .timeline-node {
+    background: var(--gold-bright) !important;
+    border: 3px solid #030611 !important;
+    box-shadow: 0 0 0 2px var(--gold-bright), 0 0 16px var(--gold-bright) !important;
+  }
+
+  .stepper-timeline {
+    padding-left: 26px;
+    margin-left: 18px;
+    border-left: 3px solid var(--cyan-primary);
+    box-shadow: -2px 0 14px rgba(0, 240, 255, 0.6);
+  }
+
+  .stepper-marker {
+    left: -36px;
+    top: 18px;
+    width: 20px;
+    height: 20px;
+    background: var(--cyan-primary) !important;
+    border: 3px solid #030611 !important;
+    box-shadow: 0 0 0 2px var(--cyan-primary), 0 0 14px var(--cyan-primary) !important;
+  }
+
+  .stepper-item.milestone .stepper-marker {
+    background: var(--pink-primary) !important;
+    border: 3px solid #030611 !important;
+    box-shadow: 0 0 0 2px var(--pink-primary), 0 0 14px var(--pink-primary) !important;
+  }
+
+  .stepper-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+}
+
 /* Full Registration Page Stepper (register.html) */
 .register-page-wrapper {
   padding: 60px 0 100px;
@@ -3966,10 +4121,60 @@ button {
 /* Official Partners Showcase (sponsors.html) */
 .two-partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
   max-width: 980px;
   margin: 0 auto;
+}
+
+/* Contact Page Layout & Responsive Grid */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.conveners-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 880px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .two-partners-grid {
+    gap: 20px;
+  }
+  .partner-card-spotlight {
+    padding: 24px 16px !important;
+    border-radius: 18px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-form-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .conveners-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .partner-card-spotlight {

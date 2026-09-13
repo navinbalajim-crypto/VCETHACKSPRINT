@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
         </div>
         <div class="brand-text">
           <span class="brand-inst">VELAMMAL COLLEGE OF ENGINEERING &amp; TECHNOLOGY</span>
-          <span class="brand-dept">DEPARTMENT OF INFORMATION TECHNOLOGY</span>
+          <span class="brand-dept"><span class="dept-prefix">DEPARTMENT OF</span> <span class="dept-name">INFORMATION TECHNOLOGY</span></span>
         </div>
       </a>
 
@@ -96,7 +96,7 @@
 
     <!-- Content Grid Section -->
     <section class="container" style="padding: 40px 0 80px;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-bottom: 60px;">
+      <div class="contact-main-grid">
 
         <!-- Left Column: Organizing Directory -->
         <div>
@@ -118,7 +118,7 @@
           </div>
 
           <!-- Tier 2: Conveners (Dr. P. Alli & Dr. R. Kavitha) -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+          <div class="conveners-grid">
             <div class="card-high-gloss" style="background: rgba(14, 20, 38, 0.8); border: 1px solid rgba(0, 240, 255, 0.3); border-radius: 14px; padding: 14px; display: flex; gap: 12px; align-items: center;">
               <div style="width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--cyan-primary); overflow: hidden; flex-shrink: 0;">
                 <img src="assets/dr_p_alli.jpeg" alt="Dr. P. Alli" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
@@ -193,7 +193,7 @@
           <!-- Direct Inquiries Card -->
           <div style="padding: 18px; background: rgba(0, 240, 255, 0.04); border: 1px dashed rgba(0, 240, 255, 0.3); border-radius: 16px;">
             <div style="font-size: 0.84rem; color: #94a3b8; line-height: 1.6;">
-              <div>📧 Email: <a href="mailto:hacksprint26@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">hacksprint26@gmail.com</a></div>
+              <div>📧 Official Email: <a href="mailto:hacksprint26@gmail.com" style="color: var(--cyan-primary); text-decoration: none;">hacksprint26@gmail.com</a></div>
               <div>📞 Helpline: <a href="tel:+919944122667" style="color: var(--cyan-primary); text-decoration: none;">+91 99441 22667</a></div>
               <div>🌐 Website: <a href="https://www.vcet.ac.in" target="_blank" rel="noopener noreferrer" style="color: var(--cyan-primary); text-decoration: none;">www.vcet.ac.in</a></div>
               <div>📍 Address: Velammal College of Engineering and Technology, Madurai–Rameshwaram Highway, Viraganoor, Madurai – 625 009, Tamil Nadu</div>
@@ -203,53 +203,65 @@
 
         <!-- Right Column: Interactive Dispatch Message Form -->
         <div>
-          <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 24px; display: flex; align-items: center; gap: 10px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Send an Official Transmission
-          </h2>
+          <div style="margin-bottom: 24px;">
+            <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; display: flex; align-items: center; gap: 10px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Send an Official Transmission
+            </h2>
+            <div style="font-size: 0.8rem; color: #94a3b8; display: flex; align-items: center; gap: 6px;">
+              <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--emerald-primary);"></span>
+              <span>Encrypted dispatch directly routed to steering committee desk</span>
+            </div>
+          </div>
 
           <div class="card-high-gloss" style="background: rgba(14, 20, 38, 0.8); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 20px; padding: 32px;">
-            <form id="contact-transmission-form" onsubmit="handleContactSubmit(event)">
+            <form id="contact-transmission-form" action="https://formsubmit.co/0ed0b155382f669d131a5e78e0a83bd9" method="POST" onsubmit="handleContactSubmit(event)">
+              <!-- FormSubmit Configuration Fields -->
+              <input type="hidden" name="_subject" value="New HackSprint '26 Contact Query">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_honey" style="display:none">
+
               <div class="form-group mb-4">
                 <label for="contact-name" class="form-label">Full Name *</label>
-                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Arun Kumar" required>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Arun Kumar" required>
               </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" class="mb-4">
+              <div class="contact-form-row mb-4">
                 <div class="form-group">
                   <label for="contact-email" class="form-label">Email Address *</label>
-                  <input type="email" id="contact-email" class="form-input" placeholder="arun@domain.edu" required>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="arun@domain.edu" required>
                 </div>
                 <div class="form-group">
                   <label for="contact-phone" class="form-label">Phone Number *</label>
-                  <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210" required>
+                  <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="+91 98765 43210" required>
                 </div>
               </div>
 
               <div class="form-group mb-4">
                 <label for="contact-category" class="form-label">Inquiry Category *</label>
-                <select id="contact-category" class="form-input" style="background: #090e1c; color: #ffffff;" required>
-                  <option value="registration">Team Registration & Fee Payment</option>
-                  <option value="tracks">Agentic AI Problem Tracks & Compute</option>
-                  <option value="accommodation">Campus Stay & Overnight Logistics</option>
-                  <option value="sponsorship">Corporate Sponsorship & Recruitment</option>
-                  <option value="other">General Inquiries / Emergency Assistance</option>
+                <select id="contact-category" name="category" class="form-input" style="background: #090e1c; color: #ffffff;" required>
+                  <option value="Team Registration & Fee Payment">Team Registration & Fee Payment</option>
+                  <option value="Agentic AI Problem Tracks & Compute">Agentic AI Problem Tracks & Compute</option>
+                  <option value="Campus Stay & Overnight Logistics">Campus Stay & Overnight Logistics</option>
+                  <option value="Corporate Sponsorship & Recruitment">Corporate Sponsorship & Recruitment</option>
+                  <option value="General Inquiries / Emergency Assistance">General Inquiries / Emergency Assistance</option>
                 </select>
               </div>
 
               <div class="form-group mb-4">
                 <label for="contact-message" class="form-label">Message Dossier *</label>
-                <textarea id="contact-message" class="form-input" rows="4" placeholder="Detail your question or requirement with squad ID if registered..." required></textarea>
+                <textarea id="contact-message" name="message" class="form-input" rows="4" placeholder="Detail your question or requirement with squad ID if registered..." required></textarea>
               </div>
 
-              <button type="submit" class="btn-pill-gold w-full" style="justify-content: center;">
-                <span>Transmit Message to Committee</span>
-                <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+              <button type="submit" id="contact-submit-btn" class="btn-pill-gold w-full" style="justify-content: center;">
+                <span id="contact-submit-btn-text">Transmit Message to Committee</span>
+                <svg id="contact-submit-btn-icon" class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
                   <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
 
-              <div id="contact-form-feedback" style="display: none; margin-top: 16px; padding: 14px; border-radius: 12px; font-family: var(--font-mono); font-size: 0.85rem; text-align: center;"></div>
+              <div id="contact-form-feedback" style="display: none; margin-top: 16px; padding: 14px; border-radius: 12px; font-family: var(--font-mono); font-size: 0.85rem; text-align: center; line-height: 1.5;"></div>
             </form>
           </div>
         </div>
@@ -399,9 +411,12 @@
         <p class="footer-sub-text">
           Receive agentic track updates, tool drop announcements, and problem bulletins. Zero spam.
         </p>
-        <form class="newsletter-form" id="newsletter-form" onsubmit="return false;">
+        <form class="newsletter-form" id="newsletter-form" action="https://formsubmit.co/0ed0b155382f669d131a5e78e0a83bd9" method="POST">
+          <input type="hidden" name="_subject" value="HackSprint '26: New Newsletter Subscriber">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="input-wrapper">
-            <input type="email" id="newsletter-email" placeholder="your.handle@domain.com" required aria-label="Email for newsletter">
+            <input type="email" id="newsletter-email" name="subscriber_email" placeholder="your.handle@domain.com" required aria-label="Email for newsletter">
           </div>
           <button type="submit" class="btn-pill-gold btn-newsletter" id="btn-subscribe">
             <span>Subscribe</span>
@@ -423,16 +438,86 @@
 
   <script src="script.js"></script>
   <script>
-    function handleContactSubmit(e) {
+    async function handleContactSubmit(e) {
       e.preventDefault();
+      const form = document.getElementById('contact-transmission-form');
       const feedback = document.getElementById('contact-form-feedback');
-      const name = document.getElementById('contact-name').value;
+      const submitBtn = document.getElementById('contact-submit-btn');
+      const btnText = document.getElementById('contact-submit-btn-text');
+
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const category = document.getElementById('contact-category').value;
+      const message = document.getElementById('contact-message').value.trim();
+
+      if (!name || !email || !message) return;
+
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      submitBtn.style.cursor = 'wait';
+      btnText.textContent = 'Transmitting Message...';
+
       feedback.style.display = 'block';
-      feedback.style.background = 'rgba(16, 185, 129, 0.15)';
-      feedback.style.border = '1px solid #10b981';
-      feedback.style.color = '#34d399';
-      feedback.innerHTML = `✓ Transmission dispatched successfully, ${name}! Reference #COMM-${Math.floor(1000 + Math.random() * 9000)}. Our committee will reply to your registered email shortly.`;
-      document.getElementById('contact-transmission-form').reset();
+      feedback.style.background = 'rgba(0, 240, 255, 0.08)';
+      feedback.style.border = '1px solid var(--cyan-primary)';
+      feedback.style.color = 'var(--cyan-primary)';
+      feedback.innerHTML = '⚡ Transmitting query to committee desk...';
+
+      const payload = {
+        name: name,
+        email: email,
+        phone: phone,
+        category: category,
+        message: message,
+        _replyto: email,
+        _subject: "New HackSprint '26 Contact Query",
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/0ed0b155382f669d131a5e78e0a83bd9', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (data.success === 'false' || data.success === false) {
+          throw new Error(data.message || 'Submission failed');
+        }
+
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(16, 185, 129, 0.12)';
+        feedback.style.border = '1px solid var(--emerald-primary)';
+        feedback.style.color = 'var(--emerald-primary)';
+        feedback.innerHTML = `✓ Transmission received, ${name}! Your query dossier has been dispatched to the committee desk.`;
+
+        form.reset();
+        if (typeof showToast === 'function') {
+          showToast('Transmission dispatched to committee desk.');
+        }
+      } catch (err) {
+        console.warn('FormSubmit transmission error:', err);
+        feedback.style.display = 'block';
+        feedback.style.background = 'rgba(239, 68, 68, 0.12)';
+        feedback.style.border = '1px solid #ef4444';
+        feedback.style.color = '#f87171';
+        feedback.innerHTML = '⚠️ Something went wrong — please email us directly at <a href="mailto:hacksprint26@gmail.com" style="color: var(--cyan-primary); text-decoration: underline;">hacksprint26@gmail.com</a>.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+        btnText.textContent = 'Transmit Message to Committee';
+      }
     }
   </script>
 </body>
