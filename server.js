@@ -65,7 +65,7 @@ const server = http.createServer((req, res) => {
 
   // Direct redirection for decommissioned pages
   if (reqPath === '/register.html' || reqPath === '/register') {
-    res.writeHead(302, { 'Location': 'https://forms.gle/RZVStZXULViDNjPQA' });
+    res.writeHead(302, { 'Location': 'https://forms.gle/fFcbTWZkEgeTHq1X8' });
     res.end();
     return;
   }
