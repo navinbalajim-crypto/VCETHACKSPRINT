@@ -465,13 +465,13 @@
       feedback.innerHTML = '⚡ Transmitting query to committee desk...';
 
       const payload = {
-        name: name,
-        email: email,
-        phone: phone,
-        category: category,
-        message: message,
+        "Applicant Name": name,
+        "Applicant Email": email,
+        "Phone Number": phone,
+        "Inquiry Category": category,
+        "User Message Dossier": message,
         _replyto: email,
-        _subject: "New HackSprint '26 Contact Query",
+        _subject: `HackSprint Query from ${name} [${category}]`,
         _template: 'table',
         _captcha: 'false'
       };
