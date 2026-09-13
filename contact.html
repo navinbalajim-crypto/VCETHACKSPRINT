@@ -491,6 +491,17 @@
         }
 
         const data = await response.json();
+
+        if (data && data.message && data.message.includes('Activation')) {
+          feedback.style.display = 'block';
+          feedback.style.background = 'rgba(245, 158, 11, 0.12)';
+          feedback.style.border = '1px solid var(--gold-bright)';
+          feedback.style.color = '#fbbf24';
+          feedback.innerHTML = `✓ Transmission initiated, ${name}!<br>FormSubmit sent an activation link to the committee inbox to authorize this deployed domain. Please click 'Activate Form' once in your inbox.`;
+          form.reset();
+          return;
+        }
+
         if (data.success === 'false' || data.success === false) {
           throw new Error(data.message || 'Submission failed');
         }
