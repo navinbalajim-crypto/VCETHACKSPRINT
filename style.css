@@ -75,6 +75,19 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+section[id], header[id], footer[id] {
+  scroll-margin-top: 130px;
+}
+
+@media (max-width: 1080px) {
+  html {
+    scroll-padding-top: 140px;
+  }
+  section[id], header[id], footer[id] {
+    scroll-margin-top: 155px;
+  }
+}
+
 body {
   position: relative;
   background: radial-gradient(circle at 50% 0%, #111833 0%, var(--bg-darkest) 75%);
@@ -517,10 +530,12 @@ button {
   transform: translateY(-120%);
   transition: transform 0.35s ease;
   z-index: 999;
+  pointer-events: none;
 }
 
 .mobile-nav-drawer.open {
   transform: translateY(0);
+  pointer-events: auto;
 }
 
 .mobile-nav-inner {
@@ -3808,7 +3823,7 @@ button {
 }
 
 .faq-accordion-item.active .faq-answer-pane {
-  max-height: 400px;
+  max-height: 1200px;
   padding: 0 24px 20px;
 }
 
@@ -4772,6 +4787,24 @@ button {
   gap: 24px;
 }
 
+.committee-grid-patron {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.committee-grid-patron .comm-member-card {
+  width: 100%;
+  max-width: 640px;
+}
+
+.committee-grid-conveners {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
 .committee-grid-coords {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -4802,6 +4835,13 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  .committee-grid-conveners {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 640px) {
   .committee-grid-coords {
     grid-template-columns: 1fr;
@@ -4810,6 +4850,29 @@ button {
   .committee-grid-students .comm-member-card {
     flex: 0 0 100%;
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .comm-member-card {
+    padding: 16px 14px !important;
+    gap: 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .comm-avatar-frame {
+    width: 58px !important;
+    height: 58px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .patron-card .comm-avatar-frame {
+    width: 68px !important;
+    height: 68px !important;
+  }
+
+  .comm-member-name {
+    font-size: 1.05rem !important;
   }
 }
 
@@ -5137,4 +5200,50 @@ button {
   color: #94a3b8;
   line-height: 1.6;
 }
+
+/* Universal Responsive Grid, Blowout & Padding Protections */
+@media (max-width: 768px) {
+  .agentic-vectors-grid,
+  .agentic-ps-grid,
+  .vm-cards-grid,
+  .committee-grid-chief,
+  .partners-tier-grid,
+  .theme-pillars-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .theme-manifesto-card {
+    padding: 24px 16px !important;
+  }
+
+  .agentic-ps-card,
+  .agentic-vector-card,
+  .vm-card {
+    padding: 24px 18px !important;
+  }
+
+  .official-partners-card {
+    padding: 24px 16px !important;
+  }
+
+  .official-sponsor-banner-frame {
+    padding: 18px 12px !important;
+  }
+
+  .countdown-venue-support {
+    font-size: 0.74rem;
+    padding: 10px 14px;
+  }
+
+  .event-meta-banner {
+    padding: 18px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .conveners-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 
