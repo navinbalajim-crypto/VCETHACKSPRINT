@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Font Comparison</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,800;1,900&family=Chakra+Petch:ital,wght@1,700&family=Exo+2:ital,wght@1,800;1,900&family=Kanit:ital,wght@1,800;1,900&family=Montserrat:ital,wght@1,800;1,900&family=Orbitron:wght@800;900&family=Prompt:ital,wght@1,800;1,900&family=Racing+Sans+One&family=Rajdhani:wght@700&family=Russo+One&family=Saira:ital,wght@1,800;1,900&family=Saira+Condensed:ital,wght@1,800;1,900&family=Saira+Semi+Condensed:ital,wght@1,800;1,900&family=Titillium+Web:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
+<style>
+  body {
+    background: #ffffff;
+    color: #000;
+    font-family: sans-serif;
+    padding: 30px;
+  }
+  .original {
+    margin-bottom: 30px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+  }
+  .original img {
+    height: 70px;
+  }
+  .font-test-row {
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+  }
+  .font-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 6px;
+  }
+  .sample {
+    font-size: 55px;
+    line-height: 1;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  .sample .hack {
+    color: #0c182b;
+  }
+  .sample .sprint {
+    background: linear-gradient(180deg, #1978ff 0%, #0052cc 60%, #003db3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .kanit-900 { font-family: 'Kanit', sans-serif; font-weight: 900; font-style: italic; }
+  .kanit-800 { font-family: 'Kanit', sans-serif; font-weight: 800; font-style: italic; }
+  .saira-900 { font-family: 'Saira', sans-serif; font-weight: 900; font-style: italic; }
+  .saira-cond-900 { font-family: 'Saira Semi Condensed', sans-serif; font-weight: 900; font-style: italic; }
+  .exo-900 { font-family: 'Exo 2', sans-serif; font-weight: 900; font-style: italic; }
+  .barlow-900 { font-family: 'Barlow', sans-serif; font-weight: 900; font-style: italic; }
+  .montserrat-900 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-style: italic; }
+  .chakra-700 { font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-style: italic; }
+  .prompt-900 { font-family: 'Prompt', sans-serif; font-weight: 900; font-style: italic; }
+  .russo { font-family: 'Russo One', sans-serif; font-style: italic; transform: skewX(-12deg); display: inline-block; }
+  .racing { font-family: 'Racing Sans One', sans-serif; }
+  .titillium-900 { font-family: 'Titillium Web', sans-serif; font-weight: 900; font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="original">
+    <div style="font-size:12px; margin-bottom: 4px; color: #888;">ORIGINAL IMAGE:</div>
+    <img src="test_original.jpg" alt="original">
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">1. Kanit Black Italic (900)</div>
+    <div class="sample kanit-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">2. Saira Black Italic (900)</div>
+    <div class="sample saira-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">3. Saira Semi Condensed Black Italic (900)</div>
+    <div class="sample saira-cond-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">4. Exo 2 Black Italic (900)</div>
+    <div class="sample exo-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">5. Montserrat Black Italic (900)</div>
+    <div class="sample montserrat-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">6. Barlow Black Italic (900)</div>
+    <div class="sample barlow-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">7. Prompt Black Italic (900)</div>
+    <div class="sample prompt-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">8. Russo One (with italic slant)</div>
+    <div class="sample russo"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+
+  <div class="font-test-row">
+    <div class="font-name">9. Titillium Web Black Italic (900)</div>
+    <div class="sample titillium-900"><span class="hack">HACK</span><span class="sprint">SPRINT'26</span></div>
+  </div>
+</body>
+</html>

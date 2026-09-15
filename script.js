@@ -873,9 +873,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filter = tab.getAttribute('data-filter');
       scheduleEvents.forEach((ev) => {
+        const cats = (ev.getAttribute('data-category') || '').trim().split(/\s+/);
+        const days = (ev.getAttribute('data-day') || '').trim().split(/\s+/);
+
         if (!filter || filter === 'all') {
           ev.style.display = 'block';
-        } else if (ev.getAttribute('data-category') === filter || ev.getAttribute('data-day') === filter) {
+        } else if (cats.includes(filter) || days.includes(filter)) {
           ev.style.display = 'block';
         } else {
           ev.style.display = 'none';
