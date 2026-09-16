@@ -179,9 +179,30 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentActive) updateMorphPill(currentActive);
     });
     link.addEventListener('click', (e) => {
-      navLinks.forEach((l) => l.classList.remove('active'));
-      link.classList.add('active');
-      updateMorphPill(link);
+      const href = link.getAttribute('href') || '';
+      if (href.startsWith('#') || href.startsWith('index.html#')) {
+        const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
+        const targetEl = hash ? document.querySelector(hash) : null;
+        if (targetEl) {
+          e.preventDefault();
+          const navHeight = navHeader ? navHeader.offsetHeight : 80;
+          const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight + 4;
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+          if (history.pushState) {
+            history.pushState(null, null, hash);
+          }
+          navLinks.forEach((l) => l.classList.remove('active'));
+          link.classList.add('active');
+          updateMorphPill(link);
+        }
+      } else {
+        navLinks.forEach((l) => l.classList.remove('active'));
+        link.classList.add('active');
+        updateMorphPill(link);
+      }
     });
   });
 
@@ -201,24 +222,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Active link tracking
         let currentSectionId = '';
+        const navHeight = navHeader ? navHeader.offsetHeight : 80;
+        const scrollPos = scrollY + navHeight + 50;
+
         sections.forEach((sec) => {
-          const top = sec.offsetTop - 160;
+          const secId = sec.getAttribute('id');
+          if (!secId || secId === 'countdown') return;
+          const top = sec.offsetTop;
           const height = sec.offsetHeight;
-          if (scrollY >= top && scrollY < top + height) {
-            currentSectionId = sec.getAttribute('id');
+          if (scrollPos >= top && scrollPos < top + height) {
+            currentSectionId = secId;
           }
         });
 
+        // If scrolled near bottom of page, highlight the last section
+        if ((window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 60)) {
+          const lastSec = sections[sections.length - 1];
+          if (lastSec && lastSec.getAttribute('id')) {
+            currentSectionId = lastSec.getAttribute('id');
+          }
+        }
+
         if (currentSectionId) {
-          navLinks.forEach((link) => {
-            if (link.getAttribute('data-section') === currentSectionId) {
-              if (!link.classList.contains('active')) {
-                navLinks.forEach((l) => l.classList.remove('active'));
-                link.classList.add('active');
-                updateMorphPill(link);
-              }
-            }
+          const targetLink = navLinks.find((link) => {
+            const dataSec = link.getAttribute('data-section');
+            const href = link.getAttribute('href') || '';
+            const hash = href.includes('#') ? href.substring(href.indexOf('#') + 1) : '';
+            return dataSec === currentSectionId || hash === currentSectionId;
           });
+
+          if (targetLink && !targetLink.classList.contains('active')) {
+            navLinks.forEach((l) => l.classList.remove('active'));
+            targetLink.classList.add('active');
+            updateMorphPill(targetLink);
+          }
         }
 
         ticking = false;
@@ -244,8 +281,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     mobileLinks.forEach((ml) => {
-      ml.addEventListener('click', () => {
+      ml.addEventListener('click', (e) => {
         mobileDrawer.classList.remove('open');
+        const href = ml.getAttribute('href') || '';
+        if (href.startsWith('#') || href.startsWith('index.html#')) {
+          const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
+          const targetEl = hash ? document.querySelector(hash) : null;
+          if (targetEl) {
+            e.preventDefault();
+            const navHeight = navHeader ? navHeader.offsetHeight : 80;
+            const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight + 4;
+            window.scrollTo({
+              top: targetY,
+              behavior: 'smooth'
+            });
+            if (history.pushState) {
+              history.pushState(null, null, hash);
+            }
+          }
+        }
       });
     });
   }
