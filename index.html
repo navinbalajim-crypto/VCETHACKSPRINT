@@ -53,6 +53,9 @@
             <a href="#theme-showcase" class="nav-link" data-section="theme-showcase">Theme</a>
           </li>
           <li class="nav-item">
+            <a href="#problem-statements" class="nav-link" id="nav-link-challenges" data-section="problem-statements">Challenges</a>
+          </li>
+          <li class="nav-item">
             <a href="#schedule" class="nav-link" data-section="schedule">Schedule</a>
           </li>
           <li class="nav-item">
@@ -77,9 +80,13 @@
 
       <!-- Right Action CTA -->
       <div class="nav-actions">
+        <div class="nav-status-badge" id="nav-status-badge" aria-label="Hackathon Status">
+          <span class="nav-status-dot pulse-amber"></span>
+          <span class="nav-status-text">COUNTDOWN ACTIVE</span>
+        </div>
         <a href="https://forms.gle/fFcbTWZkEgeTHq1X8" target="_blank" rel="noopener noreferrer" class="btn-pill-gold"
-          id="btn-open-register">
-          <span>Register Now</span>
+          id="btn-open-register" aria-label="Registration Closed">
+          <span>Registration Closed</span>
           <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
             <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -100,6 +107,7 @@
     <div class="mobile-nav-inner">
       <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
       <a href="#theme-showcase" class="mobile-nav-link">Theme (Agentic AI)</a>
+      <a href="#problem-statements" class="mobile-nav-link" id="mobile-nav-challenges" data-section="problem-statements">Challenges (60 PS)</a>
       <a href="#schedule" class="mobile-nav-link">24H Schedule</a>
       <a href="#committee" class="mobile-nav-link">Committee</a>
       <a href="#about" class="mobile-nav-link">About VCET</a>
@@ -107,8 +115,8 @@
       <a href="faq.html" class="mobile-nav-link">FAQs</a>
       <a href="contact.html" class="mobile-nav-link">Contact</a>
       <a href="https://forms.gle/fFcbTWZkEgeTHq1X8" target="_blank" rel="noopener noreferrer"
-        class="btn-pill-gold w-full mt-4" id="btn-mobile-register">
-        <span>Register Squad →</span>
+        class="btn-pill-gold w-full mt-4" id="btn-mobile-register" aria-label="Registration Closed">
+        <span>Registration Closed</span>
       </a>
     </div>
   </div>
@@ -361,11 +369,11 @@
                 </g>
               </g>
 
-              <!-- Synchronized "REGISTER NOW" Callout: Positioned directly below silhouette, above desk line -->
+              <!-- Synchronized "REGISTRATION CLOSED" Callout: Positioned directly below silhouette, above desk line -->
               <g class="coder-register-callout-group">
                 <a href="https://forms.gle/fFcbTWZkEgeTHq1X8" target="_blank" rel="noopener noreferrer"
-                  class="coder-register-anchor" aria-label="Register Now">
-                  <text class="coder-register-text" x="450" y="328" text-anchor="middle">REGISTER NOW</text>
+                  class="coder-register-anchor" aria-label="Registration Closed">
+                  <text class="coder-register-text" x="450" y="328" text-anchor="middle">REGISTRATION CLOSED</text>
                 </a>
               </g>
             </g>
@@ -391,6 +399,274 @@
     <section id="countdown" class="countdown-contrast-panel">
       <!-- Soft Ambient Top Glow -->
       <div class="panel-top-glow" aria-hidden="true"></div>
+
+      <!-- Idle Orbit-Ring Backdrop for Countdown -->
+      <div class="orbit-ring-system orbit-ring-backdrop" id="orbit-ring-backdrop" aria-hidden="true">
+        <svg class="orbit-ring-svg" viewBox="-500 -500 1000 1000" preserveAspectRatio="xMidYMid meet">
+          <!-- 1. Outer Cyan Ring (r=350) -->
+          <g class="orbit-group ring-outer-group">
+            <circle class="orbit-circle ring-outer" cx="0" cy="0" r="350" stroke="#00f0ff" stroke-width="1.8" stroke-dasharray="22 10 4 10" fill="none" opacity="0.65" filter="url(#glow-cyan)" />
+            <circle cx="350" cy="0" r="4.5" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="314" cy="154" r="3" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="214" cy="276" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="78" cy="341" r="4" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-78" cy="341" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-214" cy="276" r="3.5" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-314" cy="154" r="4" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-350" cy="0" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-314" cy="-154" r="4" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-214" cy="-276" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-78" cy="-341" r="3.5" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="78" cy="-341" r="4" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="214" cy="-276" r="3" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="314" cy="-154" r="3.5" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+          </g>
+
+          <!-- 2. Middle Magenta Ring (r=250) -->
+          <g class="orbit-group ring-middle-group">
+            <circle class="orbit-circle ring-middle" cx="0" cy="0" r="250" stroke="#d946ef" stroke-width="1.8" stroke-dasharray="14 8" fill="none" opacity="0.65" filter="url(#glow-magenta)" />
+            <circle cx="241" cy="65" r="4" fill="#d946ef" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="177" cy="177" r="3" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="65" cy="241" r="3.5" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-65" cy="241" r="4" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-177" cy="177" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-241" cy="65" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-241" cy="-65" r="4" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-177" cy="-177" r="3" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-65" cy="-241" r="3.5" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="65" cy="-241" r="4" fill="#d946ef" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="177" cy="-177" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="241" cy="-65" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+          </g>
+
+          <!-- 3. Inner Amber Ring (r=150) -->
+          <g class="orbit-group ring-inner-group">
+            <circle class="orbit-circle ring-inner" cx="0" cy="0" r="150" stroke="#fbbf24" stroke-width="1.8" stroke-dasharray="8 6" fill="none" opacity="0.75" filter="url(#glow-gold)" />
+            <circle cx="150" cy="0" r="4" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="121" cy="88" r="3" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="46" cy="143" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-51" cy="141" r="3" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-123" cy="86" r="4" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-150" cy="0" r="3.5" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-117" cy="-93" r="3" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="-39" cy="-145" r="4" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="51" cy="-141" r="3" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+            <circle cx="123" cy="-86" r="3.5" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+          </g>
+
+          <!-- 4. Satellite Dot-Clusters with Horizontal Gradient Trails -->
+          <g class="orbit-satellites">
+            <!-- Cluster 1: Top-Left (Cyan Accent) -->
+            <g class="satellite-cluster cluster-cyan" transform="translate(-380, -210)">
+              <line x1="0" y1="0" x2="-180" y2="0" stroke="url(#trail-cyan-left)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+              <circle cx="0" cy="0" r="4.5" fill="#00f0ff" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="-14" cy="-7" r="3" fill="#ffffff" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="10" cy="-10" r="2.5" fill="#00f0ff" class="satellite-dot" />
+            </g>
+
+            <!-- Cluster 2: Top-Right (Amber / Gold Accent) -->
+            <g class="satellite-cluster cluster-gold" transform="translate(370, -220)">
+              <line x1="0" y1="0" x2="180" y2="0" stroke="url(#trail-gold-right)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+              <circle cx="0" cy="0" r="4.5" fill="#fbbf24" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="14" cy="-8" r="3" fill="#ffffff" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="-10" cy="-12" r="2.5" fill="#fbbf24" class="satellite-dot" />
+            </g>
+
+            <!-- Cluster 3: Bottom-Right (Magenta Accent) -->
+            <g class="satellite-cluster cluster-magenta" transform="translate(390, 190)">
+              <line x1="0" y1="0" x2="180" y2="0" stroke="url(#trail-magenta-right)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+              <circle cx="0" cy="0" r="4.5" fill="#d946ef" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="15" cy="8" r="3" fill="#ff007a" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="-10" cy="10" r="2.5" fill="#ffffff" class="satellite-dot" />
+            </g>
+
+            <!-- Cluster 4: Bottom-Left (Hot-Pink Accent) -->
+            <g class="satellite-cluster cluster-pink" transform="translate(-370, 200)">
+              <line x1="0" y1="0" x2="-180" y2="0" stroke="url(#trail-pink-left)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+              <circle cx="0" cy="0" r="4.5" fill="#ff1493" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="-14" cy="8" r="3" fill="#ffffff" filter="url(#glow-dot)" class="satellite-dot" />
+              <circle cx="10" cy="10" r="2.5" fill="#ff007a" class="satellite-dot" />
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Celebration Energy Pulse & Keynote Reveal Overlay -->
+      <div class="celebration-overlay" id="celebration-overlay" aria-hidden="true">
+        <!-- Deepening Background Gradient Layer (teal -> purple -> near-black) -->
+        <div class="celebration-deepening-bg" id="celeb-deepening-bg" aria-hidden="true"></div>
+
+        <!-- 0.20s White Flash Screen Overlay -->
+        <div id="celebration-flash-overlay" class="celebration-flash-overlay" aria-hidden="true"></div>
+        <!-- 0.35s Center Shockwaves -->
+        <div class="celebration-shockwave-pulse" id="zero-shockwave-ring"></div>
+        <div class="celebration-shockwave-pulse secondary" id="zero-shockwave-ring-2"></div>
+        <!-- Horizontal Neon Streaks -->
+        <div class="neon-streak streak-1"></div>
+        <div class="neon-streak streak-2"></div>
+
+        <!-- Orbit-Ring "Circle of Celebration" System -->
+        <div class="orbit-ring-system" id="orbit-ring-celebration" aria-hidden="true">
+          <svg class="orbit-ring-svg" viewBox="-500 -500 1000 1000" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <filter id="glow-cyan" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <filter id="glow-magenta" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <filter id="glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <filter id="glow-dot" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <linearGradient id="trail-cyan-left" x1="100%" y1="0%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="trail-gold-right" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="trail-magenta-right" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#d946ef" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#d946ef" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="trail-pink-left" x1="100%" y1="0%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#ff1493" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#ff1493" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+
+            <!-- 1. Outer Cyan Ring (r=350) -->
+            <g class="orbit-group ring-outer-group">
+              <circle class="orbit-circle ring-outer" cx="0" cy="0" r="350" stroke="#00f0ff" stroke-width="1.8" stroke-dasharray="22 10 4 10" fill="none" opacity="0.85" filter="url(#glow-cyan)" />
+              <circle cx="350" cy="0" r="4.5" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="314" cy="154" r="3" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="214" cy="276" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="78" cy="341" r="4" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-78" cy="341" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-214" cy="276" r="3.5" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-314" cy="154" r="4" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-350" cy="0" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-314" cy="-154" r="4" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-214" cy="-276" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-78" cy="-341" r="3.5" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="78" cy="-341" r="4" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="214" cy="-276" r="3" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="314" cy="-154" r="3.5" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+            </g>
+
+            <!-- 2. Middle Magenta Ring (r=250) -->
+            <g class="orbit-group ring-middle-group">
+              <circle class="orbit-circle ring-middle" cx="0" cy="0" r="250" stroke="#d946ef" stroke-width="1.8" stroke-dasharray="14 8" fill="none" opacity="0.8" filter="url(#glow-magenta)" />
+              <circle cx="241" cy="65" r="4" fill="#d946ef" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="177" cy="177" r="3" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="65" cy="241" r="3.5" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-65" cy="241" r="4" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-177" cy="177" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-241" cy="65" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-241" cy="-65" r="4" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-177" cy="-177" r="3" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-65" cy="-241" r="3.5" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="65" cy="-241" r="4" fill="#d946ef" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="177" cy="-177" r="3" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="241" cy="-65" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+            </g>
+
+            <!-- 3. Inner Amber Ring (r=150) -->
+            <g class="orbit-group ring-inner-group">
+              <circle class="orbit-circle ring-inner" cx="0" cy="0" r="150" stroke="#fbbf24" stroke-width="1.8" stroke-dasharray="8 6" fill="none" opacity="0.85" filter="url(#glow-gold)" />
+              <circle cx="150" cy="0" r="4" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="121" cy="88" r="3" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="46" cy="143" r="3.5" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-51" cy="141" r="3" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-123" cy="86" r="4" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-150" cy="0" r="3.5" fill="#fbbf24" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-117" cy="-93" r="3" fill="#ffffff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="-39" cy="-145" r="4" fill="#00f0ff" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="51" cy="-141" r="3" fill="#ff007a" filter="url(#glow-dot)" class="orbit-dot" />
+              <circle cx="123" cy="-86" r="3.5" fill="#ff1493" filter="url(#glow-dot)" class="orbit-dot" />
+            </g>
+
+            <!-- 4. Satellite Dot-Clusters with Horizontal Gradient Trails -->
+            <g class="orbit-satellites">
+              <!-- Cluster 1: Top-Left (Cyan Accent) -->
+              <g class="satellite-cluster cluster-cyan" transform="translate(-380, -210)">
+                <line x1="0" y1="0" x2="-180" y2="0" stroke="url(#trail-cyan-left)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+                <circle cx="0" cy="0" r="4.5" fill="#00f0ff" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="-14" cy="-7" r="3" fill="#ffffff" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="10" cy="-10" r="2.5" fill="#00f0ff" class="satellite-dot" />
+              </g>
+
+              <!-- Cluster 2: Top-Right (Amber / Gold Accent) -->
+              <g class="satellite-cluster cluster-gold" transform="translate(370, -220)">
+                <line x1="0" y1="0" x2="180" y2="0" stroke="url(#trail-gold-right)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+                <circle cx="0" cy="0" r="4.5" fill="#fbbf24" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="14" cy="-8" r="3" fill="#ffffff" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="-10" cy="-12" r="2.5" fill="#fbbf24" class="satellite-dot" />
+              </g>
+
+              <!-- Cluster 3: Bottom-Right (Magenta Accent) -->
+              <g class="satellite-cluster cluster-magenta" transform="translate(390, 190)">
+                <line x1="0" y1="0" x2="180" y2="0" stroke="url(#trail-magenta-right)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+                <circle cx="0" cy="0" r="4.5" fill="#d946ef" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="15" cy="8" r="3" fill="#ff007a" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="-10" cy="10" r="2.5" fill="#ffffff" class="satellite-dot" />
+              </g>
+
+              <!-- Cluster 4: Bottom-Left (Hot-Pink Accent) -->
+              <g class="satellite-cluster cluster-pink" transform="translate(-370, 200)">
+                <line x1="0" y1="0" x2="-180" y2="0" stroke="url(#trail-pink-left)" stroke-width="1.8" stroke-linecap="round" class="trail-line" />
+                <circle cx="0" cy="0" r="4.5" fill="#ff1493" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="-14" cy="8" r="3" fill="#ffffff" filter="url(#glow-dot)" class="satellite-dot" />
+                <circle cx="10" cy="10" r="2.5" fill="#ff007a" class="satellite-dot" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <canvas id="celebration-particles-canvas" class="celebration-particles-canvas"></canvas>
+        <div class="celebration-message-wrap" id="celebration-message-wrap">
+          <span class="celebration-wait-badge" id="celeb-wait-badge">THE WAIT IS OVER</span>
+          <div class="glitch-title-wrap" id="celeb-event-title-wrap">
+            <h2 class="celebration-event-title" id="celeb-event-title" data-text="HACKSPRINT '26">
+              HACKSPRINT <span class="text-gold">'26</span>
+            </h2>
+            <span class="glitch-layer glitch-cyan" aria-hidden="true">HACKSPRINT '26</span>
+            <span class="glitch-layer glitch-pink" aria-hidden="true">HACKSPRINT '26</span>
+          </div>
+          <div class="stagger-letters-wrap" id="celeb-stagger-letters">
+            <span class="letter-reveal letter-amber-gold" style="--letter-idx: 0">I</span>
+            <span class="letter-reveal letter-amber-gold" style="--letter-idx: 1">S</span>
+            <span class="letter-space">&nbsp;</span>
+            <span class="letter-reveal letter-amber-gold" style="--letter-idx: 2">N</span>
+            <span class="letter-reveal letter-amber-gold" style="--letter-idx: 3">O</span>
+            <span class="letter-reveal letter-amber-gold" style="--letter-idx: 4">W</span>
+            <span class="letter-space">&nbsp;</span>
+            <span class="letter-reveal text-cyan-glow" style="--letter-idx: 5">L</span>
+            <span class="letter-reveal text-cyan-glow" style="--letter-idx: 6">I</span>
+            <span class="letter-reveal text-cyan-glow" style="--letter-idx: 7">V</span>
+            <span class="letter-reveal text-cyan-glow" style="--letter-idx: 8">E</span>
+          </div>
+          <p class="celebration-live-tag" id="celeb-live-tag">
+            <span class="pulse-cyan-dot"></span>
+            THE PROBLEM STATEMENTS HAVE BEEN REVEALED
+          </p>
+          <div class="celebration-horizon-line" id="celeb-horizon-line"></div>
+          <div class="celebration-action-bar" id="celeb-action-bar">
+            <button id="btn-proceed-reveal" class="btn-reveal-proceed" type="button">
+              <span>EXPLORE 60 PROBLEM STATEMENTS</span>
+              <span style="font-size: 1.2rem;">&rarr;</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <div class="container countdown-inner">
         <!-- Date Capsule Tracking -->
@@ -468,6 +744,12 @@
           </div>
         </div>
 
+        <!-- Target Date Label Badge -->
+        <div class="demo-target-badge" id="demo-target-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text" id="demo-target-text">EVENT START · 30.09.2026 · 10:00 AM IST</span>
+        </div>
+
         <!-- Supporting Date/Venue Line Beneath Clock -->
         <div class="countdown-venue-support">
           <span class="venue-pin" aria-hidden="true">📍</span>
@@ -499,8 +781,338 @@
             <strong class="meta-value">IEEE Student Branch</strong>
           </div>
         </div>
+
+        <!-- Live Problem Statements Announcement CTA -->
+        <div class="countdown-live-cta-wrap" id="countdown-live-cta-wrap" style="display: none;">
+          <div class="live-pulse-announcement">
+            <span class="live-status-dot"></span>
+            <span class="live-status-text">OFFICIAL CHALLENGES RELEASED</span>
+          </div>
+          <a href="#problem-statements" class="btn-pill-gold btn-scroll-problems" id="btn-scroll-problems">
+            <span>Explore 60 Problem Statements ↓</span>
+          </a>
+        </div>
       </div>
     </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3B. PROGRESSIVE PROBLEM STATEMENT REVEAL SECTION (MASTER ARCHITECTURE) -->
+    <!-- ========================================================================= -->
+    <section id="problem-statements" class="problem-statements-section" style="display: none;">
+      <!-- Ambient Glow Blobs -->
+      <div class="ps-ambient-glow glow-left" aria-hidden="true"></div>
+      <div class="ps-ambient-glow glow-right" aria-hidden="true"></div>
+
+      <div class="container ps-container">
+        <!-- STEP 1: STATS SHOWCASE & METRICS BLOCK -->
+        <div class="ps-stats-showcase">
+          <div class="ps-eyebrow-tag">✦ AGENTIC AI CHALLENGES ✦</div>
+          <h2 class="ps-section-title"># PROBLEM STATEMENTS</h2>
+          <p class="ps-kicker">60 CHALLENGES · 12 DOMAINS · ONE 24-HOUR AGENTIC AI SPRINT</p>
+          <div class="ps-metrics-grid">
+            <div class="ps-metric-card">
+              <span class="metric-val" id="metric-counter-problems">60</span>
+              <span class="metric-lbl">Problem Statements</span>
+            </div>
+            <div class="ps-metric-card">
+              <span class="metric-val">12</span>
+              <span class="metric-lbl">Official Domains</span>
+            </div>
+            <div class="ps-metric-card">
+              <span class="metric-val">24H</span>
+              <span class="metric-lbl">Agentic Sprint</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Heading with Horizontal Accent Dashes -->
+        <div class="ps-heading-wrapper">
+          <h3 class="ps-section-heading">
+            <span class="heading-dash"></span>
+            EXPLORE CHALLENGE DOMAINS
+            <span class="heading-dash"></span>
+          </h3>
+        </div>
+
+        <!-- STEP 2: 12 DOMAIN OVERVIEW CARDS GRID -->
+        <div class="domain-cards-grid" id="domain-cards-grid">
+          <!-- Row 1 -->
+          <div class="domain-card" data-domain="HC" data-color="cyan" tabindex="0" role="button" aria-label="Explore Healthcare Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">HC</span>
+              <span class="domain-card-symbol">✚</span>
+            </div>
+            <h4 class="domain-card-name">Healthcare</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="DM" data-color="pink" tabindex="0" role="button" aria-label="Explore Disaster Management Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">DM</span>
+              <span class="domain-card-symbol">▲</span>
+            </div>
+            <h4 class="domain-card-name">Disaster Management</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="CS" data-color="purple" tabindex="0" role="button" aria-label="Explore Cybersecurity Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">CS</span>
+              <span class="domain-card-symbol">🛡</span>
+            </div>
+            <h4 class="domain-card-name">Cybersecurity</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="SC" data-color="cyan" tabindex="0" role="button" aria-label="Explore Smart Cities Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">SC</span>
+              <span class="domain-card-symbol">🏢</span>
+            </div>
+            <h4 class="domain-card-name">Smart City</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="domain-card" data-domain="AG" data-color="green" tabindex="0" role="button" aria-label="Explore Agriculture Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">AG</span>
+              <span class="domain-card-symbol">🌱</span>
+            </div>
+            <h4 class="domain-card-name">Agriculture</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="LC" data-color="amber" tabindex="0" role="button" aria-label="Explore Legal and Compliance Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">LC</span>
+              <span class="domain-card-symbol">⚖</span>
+            </div>
+            <h4 class="domain-card-name">Legal and Compliance</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="SE" data-color="cyan" tabindex="0" role="button" aria-label="Explore Software Engineering Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">SE</span>
+              <span class="domain-card-symbol">⚡</span>
+            </div>
+            <h4 class="domain-card-name">Software Engineering</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="EN" data-color="green" tabindex="0" role="button" aria-label="Explore Environment Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">EN</span>
+              <span class="domain-card-symbol">🍃</span>
+            </div>
+            <h4 class="domain-card-name">Environment</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="domain-card" data-domain="TR" data-color="gold" tabindex="0" role="button" aria-label="Explore Transportation Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">TR</span>
+              <span class="domain-card-symbol">🚆</span>
+            </div>
+            <h4 class="domain-card-name">Transportation</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="BO" data-color="purple" tabindex="0" role="button" aria-label="Explore Business Operations Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">BO</span>
+              <span class="domain-card-symbol">💼</span>
+            </div>
+            <h4 class="domain-card-name">Business / Operations</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="ED" data-color="cyan" tabindex="0" role="button" aria-label="Explore Education Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">ED</span>
+              <span class="domain-card-symbol">🎓</span>
+            </div>
+            <h4 class="domain-card-name">Education</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+
+          <div class="domain-card" data-domain="FI" data-color="amber" tabindex="0" role="button" aria-label="Explore Finance Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">FI</span>
+              <span class="domain-card-symbol">💰</span>
+            </div>
+            <h4 class="domain-card-name">Finance</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: STICKY DOMAIN NAVIGATION FILTER BAR -->
+        <div class="ps-sticky-filter-wrapper" id="domain-nav-pills-wrap">
+          <div class="ps-filter-pills" id="domain-nav-pills" role="tablist" aria-label="Domain Filter Navigation">
+            <button class="ps-filter-pill active-all ghost-pill" data-domain="ALL" data-color="amber" role="tab" aria-selected="true">
+              ✦ ALL 60
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="HC" data-color="cyan" role="tab" aria-selected="false">
+              ✚ HC 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="DM" data-color="pink" role="tab" aria-selected="false">
+              ▲ DM 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="CS" data-color="purple" role="tab" aria-selected="false">
+              🛡 CS 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="SC" data-color="cyan" role="tab" aria-selected="false">
+              🏢 SC 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="AG" data-color="green" role="tab" aria-selected="false">
+              🌱 AG 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="LC" data-color="amber" role="tab" aria-selected="false">
+              ⚖ LC 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="SE" data-color="cyan" role="tab" aria-selected="false">
+              ⚡ SE 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="EN" data-color="green" role="tab" aria-selected="false">
+              🍃 EN 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="TR" data-color="gold" role="tab" aria-selected="false">
+              🚆 TR 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="BO" data-color="purple" role="tab" aria-selected="false">
+              💼 BO 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="ED" data-color="cyan" role="tab" aria-selected="false">
+              🎓 ED 5
+            </button>
+            <button class="ps-filter-pill ghost-pill" data-domain="FI" data-color="amber" role="tab" aria-selected="false">
+              💰 FI 5
+            </button>
+          </div>
+        </div>
+
+        <!-- Problem Statement List Header (All in one row) -->
+        <div class="ps-list-header">
+          <h3 class="ps-list-heading" id="ps-list-heading">
+            ALL <span class="accent-teal">HACKSPRINT '26</span> CHALLENGES
+          </h3>
+          <div class="ps-list-right-actions">
+            <span class="ps-amber-count-badge" id="ps-count-badge">60 PROBLEM STATEMENTS</span>
+            <div class="ps-pagination-bar">
+              <button class="ps-nav-btn" id="ps-page-prev" aria-label="Previous Page" disabled>Prev</button>
+              <span class="ps-page-numbers" id="ps-page-numbers">1 / 7</span>
+              <button class="ps-nav-btn" id="ps-page-next" aria-label="Next Page">Next</button>
+            </div>
+            <button class="ps-view-all-btn" id="ps-view-all-btn">View All</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: LIVE INSTANT SEARCH BAR -->
+        <div class="ps-search-wrapper">
+          <svg class="ps-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="ps-search-input" class="ps-search-input" placeholder="Search problem statements by ID (e.g. HC-01), title, or keyword…" aria-label="Search problem statements">
+          <button id="ps-search-clear" class="ps-search-clear" aria-label="Clear Search" style="display: none;">✕</button>
+        </div>
+
+        <!-- STEP 5: 60 PROBLEM STATEMENT GLASS CARDS GRID -->
+        <div class="ps-cards-grid" id="ps-cards-grid" aria-live="polite">
+          <!-- Dynamically populated via script.js -->
+        </div>
+
+        <!-- Empty Search State -->
+        <div class="ps-empty-state" id="ps-empty-state" style="display: none;">
+          <div class="empty-icon">🔍</div>
+          <h3>No Problem Statements Match Your Search</h3>
+          <p>Try searching for a different keyword or reset your domain filters.</p>
+          <button class="btn-pill-gold" id="btn-reset-filters"><span>Reset Filters</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 6: ACCESSIBLE PROBLEM STATEMENT DETAIL INSPECTOR MODAL -->
+    <div class="modal-backdrop" id="ps-detail-modal" role="dialog" aria-modal="true" aria-labelledby="ps-modal-title">
+      <div class="modal-card modal-card-ps">
+        <button class="modal-close-btn" id="ps-modal-close" aria-label="Close Problem Statement Details">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="ps-modal-header">
+          <div class="ps-modal-badge-group">
+            <span class="ps-modal-id-badge" id="ps-modal-id">HC-01</span>
+            <span class="ps-modal-domain-tag" id="ps-modal-domain">HEALTHCARE</span>
+          </div>
+          <h3 id="ps-modal-title" class="ps-modal-heading">Autonomous Clinical Triage and Emergency Response</h3>
+        </div>
+        <div class="ps-modal-body">
+          <div class="ps-modal-section">
+            <h4>Official Problem Statement and Challenge Context</h4>
+            <p id="ps-modal-desc" class="ps-modal-desc-full"></p>
+          </div>
+          <div class="ps-modal-section">
+            <h4>Autonomous System Verification Focus</h4>
+            <div class="ps-modal-tags" id="ps-modal-tags">
+              <span class="vector-tech-chip">Autonomous Perception</span>
+              <span class="vector-tech-chip">Self-Healing Replanning</span>
+              <span class="vector-tech-chip">Sandboxed Tool Orchestration</span>
+            </div>
+          </div>
+        </div>
+        <div class="ps-modal-footer">
+          <div class="ps-modal-nav-group">
+            <button class="ps-modal-nav-btn" id="ps-modal-prev" aria-label="Previous Challenge">← Prev Challenge</button>
+            <button class="ps-modal-nav-btn" id="ps-modal-next" aria-label="Next Challenge">Next Challenge →</button>
+          </div>
+          <div class="ps-modal-actions-right">
+            <button class="btn-copy-problem-id" id="ps-modal-copy-id" aria-label="Copy Problem ID">
+              📋 Copy Problem ID
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ========================================================================= -->
     <!-- 4. SINGLE THEME SHOWCASE: AGENTIC AI -->
@@ -564,8 +1176,8 @@
 
         <!-- Section CTA Bar -->
         <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
-          <a href="https://forms.gle/fFcbTWZkEgeTHq1X8" target="_blank" rel="noopener noreferrer" class="btn-pill-gold">
-            <span>Register Squad for Agentic AI →</span>
+          <a href="https://forms.gle/fFcbTWZkEgeTHq1X8" target="_blank" rel="noopener noreferrer" class="btn-pill-gold" aria-label="Registration Closed">
+            <span>Registration Closed</span>
             <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor">
               <path d="M4.167 10h11.666M10.833 5l5 5-5 5" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
@@ -588,16 +1200,14 @@
           24-Hour <span class="gradient-text">Event Schedule</span>
         </h2>
         <p class="section-subtitle">
-          Continuous 24-hour overnight schedule running from 9:00 AM on Day 1 (Sept 30) to 10:00 AM on Day 2 (Oct 1, 2026), ending with the ₹25,000 Grand Valedictory Function.
+          Continuous 24-hour overnight schedule running from 9:00 AM on Day 1 (Sept 30) to 9:30 AM on Day 2 (Oct 1, 2026), ending with the ₹25,000 Grand Valedictory Function.
         </p>
       </div>
 
       <div class="container schedule-stepper-wrapper">
-        <!-- Human Verification Flag: Transcribed from photographed official run-of-show table (INFO.docx). Verify exact times before publishing. -->
-
         <!-- Day 1 Header -->
         <div class="schedule-day-heading">
-          <span>📅 DAY 1 · 30.09.2026 (INAUGURATION AND DEVELOPMENT)</span>
+          <span>📅 DAY 1 · 30.09.2026 (INAUGURATION &amp; CORE SPRINT)</span>
         </div>
 
         <div class="stepper-timeline">
@@ -606,8 +1216,8 @@
             <div class="stepper-marker"></div>
             <div class="stepper-card">
               <span class="stepper-time">09:00 – 10:00 AM · 30.09.2026</span>
-              <h4 class="stepper-activity">Participation Registration And Kit Distribution</h4>
-              <p class="stepper-note">Check-in at VCET Auditorium foyer. Verification of student IDs, workstation setup, Wi-Fi credentials &amp; welcome kits.</p>
+              <h4 class="stepper-activity">Participant Registration &amp; Kit Distribution</h4>
+              <p class="stepper-note">Check-in at VCET Auditorium foyer. Verification of student IDs, workstation setup, Wi-Fi credentials, and official delegate kits.</p>
             </div>
           </div>
 
@@ -627,7 +1237,7 @@
             <div class="stepper-card">
               <span class="stepper-time">10:30 – 11:30 AM · 30.09.2026</span>
               <h4 class="stepper-activity">Ideation Phase of Selected Problem Statements</h4>
-              <p class="stepper-note">Squads brainstorm, map agent architecture graphs, tool orchestration DAGs, and preliminary feasibility designs.</p>
+              <p class="stepper-note">Squads brainstorm and lock in problem statements. Formulation of agent architecture graphs, tool orchestration DAGs, and preliminary system design.</p>
             </div>
           </div>
 
@@ -635,9 +1245,9 @@
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">11:30 AM – 01:30 PM · 30.09.2026</span>
-              <h4 class="stepper-activity">Development Phase – I</h4>
-              <p class="stepper-note">Development environments configured, foundation model APIs linked, baseline agent scaffolding assembled, and primary loops launched.</p>
+              <span class="stepper-time">11:30 AM – 12:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Tea &amp; Refreshments</h4>
+              <p class="stepper-note">Morning hot tea, artisanal filter coffee, and light refreshments served at the venue to recharge teams.</p>
             </div>
           </div>
 
@@ -645,9 +1255,9 @@
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">01:30 – 02:30 PM · 30.09.2026</span>
-              <h4 class="stepper-activity">Lunch</h4>
-              <p class="stepper-note">Multi-course buffet lunch provided for all participants, mentors, and faculty at VCET dining facility.</p>
+              <span class="stepper-time">12:00 PM – 01:30 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Development Phase – I</h4>
+              <p class="stepper-note">Development environments configured, foundation model APIs linked, baseline agent scaffolding assembled, and primary loops launched.</p>
             </div>
           </div>
 
@@ -655,29 +1265,29 @@
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">02:30 – 04:30 PM · 30.09.2026</span>
+              <span class="stepper-time">01:30 – 02:15 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Lunch</h4>
+              <p class="stepper-note">Grand multi-course networking lunch buffet provided for all participants, mentors, and faculty at the VCET dining facility.</p>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">02:15 – 03:00 PM · 30.09.2026</span>
               <h4 class="stepper-activity">Development Phase – II</h4>
               <p class="stepper-note">Deep implementation sprint: core tool integration, agent memory setup, function-calling execution loops, and autonomous workflow design.</p>
             </div>
           </div>
 
-          <!-- 7 -->
+          <!-- 8 -->
           <div class="stepper-item milestone">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">04:30 – 05:30 PM · 30.09.2026</span>
-              <h4 class="stepper-activity">Review-I (Idea / Architecture Review)</h4>
+              <span class="stepper-time">03:00 – 04:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Review – I (Idea/Architecture Review)</h4>
               <p class="stepper-note">Senior technical mentors and academic evaluators review system architecture diagrams, safety boundaries, and API integrations.</p>
-            </div>
-          </div>
-
-          <!-- 8 -->
-          <div class="stepper-item">
-            <div class="stepper-marker"></div>
-            <div class="stepper-card">
-              <span class="stepper-time">05:30 – 06:00 PM · 30.09.2026</span>
-              <h4 class="stepper-activity">Tea &amp; Refreshments</h4>
-              <p class="stepper-note">Evening hot tea, artisanal filter coffee, and savory energy snacks served at the engineering floor.</p>
             </div>
           </div>
 
@@ -685,9 +1295,9 @@
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">06:00 – 09:00 PM · 30.09.2026</span>
-              <h4 class="stepper-activity">Development Phase – III</h4>
-              <p class="stepper-note">Intensive development sprint incorporating Review I mentor guidance: multi-agent consensus, retrieval pipelines, and core integration.</p>
+              <span class="stepper-time">04:00 – 04:30 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Tea &amp; Refreshments</h4>
+              <p class="stepper-note">Evening hot tea, artisanal filter coffee, and savory energy snacks served at the engineering floor to fuel team velocity.</p>
             </div>
           </div>
 
@@ -695,40 +1305,60 @@
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">09:00 – 10:00 PM · 30.09.2026</span>
-              <h4 class="stepper-activity">Dinner</h4>
-              <p class="stepper-note">Full dinner buffet served at campus dining hall; squads align overnight sprint tasks and team roles.</p>
+              <span class="stepper-time">04:30 – 08:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Development Phase – III</h4>
+              <p class="stepper-note">Intensive development sprint incorporating Review I mentor guidance: multi-agent consensus, retrieval pipelines, and core integration.</p>
             </div>
           </div>
 
           <!-- 11 -->
-          <div class="stepper-item milestone">
+          <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">10:00 – 11:00 PM · 30.09.2026</span>
-              <h4 class="stepper-activity">Review-II (Development Progress Review)</h4>
-              <p class="stepper-note">Deep technical review by domain specialists assessing live execution progress, error resilience, and agent autonomy.</p>
+              <span class="stepper-time">08:00 – 08:30 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Dinner</h4>
+              <p class="stepper-note">Nutritious campus dinner buffet served at campus dining hall; squads align overnight sprint tasks and team roles.</p>
             </div>
           </div>
-        </div>
 
-        <!-- Overnight Header -->
-        <div class="schedule-day-heading">
-          <span>🌙 OVERNIGHT · 30.09.2026 – 01.10.2026 (SPRINT &amp; TESTING)</span>
-        </div>
-
-        <div class="stepper-timeline">
           <!-- 12 -->
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">11:00 PM – 01:00 AM · 30.09.2026 – 01.10.2026</span>
+              <span class="stepper-time">08:30 – 10:00 PM · 30.09.2026</span>
               <h4 class="stepper-activity">Development Phase – IV</h4>
-              <p class="stepper-note">Late-night intensive sprint: complex sub-goal execution, autonomous self-healing loops, and agent optimization.</p>
+              <p class="stepper-note">Advanced multi-agent implementation: tool chaining, validation safeguards, context routing, and subsystem integration.</p>
             </div>
           </div>
 
           <!-- 13 -->
+          <div class="stepper-item milestone">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">10:00 – 11:00 PM · 30.09.2026</span>
+              <h4 class="stepper-activity">Review – II (Development Progress Review)</h4>
+              <p class="stepper-note">Deep technical review by domain specialists assessing live execution progress, error resilience, and agent autonomy.</p>
+            </div>
+          </div>
+
+          <!-- 14 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">11:00 PM – 01:00 AM · 30.09.2026 – 01.10.2026</span>
+              <h4 class="stepper-activity">Development Phase – V</h4>
+              <p class="stepper-note">Late-night intensive sprint: complex sub-goal execution, autonomous self-healing loops, and agent optimization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 Header -->
+        <div class="schedule-day-heading">
+          <span>🏆 DAY 2 · 01.10.2026 (OVERNIGHT SPRINT, REVIEWS &amp; VALEDICTORY)</span>
+        </div>
+
+        <div class="stepper-timeline">
+          <!-- 15 -->
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
@@ -738,60 +1368,33 @@
             </div>
           </div>
 
-          <!-- 14 -->
-          <div class="stepper-item">
-            <div class="stepper-marker"></div>
-            <div class="stepper-card">
-              <span class="stepper-time">01:30 – 05:00 AM · 01.10.2026</span>
-              <h4 class="stepper-activity">Development Phase – V</h4>
-              <p class="stepper-note">Overnight sprint: user interface polish, telemetry dashboards, end-to-end integration, and stress tests.</p>
-            </div>
-          </div>
-
-          <!-- 15 -->
-          <div class="stepper-item milestone">
-            <div class="stepper-marker"></div>
-            <div class="stepper-card">
-              <span class="stepper-time">05:00 – 05:30 AM · 01.10.2026</span>
-              <h4 class="stepper-activity">Review-III (Prototype &amp; Integration Review)</h4>
-              <p class="stepper-note">Early dawn prototype and architecture integration review before evaluators.</p>
-            </div>
-          </div>
-
           <!-- 16 -->
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">05:30 – 07:30 AM · 01.10.2026</span>
-              <h4 class="stepper-activity">Tea / Refreshments</h4>
-              <p class="stepper-note">Early dawn hot tea, coffee, and light refreshments as squads power into the home stretch.</p>
+              <span class="stepper-time">01:30 – 03:00 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Development Phase – VI</h4>
+              <p class="stepper-note">Deep overnight sprint: polishing user interfaces, telemetry dashboards, end-to-end autonomous agent execution, and benchmark testing.</p>
             </div>
           </div>
 
           <!-- 17 -->
-          <div class="stepper-item">
+          <div class="stepper-item milestone">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">07:30 – 08:00 AM · 01.10.2026</span>
-              <h4 class="stepper-activity">Final Development, Integration &amp; Testing</h4>
-              <p class="stepper-note">Cloud deployment, container verification, automated regression tests, pitch deck preparation, and final functional checks.</p>
+              <span class="stepper-time">03:00 – 04:00 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Review – III (Prototype &amp; Integration Review)</h4>
+              <p class="stepper-note">Third evaluation round. Jury mentors evaluate working prototype execution, multi-agent coordination stability, and deliverable readiness.</p>
             </div>
           </div>
-        </div>
 
-        <!-- Day 2 Header -->
-        <div class="schedule-day-heading">
-          <span>🏆 DAY 2 · 01.10.2026 (SUBMISSION &amp; VALEDICTORY)</span>
-        </div>
-
-        <div class="stepper-timeline">
           <!-- 18 -->
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">08:00 – 08:30 AM · 01.10.2026</span>
-              <h4 class="stepper-activity">Breakfast</h4>
-              <p class="stepper-note">Hot South Indian breakfast served for all participants and evaluators at VCET dining facility.</p>
+              <span class="stepper-time">04:00 – 05:00 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Development Phase – VII</h4>
+              <p class="stepper-note">Post-review refinements: resolving edge cases identified in Review III, hardening error recovery, and final pipeline stabilization.</p>
             </div>
           </div>
 
@@ -799,19 +1402,19 @@
           <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">08:30 – 09:00 AM · 01.10.2026</span>
-              <h4 class="stepper-activity">Final Debugging &amp; Documentation</h4>
-              <p class="stepper-note">Final code cleanup, polishing GitHub README documentation, architecture schematics, and live test recording preparation.</p>
+              <span class="stepper-time">05:00 – 05:30 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Tea / Refreshments</h4>
+              <p class="stepper-note">Early dawn hot tea, coffee, and light refreshments as squads power into the final hours of the hackathon sprint.</p>
             </div>
           </div>
 
           <!-- 20 -->
-          <div class="stepper-item milestone">
+          <div class="stepper-item">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">09:00 – 09:45 AM · 01.10.2026</span>
-              <h4 class="stepper-activity">Final Submission</h4>
-              <p class="stepper-note">Official code freeze! All GitHub repositories locked, demo videos uploaded, and final project submissions closed.</p>
+              <span class="stepper-time">05:30 – 07:30 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Final Development, Integration &amp; Testing</h4>
+              <p class="stepper-note">Cloud deployment, container verification, automated regression tests, pitch deck preparation, and final functional checks.</p>
             </div>
           </div>
 
@@ -819,22 +1422,31 @@
           <div class="stepper-item milestone">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">09:45 – 10:00 AM · 01.10.2026</span>
+              <span class="stepper-time">07:30 – 08:15 AM · 01.10.2026</span>
               <h4 class="stepper-activity">Final Review (Project Demo &amp; Jury Evaluation)</h4>
-              <p class="stepper-note">Live interactive autonomous agent demonstrations and final evaluation before the distinguished jury panel.</p>
+              <p class="stepper-note">Live interactive autonomous agent demonstrations, technical defense, and final scoring before the grand jury panels.</p>
             </div>
           </div>
 
           <!-- 22 -->
+          <div class="stepper-item">
+            <div class="stepper-marker"></div>
+            <div class="stepper-card">
+              <span class="stepper-time">08:15 – 09:30 AM · 01.10.2026</span>
+              <h4 class="stepper-activity">Breakfast</h4>
+              <p class="stepper-note">Hot South Indian breakfast buffet served at the VCET dining hall for all participants, mentors, and faculty evaluators.</p>
+            </div>
+          </div>
+
+          <!-- 23 -->
           <div class="stepper-item milestone">
             <div class="stepper-marker"></div>
             <div class="stepper-card">
-              <span class="stepper-time">09:45 – 10:00 AM · 01.10.2026</span>
+              <span class="stepper-time">09:30 AM · 01.10.2026</span>
               <h4 class="stepper-activity">Results / Valedictory Function</h4>
               <p class="stepper-note">Grand valedictory ceremony, announcement of winners, presentation of the ₹25,000 total prize pool, and certificate distribution.</p>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>
@@ -1172,7 +1784,7 @@
                 <img src="assets/reccsar_logo_transparent.png" alt="Reccsar Private Limited Logo" class="partner-box-logo">
               </div>
               <h3 class="partner-brand-name">Reccsar Private Limited</h3>
-              <p class="partner-tagline">"Empowering Innovation &amp; Skills"</p>
+              <p class="partner-tagline">"Empowering Innovation and Skills"</p>
               <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">
                 Pioneering technology solutions and professional skill development enterprise, backing student innovators with industry-grade mentorship, technical resources, and hackathon sponsorship.
               </p>
@@ -1316,7 +1928,7 @@
           <!-- Stylized Dark Map Preview Canvas -->
           <div class="map-canvas-visual" id="map-canvas-visual">
             <iframe
-              src="https://maps.google.com/maps?ll=9.89388,78.176088&amp;z=16&amp;t=m&amp;hl=en&amp;gl=IN&amp;mapclient=embed&amp;cid=1801179381751076763&amp;output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.5097486842777!2d78.1760881!3d9.8938804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c542e773b4bf%3A0x18ff131aca07d79b!2sVELAMMAL%20COLLEGE%20OF%20ENGINEERING%20AND%20TECHNOLOGY!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
               class="map-iframe-embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               title="Velammal College of Engineering and Technology Google Maps Location">
             </iframe>
@@ -1390,22 +2002,19 @@
       </button>
 
       <div class="modal-header">
-        <div class="modal-tag">HACKSPRINT '26 · OFFICIAL REGISTRATION</div>
-        <h3 id="modal-title" class="modal-heading">Register Your Squad</h3>
-        <p class="modal-desc">Secure your spot at VCET's flagship 24-hour Agentic AI hackathon. Grand Prize Pool:
-          <strong>25K</strong>. Registration fee: <strong>₹500 / participant</strong> (Squad size: <strong>4
-            Members</strong>).</p>
+        <div class="modal-tag">HACKSPRINT '26 · REGISTRATION STATUS</div>
+        <h3 id="modal-title" class="modal-heading">Registration Closed</h3>
+        <p class="modal-desc">Registrations for VCET's 24-hour Agentic AI hackathon are now officially closed. All squad allocations and developer workstations have been filled.</p>
       </div>
 
       <div style="padding: 20px 0; text-align: center;">
         <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
-          Registrations are officially managed through Google Forms. Click the button below to submit your team details,
-          member credentials, and payment transaction screenshot.
+          Registrations for HackSprint '26 have officially concluded. Thank you to all the applicants! Stay tuned for event updates, live streams, and project showcases.
         </p>
-        <a href="https://forms.gle/fFcbTWZkEgeTHq1X8" target="_blank" rel="noopener noreferrer" class="btn-pill-gold"
-          style="display: inline-block; padding: 14px 32px; font-size: 1rem;">
-          <span>Open Official Google Registration Form ↗</span>
-        </a>
+        <button type="button" class="btn-pill-gold" onclick="document.getElementById('register-modal').classList.remove('active'); document.body.style.overflow='';"
+          style="display: inline-block; padding: 14px 32px; font-size: 1rem; cursor: pointer; border: none;">
+          <span>Registration Closed</span>
+        </button>
       </div>
     </div>
   </div>
@@ -1450,8 +2059,8 @@
 
       <div class="track-modal-footer">
         <a href="https://forms.gle/fFcbTWZkEgeTHq1X8" target="_blank" rel="noopener noreferrer" class="btn-pill-gold"
-          id="btn-select-track-reg">
-          <span>Register Squad for Agentic AI ↗</span>
+          id="btn-select-track-reg" aria-label="Registration Closed">
+          <span>Registration Closed</span>
         </a>
       </div>
     </div>
@@ -1459,6 +2068,9 @@
 
   <!-- Toast Notification Alert -->
   <div class="toast-container" id="toast-container"></div>
+
+  <!-- Problem Statements Data Layer (Universal Browser Support) -->
+  <script src="problemStatements.js"></script>
 
   <!-- Main JavaScript Logic -->
   <script src="script.js"></script>

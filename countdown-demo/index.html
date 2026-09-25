@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackSprint '26 — Countdown to Problem Statement Reveal</title>
+  <meta name="description" content="HackSprint '26: 24-Hour Premier National Agentic AI Hackathon. Countdown, Cinematic Celebration, and 60 Problem Statements across 12 Domains." />
+
+  <!-- Google Fonts: Kanit (Display), Outfit (Secondary), Plus Jakarta Sans (Body), JetBrains Mono (Tech/Counters) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Kanit:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glow Background Auras -->
+  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+  <div class="ambient-glow glow-purple" aria-hidden="true"></div>
+  <div class="ambient-glow glow-pink" aria-hidden="true"></div>
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+
+  <!-- 0.20s White Screen Flash Overlay -->
+  <div id="celebration-flash-overlay" class="celebration-flash-overlay" aria-hidden="true"></div>
+
+  <!-- 0.35s Expanding Neon Shockwave Rings -->
+  <div id="shockwave-ring-1" class="celebration-shockwave-ring" aria-hidden="true"></div>
+  <div id="shockwave-ring-2" class="celebration-shockwave-ring secondary" aria-hidden="true"></div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. COUNTDOWN SECTION (CLEAN CONTRAST LIGHT PANEL) -->
+  <!-- ========================================================================= -->
+  <section id="countdown-section-wrapper" class="countdown-section-wrapper">
+    <!-- Top Neon Ambient Strip -->
+    <div class="panel-top-glow" aria-hidden="true"></div>
+
+    <!-- Header bar with Demo Target Badge -->
+    <header class="demo-top-header">
+      <div class="demo-brand">
+        <span class="brand-badge">HACKSPRINT <span class="text-gold">'26</span></span>
+      </div>
+      <div class="demo-target-badge" title="Dynamic Demo Countdown Target">
+        <span class="target-dot"></span>
+        <span>EVENT START · 30.09.2026 · 10:00 AM IST</span>
+      </div>
+    </header>
+
+    <!-- Main Countdown Inner Card Area -->
+    <div class="container countdown-inner" id="countdown-inner">
+      <div class="countdown-eyebrow">
+        <span class="eyebrow-accent"></span>
+        <span class="eyebrow-text">30.09.2026 – 01.10.2026 · 24-HOUR NON-STOP FORMAT</span>
+        <span class="eyebrow-accent"></span>
+      </div>
+
+      <h1 class="countdown-heading">
+        The Agentic AI hackathon begins in
+      </h1>
+
+      <p class="countdown-subheading">
+        Assemble your 4-member crew, calibrate your autonomous multi-agent pipelines, and prepare for the 24-hour national hackathon sprint.
+      </p>
+
+      <!-- Mechanical 3D Flip Clock Grid -->
+      <div class="flip-clock-grid" id="flip-clock" role="timer" aria-live="polite">
+        <!-- DAYS -->
+        <div class="clock-unit-wrapper">
+          <div class="flip-card-unit" id="digit-days">
+            <div class="flip-card">
+              <div class="digit-roll-viewport">
+                <div class="digit-slide slide-current">
+                  <span class="digit-text">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="unit-label">DAYS</span>
+        </div>
+
+        <!-- HOURS -->
+        <div class="clock-unit-wrapper">
+          <div class="flip-card-unit" id="digit-hours">
+            <div class="flip-card">
+              <div class="digit-roll-viewport">
+                <div class="digit-slide slide-current">
+                  <span class="digit-text">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="unit-label">HOURS</span>
+        </div>
+
+        <!-- MINUTES -->
+        <div class="clock-unit-wrapper">
+          <div class="flip-card-unit" id="digit-minutes">
+            <div class="flip-card">
+              <div class="digit-roll-viewport">
+                <div class="digit-slide slide-current">
+                  <span class="digit-text">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="unit-label">MINUTES</span>
+        </div>
+
+        <!-- SECONDS -->
+        <div class="clock-unit-wrapper">
+          <div class="flip-card-unit" id="digit-seconds">
+            <div class="flip-card">
+              <div class="digit-roll-viewport">
+                <div class="digit-slide slide-current">
+                  <span class="digit-text">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="unit-label">SECONDS</span>
+        </div>
+      </div>
+
+      <!-- Event Key Details Bar -->
+      <div class="event-meta-banner">
+        <div class="meta-item">
+          <span class="meta-label">DURATION</span>
+          <span class="meta-value">24 Hours Non-Stop</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">SOLE THEME</span>
+          <span class="meta-value text-gold-accent">Agentic AI</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">CHALLENGES</span>
+          <span class="meta-value">60 Problem Statements</span>
+        </div>
+        <div class="meta-divider"></div>
+        <div class="meta-item">
+          <span class="meta-label">VENUE</span>
+          <span class="meta-value">VCET Campus, Madurai</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 2. FULL VIEWPORT CINEMATIC CELEBRATION OVERLAY -->
+  <!-- ========================================================================= -->
+  <div id="celebration-wrapper" class="celebration-wrapper" aria-hidden="true">
+    <div class="neon-streak streak-1"></div>
+    <div class="neon-streak streak-2"></div>
+
+    <canvas id="celebration-canvas" class="celebration-canvas"></canvas>
+
+    <div class="celebration-content">
+      <div class="celebration-eyebrow">
+        <span>THE WAIT IS OVER</span>
+      </div>
+
+      <!-- Main "HACKSPRINT '26" with Subtle RGB Glitch -->
+      <div class="celebration-hero-title-wrap">
+        <h2 class="celebration-hero-title">
+          HACKSPRINT <span class="gold-accent">'26</span>
+        </h2>
+        <span class="glitch-layer glitch-cyan" aria-hidden="true">HACKSPRINT '26</span>
+        <span class="glitch-layer glitch-pink" aria-hidden="true">HACKSPRINT '26</span>
+      </div>
+
+      <!-- "IS NOW LIVE" Staggered Character Reveal -->
+      <div class="stagger-letters-wrap">
+        <span class="letter-reveal" style="--letter-idx: 0">I</span>
+        <span class="letter-reveal" style="--letter-idx: 1">S</span>
+        <span class="letter-space">&nbsp;</span>
+        <span class="letter-reveal" style="--letter-idx: 2">N</span>
+        <span class="letter-reveal" style="--letter-idx: 3">O</span>
+        <span class="letter-reveal" style="--letter-idx: 4">W</span>
+        <span class="letter-space">&nbsp;</span>
+        <span class="letter-reveal letter-live-cyan" style="--letter-idx: 5">L</span>
+        <span class="letter-reveal letter-live-cyan" style="--letter-idx: 6">I</span>
+        <span class="letter-reveal letter-live-cyan" style="--letter-idx: 7">V</span>
+        <span class="letter-reveal letter-live-cyan" style="--letter-idx: 8">E</span>
+      </div>
+
+      <!-- "THE PROBLEM STATEMENTS HAVE BEEN REVEALED" -->
+      <p class="celebration-live-tag">
+        <span class="pulse-cyan-dot"></span>
+        <span>THE PROBLEM STATEMENTS HAVE BEEN REVEALED</span>
+      </p>
+
+      <!-- Action to enter reveal section immediately -->
+      <div class="celebration-action-bar">
+        <button id="btn-proceed-reveal" class="btn-reveal-proceed">
+          <span>EXPLORE 60 PROBLEM STATEMENTS</span>
+          <span style="font-size: 1.2rem;">&rarr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3. PROBLEM STATEMENT REVEAL & EXPLORER INTERFACE -->
+  <!-- ========================================================================= -->
+  <section id="ps-reveal-section" class="ps-reveal-section">
+    <div class="container">
+      <!-- Section Header with Animated Counter -->
+      <div class="ps-header">
+        <div class="ps-eyebrow">
+          <span>OFFICIAL CHALLENGE DIRECTORY</span>
+        </div>
+        <h2 class="ps-main-title">
+          <span id="ps-counter" class="counter-highlight">0</span> PROBLEM STATEMENTS
+        </h2>
+        <p class="ps-manifesto">
+          <span class="text-gold">60 CHALLENGES</span> &bull; 
+          <span class="text-cyan">12 DOMAINS</span> &bull; 
+          <span>ONE 24-HOUR AGENTIC AI SPRINT</span>
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="ps-stats-grid">
+          <div class="stat-pill">
+            <span class="stat-num">60</span>
+            <span class="stat-label">Total Challenges</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Domains</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-num">05</span>
+            <span class="stat-label">Per Domain</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-num">24h</span>
+            <span class="stat-label">Sprint Time</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain Navigation Filter Bar -->
+      <div class="domain-filter-wrapper">
+        <nav class="domain-filter-bar" id="domain-filter-bar" aria-label="Domain Filter Navigation">
+          <!-- Dynamically populated by script.js -->
+        </nav>
+      </div>
+
+      <!-- Active Domain Header Banner -->
+      <div class="active-domain-banner" id="active-domain-banner">
+        <div class="active-domain-info">
+          <span class="active-domain-badge" id="active-domain-badge">ALL</span>
+          <h3 class="active-domain-name" id="active-domain-name">ALL DOMAINS</h3>
+        </div>
+        <span class="active-domain-count" id="active-domain-count">60 PROBLEM STATEMENTS</span>
+      </div>
+
+      <!-- 60 Problem Statement Cards Grid -->
+      <div class="cards-grid" id="ps-cards-grid">
+        <!-- Dynamically rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. ACCESSIBLE PROBLEM STATEMENT MODAL -->
+  <!-- ========================================================================= -->
+  <div id="ps-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+
+      <div class="modal-header">
+        <div class="modal-badges-row">
+          <span class="modal-id-badge" id="modal-id-badge">HC-01</span>
+          <span class="modal-domain-tag" id="modal-domain-tag">Healthcare</span>
+        </div>
+        <h3 class="modal-title" id="modal-title">Autonomous Clinical Triage & Emergency Response</h3>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-desc-heading">PROBLEM STATEMENT & REAL-WORLD CONTEXT</div>
+        <p class="modal-description" id="modal-description">
+          <!-- Full verbatim description loaded dynamically -->
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-nav-group">
+          <button class="modal-nav-btn" id="modal-prev-btn">&larr; Previous Challenge</button>
+          <button class="modal-nav-btn" id="modal-next-btn">Next Challenge &rarr;</button>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 0.76rem; color: #64748b;">
+          Tip: Use Left/Right Arrow keys or ESC
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 5. FLOATING DEVELOPER DEMO CONTROLS -->
+  <!-- ========================================================================= -->
+  <aside class="demo-floating-panel" id="demo-floating-panel" aria-label="Developer Demo Controls">
+    <div class="demo-controls-box">
+      <div class="demo-status-indicator">
+        <span class="demo-status-dot"></span>
+        <span id="demo-status-text">COUNTDOWN ACTIVE</span>
+      </div>
+      <button id="btn-test-reveal" class="btn-demo-action btn-demo-reveal" title="Simulate countdown zero event">
+        <span>⚡ TEST REVEAL NOW</span>
+      </button>
+      <button id="btn-reset-demo" class="btn-demo-action btn-demo-reset" title="Return to countdown state">
+        <span>↺ RESET DEMO</span>
+      </button>
+      <button id="btn-skip-celeb" class="btn-demo-action btn-demo-skip" title="Jump straight to problem statements">
+        <span>⏩ SKIP</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Problem Statement Dataset (All 60 Verbatim Challenges) -->
+  <script src="problemStatements.js"></script>
+  <!-- Main Orchestration Script -->
+  <script src="script.js"></script>
+</body>
+</html>
