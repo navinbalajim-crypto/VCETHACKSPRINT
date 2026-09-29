@@ -696,7 +696,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5200));
 
     // Function to smoothly transition to problem statements
-    const proceedToProblems = () => {
+    const proceedToProblems = async () => {
+      await ensureProblemStatementsLoaded();
+
       if (problemSection) {
         problemSection.style.display = 'block';
         problemSection.classList.add('revealed');
@@ -1367,12 +1369,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 11. POST-COUNTDOWN PROBLEM STATEMENTS REVEAL & DEMO HUB ENGINE
   // =========================================================================
-  const initProblemStatementsEngine = () => {
-    const psData = window.PROBLEM_STATEMENTS;
+  let cachedProblemStatements = null;
+  let isProblemStatementsEngineInitialized = false;
+
+  const initProblemStatementsEngine = (dataset) => {
+    const psData = dataset || cachedProblemStatements || window.PROBLEM_STATEMENTS;
     if (!psData || !Array.isArray(psData) || psData.length === 0) {
-      console.warn('[HackSprint] Problem statements dataset not found on window.');
       return;
     }
+    cachedProblemStatements = psData;
+    if (isProblemStatementsEngineInitialized) return;
+    isProblemStatementsEngineInitialized = true;
 
     const DOMAIN_COLOR_MAP = {
       HC: 'cyan',
@@ -1843,7 +1850,66 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFiltersAndRender();
   };
 
-  initProblemStatementsEngine();
+  let psLoadPromise = null;
+  const ensureProblemStatementsLoaded = async () => {
+    if (cachedProblemStatements && cachedProblemStatements.length > 0) {
+      return cachedProblemStatements;
+    }
+    if (psLoadPromise) return psLoadPromise;
+
+    psLoadPromise = (async () => {
+      // 1. Try server API
+      try {
+        const isDemo = window.location.search.includes('demo=true') ||
+          (!window.location.search.includes('demo=false') && HACKSPRINT_CONFIG.mode === 'demo');
+        const apiUrl = isDemo ? '/api/problem-statements?demo=true' : '/api/problem-statements';
+        const res = await fetch(apiUrl);
+        if (res.ok) {
+          const json = await res.json();
+          if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+            initProblemStatementsEngine(json.data);
+            return json.data;
+          }
+        }
+      } catch (err) {
+        // Fall through to sealed payload
+      }
+
+      // 2. Fall back to sealed encrypted payload in assets/challenges.enc
+      try {
+        const encRes = await fetch('assets/challenges.enc');
+        if (encRes.ok) {
+          const b64 = (await encRes.text()).trim();
+          const binary = atob(b64);
+          const bytes = new Uint8Array(binary.length);
+          for (let i = 0; i < binary.length; i++) {
+            bytes[i] = binary.charCodeAt(i);
+          }
+          const keyBytes = new TextEncoder().encode('HACKSPRINT2026_VCET_AGENTIC_AI');
+          for (let i = 0; i < bytes.length; i++) {
+            bytes[i] ^= keyBytes[i % keyBytes.length];
+          }
+          const decodedStr = new TextDecoder('utf-8').decode(bytes);
+          const parsed = JSON.parse(decodedStr);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            initProblemStatementsEngine(parsed);
+            return parsed;
+          }
+        }
+      } catch (err) {
+        // Silently handled
+      }
+
+      return [];
+    })();
+
+    return psLoadPromise;
+  };
+
+  // Only auto-load if countdown already expired before page load
+  if (currentTargetDate <= Date.now()) {
+    ensureProblemStatementsLoaded();
+  }
 
   // =========================================================================
   // 12. DEMO HUB FLOATING CONTROLS & DEV TESTING HARNESS
@@ -2017,6 +2083,8 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.add('celebration-completed');
       }
 
+      ensureProblemStatementsLoaded();
+
       const problemSection = document.getElementById('problem-statements');
       if (problemSection) {
         problemSection.style.display = 'block';
@@ -2064,5 +2132,68 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   };
+
+  // =========================================================================
+  // 13. ANTI-INSPECT SECURITY SHIELD
+  // =========================================================================
+  const initSecurityGuard = () => {
+    // Check if inspection override flag is passed (for developers / debugging)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('inspect') === 'allow' || sessionStorage.getItem('hacksprint_debug') === 'true') {
+      return;
+    }
+
+    let lastToast = 0;
+    const alertRestricted = () => {
+      const now = Date.now();
+      if (now - lastToast < 3000) return;
+      lastToast = now;
+      const tc = document.getElementById('toast-container');
+      if (tc) {
+        const toast = document.createElement('div');
+        toast.className = 'toast-alert warning';
+        toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#0f172a;color:#f8fafc;padding:12px 20px;border:1px solid #f59e0b;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.5);font-size:0.88rem;z-index:99999;display:flex;align-items:center;gap:10px;animation:fade-in-up 0.3s ease;';
+        toast.innerHTML = '<span style="color:#fbbf24;font-size:1.1rem;">🛡️</span><span>Inspection restricted: Problem statements are sealed until kickoff.</span>';
+        tc.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transition = 'opacity 0.4s ease';
+          setTimeout(() => toast.remove(), 400);
+        }, 3200);
+      }
+    };
+
+    // 1. Block right-click context menu (prevents "Inspect" and "View Page Source")
+    document.addEventListener('contextmenu', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+      e.preventDefault();
+      alertRestricted();
+    });
+
+    // 2. Block DevTools inspection shortcuts
+    window.addEventListener('keydown', (e) => {
+      // F12
+      if (e.key === 'F12') {
+        e.preventDefault();
+        alertRestricted();
+        return false;
+      }
+      // Ctrl+Shift+I / J / C (DevTools, Console, Inspector)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && ['I', 'i', 'J', 'j', 'C', 'c'].includes(e.key)) {
+        e.preventDefault();
+        alertRestricted();
+        return false;
+      }
+      // Ctrl+U / Cmd+Option+U (View Page Source)
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+        e.preventDefault();
+        alertRestricted();
+        return false;
+      }
+    });
+  };
+
+  initSecurityGuard();
+
 
   });

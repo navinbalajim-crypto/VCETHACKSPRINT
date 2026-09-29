@@ -512,20 +512,11 @@ function validateProblemStatements() {
     }
   });
 
-  if (!hasError) {
-    console.log(`%c[HackSprint '26] Data Validation Passed: 60 Problem Statements loaded across 12 Domains (5 each).`, 'color: #00f0ff; font-weight: bold;');
-  }
   return !hasError;
 }
 
-// Auto-run validation
-validateProblemStatements();
-
 // Universal export
-if (typeof window !== 'undefined') {
-  window.PROBLEM_STATEMENTS = PROBLEM_STATEMENTS;
-  window.validateProblemStatements = validateProblemStatements;
-}
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { PROBLEM_STATEMENTS, validateProblemStatements };
 }
+
