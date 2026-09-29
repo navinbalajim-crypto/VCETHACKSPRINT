@@ -354,8 +354,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mode: "production"
     mode: "production",
 
-    // Fixed Final Target: September 30, 2026 at 10:00:00 AM IST
-    productionTarget: new Date('2026-09-30T10:00:00+05:30').getTime(),
+    // Fixed Final Target: September 30, 2026 at 09:30:00 AM IST
+    productionTarget: new Date('2026-09-30T09:30:00+05:30').getTime(),
 
     getTarget: () => {
       const urlParams = new URLSearchParams(window.location.search);
@@ -1383,10 +1383,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 10. 24-HOUR SCHEDULE FILTER TABS (FOR schedule.html)
+  // 10. 24-HOUR SCHEDULE FILTER TABS & VIEW SWITCHER (FOR schedule.html)
   // =========================================================================
   const scheduleTabs = document.querySelectorAll('.schedule-tab-btn');
   const scheduleEvents = document.querySelectorAll('.timeline-event-card');
+  const tableRows = document.querySelectorAll('.official-schedule-table tbody tr');
 
   scheduleTabs.forEach((tab) => {
     tab.addEventListener('click', () => {
@@ -1406,8 +1407,50 @@ document.addEventListener('DOMContentLoaded', () => {
           ev.style.display = 'none';
         }
       });
+
+      if (tableRows.length > 0) {
+        tableRows.forEach((row) => {
+          const cats = (row.getAttribute('data-category') || '').trim().split(/\s+/);
+          const days = (row.getAttribute('data-day') || '').trim().split(/\s+/);
+
+          if (!filter || filter === 'all') {
+            row.style.display = '';
+          } else if (cats.includes(filter) || days.includes(filter)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      }
     });
   });
+
+  // Schedule View Switcher (Interactive Timeline vs Official Matrix Table)
+  const viewSwitchBtns = document.querySelectorAll('.view-switch-btn');
+  const timelineView = document.getElementById('schedule-timeline-view');
+  const tableView = document.getElementById('schedule-table-view');
+
+  if (viewSwitchBtns.length > 0 && timelineView && tableView) {
+    viewSwitchBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        viewSwitchBtns.forEach((b) => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        const targetView = btn.getAttribute('data-view');
+        if (targetView === 'table') {
+          timelineView.style.display = 'none';
+          tableView.style.display = 'block';
+        } else {
+          timelineView.style.display = 'block';
+          tableView.style.display = 'none';
+        }
+      });
+    });
+  }
 
   // =========================================================================
   // 11. POST-COUNTDOWN PROBLEM STATEMENTS REVEAL & DEMO HUB ENGINE

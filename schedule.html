@@ -110,9 +110,27 @@
       </div>
     </section>
 
-    <!-- Schedule Timeline Section -->
+    <!-- Schedule Timeline & Table Section -->
     <section class="container schedule-container">
       
+      <!-- Official Event Schedule Header & View Switcher -->
+      <div class="schedule-header-bar">
+        <div class="official-schedule-title-block">
+          <div class="official-section-num">5. HACKATHON SCHEDULE</div>
+          <h2 class="official-section-subtitle">24-Hour Hackathon – Official Event Timeline</h2>
+        </div>
+        <div class="schedule-view-switcher" role="tablist" aria-label="Schedule View Switcher">
+          <button type="button" class="view-switch-btn active" id="btn-view-timeline" data-view="timeline" aria-pressed="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Timeline View</span>
+          </button>
+          <button type="button" class="view-switch-btn" id="btn-view-table" data-view="table" aria-pressed="false">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+            <span>Official Table View</span>
+          </button>
+        </div>
+      </div>
+
       <!-- Filter Tabs -->
       <div class="schedule-filter-tabs">
         <button type="button" class="schedule-tab-btn active" data-filter="all">All Operations</button>
@@ -122,14 +140,205 @@
         <button type="button" class="schedule-tab-btn" data-filter="mentoring">Mentorship Rounds</button>
       </div>
 
-      <!-- Timeline Stream -->
+      <!-- OFFICIAL TABLE VIEW (MATCHES OFFICIAL TIMELINE DOCUMENT) -->
+      <div class="official-tables-container" id="schedule-table-view" style="display: none;">
+        <!-- DAY 1 TABLE -->
+        <div class="official-day-block">
+          <div class="day-table-header">
+            <span class="day-table-pill day-1-pill">DAY 1</span>
+            <span class="day-table-date">September 30, 2026 · Inauguration &amp; Core Sprint</span>
+          </div>
+          <div class="table-responsive-wrapper">
+            <table class="official-schedule-table">
+              <thead>
+                <tr>
+                  <th style="width: 14%;">Day</th>
+                  <th style="width: 26%;">Time</th>
+                  <th style="width: 44%;">Activity</th>
+                  <th style="width: 16%;">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">9:00 AM – 9:30 AM</td>
+                  <td class="col-activity">Participant Registration &amp; Kit Distribution</td>
+                  <td><span class="track-tag tag-general">Registration</span></td>
+                </tr>
+                <tr class="row-milestone" data-day="day1" data-category="milestone">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">9:30 AM – 10:30 AM</td>
+                  <td class="col-activity"><strong>Theme, Problem Statements, Rules &amp; Guidelines Briefing</strong></td>
+                  <td><span class="track-tag tag-milestone">Key Milestone</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">10:30 AM – 11:30 AM</td>
+                  <td class="col-activity">Ideation Phase of Selected Problem Statements</td>
+                  <td><span class="track-tag tag-general">Ideation</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">11:30 AM – 12:00 PM</td>
+                  <td class="col-activity">Tea &amp; Refreshments</td>
+                  <td><span class="track-tag tag-refreshment">Refreshments</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">12:00 PM – 1:30 PM</td>
+                  <td class="col-activity">Development Phase – I</td>
+                  <td><span class="track-tag tag-dev">Development</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">1:30 PM – 2:15 PM</td>
+                  <td class="col-activity">Lunch</td>
+                  <td><span class="track-tag tag-refreshment">Lunch Buffet</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">2:15 PM – 3:00 PM</td>
+                  <td class="col-activity">Development Phase – II</td>
+                  <td><span class="track-tag tag-dev">Development</span></td>
+                </tr>
+                <tr class="row-review" data-day="day1" data-category="mentoring milestone">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">3:00 PM – 4:00 PM</td>
+                  <td class="col-activity"><strong>Review – I (Idea/Architecture Review)</strong></td>
+                  <td><span class="track-tag tag-review">Evaluation</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">4:00 PM – 5:00 PM</td>
+                  <td class="col-activity">Development Phase – III</td>
+                  <td><span class="track-tag tag-dev">Development</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">5:00 PM – 5:30 PM</td>
+                  <td class="col-activity">Tea &amp; Refreshments</td>
+                  <td><span class="track-tag tag-refreshment">Refreshments</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">5:30 PM – 8:00 PM</td>
+                  <td class="col-activity">Development Phase – IV</td>
+                  <td><span class="track-tag tag-dev">Development</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">8:00 PM – 8:30 PM</td>
+                  <td class="col-activity">Dinner</td>
+                  <td><span class="track-tag tag-refreshment">Dinner Buffet</span></td>
+                </tr>
+                <tr data-day="day1" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">8:30 PM – 10:00 PM</td>
+                  <td class="col-activity">Development Phase – V</td>
+                  <td><span class="track-tag tag-dev">Development</span></td>
+                </tr>
+                <tr class="row-review" data-day="day1" data-category="mentoring milestone">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">10:00 PM – 11:00 PM</td>
+                  <td class="col-activity"><strong>Review – II (Development Progress Review)</strong></td>
+                  <td><span class="track-tag tag-review">Evaluation</span></td>
+                </tr>
+                <tr data-day="day1 day2" data-category="general">
+                  <td class="col-day">Day 1</td>
+                  <td class="col-time">11:00 PM – 1:00 AM</td>
+                  <td class="col-activity">Development Phase – VI</td>
+                  <td><span class="track-tag tag-dev">Overnight Sprint</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- DAY 2 TABLE -->
+        <div class="official-day-block">
+          <div class="day-table-header">
+            <span class="day-table-pill day-2-pill">DAY 2</span>
+            <span class="day-table-date">October 1, 2026 · Overnight Sprint, Reviews &amp; Valedictory</span>
+          </div>
+          <div class="table-responsive-wrapper">
+            <table class="official-schedule-table">
+              <thead>
+                <tr>
+                  <th style="width: 14%;">Day</th>
+                  <th style="width: 26%;">Time</th>
+                  <th style="width: 44%;">Activity</th>
+                  <th style="width: 16%;">Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-day="day2" data-category="general">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">1:00 AM – 1:30 AM</td>
+                  <td class="col-activity">Midnight Refreshments</td>
+                  <td><span class="track-tag tag-refreshment">Refreshments</span></td>
+                </tr>
+                <tr data-day="day2" data-category="general">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">1:30 AM – 3:00 AM</td>
+                  <td class="col-activity">Development Phase – VII</td>
+                  <td><span class="track-tag tag-dev">Development</span></td>
+                </tr>
+                <tr class="row-review" data-day="day2" data-category="mentoring milestone">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">3:00 AM – 4:00 AM</td>
+                  <td class="col-activity"><strong>Review – III (Prototype &amp; Integration Review)</strong></td>
+                  <td><span class="track-tag tag-review">Evaluation</span></td>
+                </tr>
+                <tr data-day="day2" data-category="general">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">4:00 AM – 5:00 AM</td>
+                  <td class="col-activity">Development Phase – VIII</td>
+                  <td><span class="track-tag tag-dev">Development</span></td>
+                </tr>
+                <tr data-day="day2" data-category="general">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">5:00 AM – 5:30 AM</td>
+                  <td class="col-activity">Tea / Refreshments</td>
+                  <td><span class="track-tag tag-refreshment">Refreshments</span></td>
+                </tr>
+                <tr data-day="day2" data-category="general">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">5:30 AM – 7:30 AM</td>
+                  <td class="col-activity">Final Development, Integration &amp; Testing</td>
+                  <td><span class="track-tag tag-dev">Final Polish</span></td>
+                </tr>
+                <tr class="row-review" data-day="day2" data-category="mentoring milestone">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">7:30 AM – 8:45 AM</td>
+                  <td class="col-activity"><strong>Final Review (Project Demo &amp; Jury Evaluation)</strong></td>
+                  <td><span class="track-tag tag-review">Grand Jury</span></td>
+                </tr>
+                <tr data-day="day2" data-category="general">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">8:45 AM – 9:30 AM</td>
+                  <td class="col-activity">Breakfast</td>
+                  <td><span class="track-tag tag-refreshment">Breakfast Buffet</span></td>
+                </tr>
+                <tr class="row-milestone" data-day="day2" data-category="milestone">
+                  <td class="col-day">Day 2</td>
+                  <td class="col-time">9:30 AM</td>
+                  <td class="col-activity"><strong>Results / Valedictory Function</strong></td>
+                  <td><span class="track-tag tag-milestone">Valedictory</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE TIMELINE STREAM -->
       <!-- Official 24-Hour Overnight Schedule: September 30 (09:00 AM) to October 1 (09:30 AM) -->
-      <div class="schedule-timeline">
+      <div class="schedule-timeline" id="schedule-timeline-view">
 
         <!-- EVENT 1 -->
         <div class="timeline-event-card" data-day="day1" data-category="general">
           <div class="timeline-node"></div>
-          <div class="timeline-time-badge">09:00 AM – 10:00 AM · DAY 1 (30.09.2026)</div>
+          <div class="timeline-time-badge">09:00 AM – 09:30 AM · DAY 1 (30.09.2026)</div>
           <h3 class="timeline-event-title">Participant Registration &amp; Kit Distribution</h3>
           <p class="timeline-event-desc">
             Physical check-in at the VCET Auditorium foyer. Verification of college ID cards, workstation setup, network credential allocation, and distribution of official HackSprint '26 delegate kits.
@@ -139,7 +348,7 @@
         <!-- EVENT 2 -->
         <div class="timeline-event-card milestone" data-day="day1" data-category="milestone">
           <div class="timeline-node"></div>
-          <div class="timeline-time-badge" style="color: var(--gold-bright);">10:00 AM – 10:30 AM · DAY 1 (30.09.2026)</div>
+          <div class="timeline-time-badge" style="color: var(--gold-bright);">09:30 AM – 10:30 AM · DAY 1 (30.09.2026)</div>
           <h3 class="timeline-event-title">Theme, Problem Statements, Rules &amp; Guidelines Briefing</h3>
           <p class="timeline-event-desc">
             Official inauguration and challenge briefing. Institutional leaders, faculty conveners, and industry partners unveil the Agentic AI problem statements, judging rubrics, and sandbox guidelines.
@@ -209,44 +418,54 @@
         <!-- EVENT 9 -->
         <div class="timeline-event-card" data-day="day1" data-category="general">
           <div class="timeline-node"></div>
-          <div class="timeline-time-badge">04:00 PM – 04:30 PM · DAY 1 (30.09.2026)</div>
-          <h3 class="timeline-event-title">Tea &amp; Refreshments</h3>
+          <div class="timeline-time-badge">04:00 PM – 05:00 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Development Phase – III</h3>
           <p class="timeline-event-desc">
-            Evening hot tea, artisanal filter coffee, and savory energy snacks provided at the engineering floor to fuel team velocity.
+            Intensive development sprint incorporating Review I mentor guidance: multi-agent consensus, retrieval pipelines, and core integration.
           </p>
         </div>
 
         <!-- EVENT 10 -->
         <div class="timeline-event-card" data-day="day1" data-category="general">
           <div class="timeline-node"></div>
-          <div class="timeline-time-badge">04:30 PM – 08:00 PM · DAY 1 (30.09.2026)</div>
-          <h3 class="timeline-event-title">Development Phase – III</h3>
+          <div class="timeline-time-badge">05:00 PM – 05:30 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Tea &amp; Refreshments</h3>
           <p class="timeline-event-desc">
-            Intensive development sprint incorporating Review I mentor guidance. Multi-agent consensus, retrieval-augmented memory, function calling pipelines, and core integration.
+            Evening hot tea, artisanal filter coffee, and savory energy snacks provided at the engineering floor to fuel team velocity.
           </p>
         </div>
 
         <!-- EVENT 11 -->
         <div class="timeline-event-card" data-day="day1" data-category="general">
           <div class="timeline-node"></div>
-          <div class="timeline-time-badge">08:00 PM – 08:30 PM · DAY 1 (30.09.2026)</div>
-          <h3 class="timeline-event-title">Dinner</h3>
-          <p class="timeline-event-desc">
-            Nutritious campus dinner buffet served at VCET dining. Teams synchronize overnight coding roles and distribute remaining sprint tasks.
-          </p>
-        </div>
-
-        <!-- EVENT 12 -->
-        <div class="timeline-event-card" data-day="day1" data-category="general">
-          <div class="timeline-node"></div>
-          <div class="timeline-time-badge">08:30 PM – 10:00 PM · DAY 1 (30.09.2026)</div>
+          <div class="timeline-time-badge">05:30 PM – 08:00 PM · DAY 1 (30.09.2026)</div>
           <h3 class="timeline-event-title">Development Phase – IV</h3>
           <p class="timeline-event-desc">
             Advanced multi-agent implementation: tool chaining, validation safeguards, context routing, and subsystem integration.
           </p>
         </div>
 
+        <!-- EVENT 12 -->
+        <div class="timeline-event-card" data-day="day1" data-category="general">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge">08:00 PM – 08:30 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Dinner</h3>
+          <p class="timeline-event-desc">
+            Nutritious campus dinner buffet served at VCET dining hall. Teams synchronize overnight coding roles and distribute remaining sprint tasks.
+          </p>
+        </div>
+
         <!-- EVENT 13 -->
+        <div class="timeline-event-card" data-day="day1" data-category="general">
+          <div class="timeline-node"></div>
+          <div class="timeline-time-badge">08:30 PM – 10:00 PM · DAY 1 (30.09.2026)</div>
+          <h3 class="timeline-event-title">Development Phase – V</h3>
+          <p class="timeline-event-desc">
+            Deep feature buildout, backend API orchestration, agent tool execution testing, and prompt chain refinement.
+          </p>
+        </div>
+
+        <!-- EVENT 14 -->
         <div class="timeline-event-card milestone mentoring" data-day="day1" data-category="mentoring milestone">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge" style="color: var(--purple-primary);">10:00 PM – 11:00 PM · DAY 1 (30.09.2026)</div>
@@ -256,17 +475,17 @@
           </p>
         </div>
 
-        <!-- EVENT 14 -->
+        <!-- EVENT 15 -->
         <div class="timeline-event-card" data-day="day1 day2" data-category="general">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge" style="color: var(--cyan-primary);">11:00 PM – 01:00 AM · OVERNIGHT (30.09 – 01.10.2026)</div>
-          <h3 class="timeline-event-title">Development Phase – V</h3>
+          <h3 class="timeline-event-title">Development Phase – VI</h3>
           <p class="timeline-event-desc">
-            Late-night intensive sprint. Hardening agent reasoning capabilities, debugging edge cases, optimizing latency, and stabilizing multi-agent coordination under load.
+            Late-night intensive sprint: hardening agent reasoning capabilities, debugging edge cases, optimizing latency, and stabilizing multi-agent coordination under load.
           </p>
         </div>
 
-        <!-- EVENT 15 -->
+        <!-- EVENT 16 -->
         <div class="timeline-event-card" data-day="day2" data-category="general">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge" style="color: var(--pink-primary);">01:00 AM – 01:30 AM · DAY 2 (01.10.2026)</div>
@@ -276,17 +495,17 @@
           </p>
         </div>
 
-        <!-- EVENT 16 -->
+        <!-- EVENT 17 -->
         <div class="timeline-event-card" data-day="day2" data-category="general">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge">01:30 AM – 03:00 AM · DAY 2 (01.10.2026)</div>
-          <h3 class="timeline-event-title">Development Phase – VI</h3>
+          <h3 class="timeline-event-title">Development Phase – VII</h3>
           <p class="timeline-event-desc">
             Deep overnight sprint: polishing user interfaces, telemetry dashboards, end-to-end autonomous agent execution, and benchmark testing.
           </p>
         </div>
 
-        <!-- EVENT 17 -->
+        <!-- EVENT 18 -->
         <div class="timeline-event-card milestone mentoring" data-day="day2" data-category="mentoring milestone">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge" style="color: var(--purple-primary);">03:00 AM – 04:00 AM · DAY 2 (01.10.2026)</div>
@@ -296,17 +515,17 @@
           </p>
         </div>
 
-        <!-- EVENT 18 -->
+        <!-- EVENT 19 -->
         <div class="timeline-event-card" data-day="day2" data-category="general">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge">04:00 AM – 05:00 AM · DAY 2 (01.10.2026)</div>
-          <h3 class="timeline-event-title">Development Phase – VII</h3>
+          <h3 class="timeline-event-title">Development Phase – VIII</h3>
           <p class="timeline-event-desc">
             Post-review refinements: resolving edge cases identified in Review III, hardening error recovery, and final pipeline stabilization.
           </p>
         </div>
 
-        <!-- EVENT 19 -->
+        <!-- EVENT 20 -->
         <div class="timeline-event-card" data-day="day2" data-category="general">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge">05:00 AM – 05:30 AM · DAY 2 (01.10.2026)</div>
@@ -316,7 +535,7 @@
           </p>
         </div>
 
-        <!-- EVENT 20 -->
+        <!-- EVENT 21 -->
         <div class="timeline-event-card" data-day="day2" data-category="general">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge">05:30 AM – 07:30 AM · DAY 2 (01.10.2026)</div>
@@ -326,27 +545,27 @@
           </p>
         </div>
 
-        <!-- EVENT 21 -->
+        <!-- EVENT 22 -->
         <div class="timeline-event-card milestone mentoring" data-day="day2" data-category="mentoring milestone">
           <div class="timeline-node"></div>
-          <div class="timeline-time-badge" style="color: var(--cyan-primary);">07:30 AM – 08:15 AM · DAY 2 (01.10.2026)</div>
+          <div class="timeline-time-badge" style="color: var(--cyan-primary);">07:30 AM – 08:45 AM · DAY 2 (01.10.2026)</div>
           <h3 class="timeline-event-title">Final Review (Project Demo &amp; Jury Evaluation)</h3>
           <p class="timeline-event-desc">
             Live interactive demonstrations and technical defenses before the grand jury panels. Scored across autonomy, novelty, architecture, and execution.
           </p>
         </div>
 
-        <!-- EVENT 22 -->
+        <!-- EVENT 23 -->
         <div class="timeline-event-card" data-day="day2" data-category="general">
           <div class="timeline-node"></div>
-          <div class="timeline-time-badge">08:15 AM – 09:30 AM · DAY 2 (01.10.2026)</div>
+          <div class="timeline-time-badge">08:45 AM – 09:30 AM · DAY 2 (01.10.2026)</div>
           <h3 class="timeline-event-title">Breakfast</h3>
           <p class="timeline-event-desc">
             Hot South Indian breakfast buffet served at the VCET dining hall for all participants, mentors, and evaluators before the grand valedictory ceremony.
           </p>
         </div>
 
-        <!-- EVENT 23 -->
+        <!-- EVENT 24 -->
         <div class="timeline-event-card milestone" data-day="day2" data-category="milestone">
           <div class="timeline-node"></div>
           <div class="timeline-time-badge" style="color: var(--gold-bright);">09:30 AM ONWARDS · DAY 2 (01.10.2026) · RESULTS &amp; VALEDICTORY</div>

@@ -105,11 +105,28 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // Gate encrypted payload until countdown finishes or demo mode is active
+  if (reqPath.toLowerCase().includes('challenges.enc')) {
+    const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+    const isDemo = parsedUrl.searchParams.get('demo') === 'true' || req.headers['x-hacksprint-auth'] === 'demo-test';
+    const REVEAL_TIMESTAMP = new Date('2026-09-30T09:30:00+05:30').getTime();
+    const isUnlocked = Date.now() >= REVEAL_TIMESTAMP || isDemo;
+
+    if (!isUnlocked) {
+      res.writeHead(403, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        error: 'Access Denied: Problem statements payload is sealed until countdown finishes on Sept 30, 2026 at 09:30 AM IST.',
+        status: 403
+      }));
+      return;
+    }
+  }
+
   // Secure API endpoint for problem statements
   if (req.method === 'GET' && reqPath === '/api/problem-statements') {
     const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     const isDemo = parsedUrl.searchParams.get('demo') === 'true' || req.headers['x-hacksprint-auth'] === 'demo-test';
-    const REVEAL_TIMESTAMP = new Date('2026-09-30T10:00:00+05:30').getTime();
+    const REVEAL_TIMESTAMP = new Date('2026-09-30T09:30:00+05:30').getTime();
     const isUnlocked = Date.now() >= REVEAL_TIMESTAMP || isDemo;
 
     if (!isUnlocked) {
@@ -117,7 +134,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify({
         success: false,
         locked: true,
-        message: 'Problem statements are locked until 30 Sept 2026, 10:00 AM IST.',
+        message: 'Problem statements are locked until 30 Sept 2026, 09:30 AM IST.',
         revealTimestamp: REVEAL_TIMESTAMP
       }));
       return;
