@@ -3094,7 +3094,7 @@ button {
     display: none !important; /* Same menu is directly visible on mobile */
   }
 
-  /* Full 8-item menu bar directly visible & horizontally scrollable on mobile view */
+  /* Full 9-item menu bar directly visible & horizontally scrollable on mobile view */
   .nav-links-wrapper {
     position: relative !important;
     left: auto !important;

@@ -182,7 +182,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = link.getAttribute('href') || '';
       if (href.startsWith('#') || href.startsWith('index.html#')) {
         const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
-        const targetEl = hash ? document.querySelector(hash) : null;
+        let targetEl = hash ? document.querySelector(hash) : null;
+        if (targetEl && hash === '#problem-statements') {
+          const isPsHidden = targetEl.style.display === 'none' || getComputedStyle(targetEl).display === 'none';
+          if (isPsHidden) {
+            targetEl = document.getElementById('countdown') || targetEl;
+          }
+        }
         if (targetEl) {
           e.preventDefault();
           const navHeight = navHeader ? navHeader.offsetHeight : 80;
@@ -227,7 +233,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sections.forEach((sec) => {
           const secId = sec.getAttribute('id');
-          if (!secId || secId === 'countdown') return;
+          if (!secId) return;
+          if (secId === 'countdown') {
+            const psEl = document.getElementById('problem-statements');
+            const isPsHidden = !psEl || psEl.style.display === 'none' || getComputedStyle(psEl).display === 'none';
+            if (isPsHidden) {
+              const top = sec.offsetTop;
+              const height = sec.offsetHeight;
+              if (scrollPos >= top && scrollPos < top + height) {
+                currentSectionId = 'problem-statements';
+              }
+            }
+            return;
+          }
           const top = sec.offsetTop;
           const height = sec.offsetHeight;
           if (scrollPos >= top && scrollPos < top + height) {
@@ -286,7 +304,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const href = ml.getAttribute('href') || '';
         if (href.startsWith('#') || href.startsWith('index.html#')) {
           const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
-          const targetEl = hash ? document.querySelector(hash) : null;
+          let targetEl = hash ? document.querySelector(hash) : null;
+          if (targetEl && hash === '#problem-statements') {
+            const isPsHidden = targetEl.style.display === 'none' || getComputedStyle(targetEl).display === 'none';
+            if (isPsHidden) {
+              targetEl = document.getElementById('countdown') || targetEl;
+            }
+          }
           if (targetEl) {
             e.preventDefault();
             const navHeight = navHeader ? navHeader.offsetHeight : 80;
@@ -302,6 +326,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+  }
+
+  // Handle direct navigation or incoming hash link to #problem-statements
+  if (window.location.hash === '#problem-statements') {
+    const psEl = document.getElementById('problem-statements');
+    const isPsHidden = !psEl || psEl.style.display === 'none' || getComputedStyle(psEl).display === 'none';
+    if (isPsHidden) {
+      const countdownSec = document.getElementById('countdown');
+      if (countdownSec) {
+        setTimeout(() => {
+          const navHeight = navHeader ? navHeader.offsetHeight : 80;
+          const targetY = countdownSec.getBoundingClientRect().top + window.pageYOffset - navHeight + 4;
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+        }, 150);
+      }
+    }
   }
 
   // =========================================================================
