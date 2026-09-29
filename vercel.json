@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, nosnippet, noimageindex"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "interest-cohort=()"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/problemStatements.js",
+      "destination": "/blocked.html",
+      "permanent": false
+    },
+    {
+      "source": "/INFO.docx",
+      "destination": "/blocked.html",
+      "permanent": false
+    },
+    {
+      "source": "/countdown-demo/:match*",
+      "destination": "/blocked.html",
+      "permanent": false
+    },
+    {
+      "source": "/docx_unzipped/:match*",
+      "destination": "/blocked.html",
+      "permanent": false
+    },
+    {
+      "source": "/scratch_docx/:match*",
+      "destination": "/blocked.html",
+      "permanent": false
+    },
+    {
+      "source": "/extracted_media/:match*",
+      "destination": "/blocked.html",
+      "permanent": false
+    },
+    {
+      "source": "/((?!blocked\\.html).*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(ClaudeBot|Claude-Web|Anthropic|GPTBot|ChatGPT-User|PerplexityBot|CCBot|Bytespider|Diffbot|FacebookBot|Google-Extended|cohere-ai|Amazonbot|Applebot-Extended|Omgilibot|Scrapy|python-requests|aiohttp|httpx).*"
+        }
+      ],
+      "destination": "/blocked.html",
+      "permanent": false
+    }
+  ]
+}

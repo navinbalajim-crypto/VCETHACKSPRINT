@@ -7,6 +7,14 @@
   <title>HackSprint '26 | 24H National Level Agentic AI Hackathon · VCET IT</title>
   <meta name="description"
     content="HackSprint '26 - 24-Hour Premier National Agentic AI Hackathon presented by the Department of Information Technology, Velammal College of Engineering & Technology (VCET), Madurai. September 30 – October 1, 2026.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="claudebot" content="noindex, nofollow">
+  <meta name="anthropic-ai" content="noindex, nofollow">
+  <meta name="gptbot" content="noindex, nofollow">
+  <meta name="chatgpt-user" content="noindex, nofollow">
+  <meta name="perplexitybot" content="noindex, nofollow">
 
   <!-- Google Fonts: Kanit (Display & Headings), Outfit (Secondary), Plus Jakarta Sans (Body), JetBrains Mono (Tech/Counters) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,7 +115,7 @@
     <div class="mobile-nav-inner">
       <a href="#hero" class="mobile-nav-link active" data-section="hero">Home</a>
       <a href="#theme-showcase" class="mobile-nav-link">Theme (Agentic AI)</a>
-      <a href="#problem-statements" class="mobile-nav-link" id="mobile-nav-challenges" data-section="problem-statements">Challenges (60 PS)</a>
+      <a href="#problem-statements" class="mobile-nav-link" id="mobile-nav-challenges" data-section="problem-statements">Challenges</a>
       <a href="#schedule" class="mobile-nav-link">24H Schedule</a>
       <a href="#committee" class="mobile-nav-link">Committee</a>
       <a href="#about" class="mobile-nav-link">About VCET</a>
@@ -789,7 +797,7 @@
             <span class="live-status-text">OFFICIAL CHALLENGES RELEASED</span>
           </div>
           <a href="#problem-statements" class="btn-pill-gold btn-scroll-problems" id="btn-scroll-problems">
-            <span>Explore 60 Problem Statements ↓</span>
+            <span>Explore Problem Statements ↓</span>
           </a>
         </div>
       </div>
@@ -808,14 +816,14 @@
         <div class="ps-stats-showcase">
           <div class="ps-eyebrow-tag">✦ AGENTIC AI CHALLENGES ✦</div>
           <h2 class="ps-section-title"># PROBLEM STATEMENTS</h2>
-          <p class="ps-kicker">60 CHALLENGES · 12 DOMAINS · ONE 24-HOUR AGENTIC AI SPRINT</p>
+          <p class="ps-kicker" id="ps-kicker">AGENTIC AI CHALLENGES · ONE 24-HOUR SPRINT</p>
           <div class="ps-metrics-grid">
             <div class="ps-metric-card">
-              <span class="metric-val" id="metric-counter-problems">60</span>
+              <span class="metric-val" id="metric-counter-problems">--</span>
               <span class="metric-lbl">Problem Statements</span>
             </div>
             <div class="ps-metric-card">
-              <span class="metric-val">12</span>
+              <span class="metric-val" id="metric-counter-domains">--</span>
               <span class="metric-lbl">Official Domains</span>
             </div>
             <div class="ps-metric-card">
@@ -836,196 +844,13 @@
 
         <!-- STEP 2: 12 DOMAIN OVERVIEW CARDS GRID -->
         <div class="domain-cards-grid" id="domain-cards-grid">
-          <!-- Row 1 -->
-          <div class="domain-card" data-domain="HC" data-color="cyan" tabindex="0" role="button" aria-label="Explore Healthcare Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">HC</span>
-              <span class="domain-card-symbol">✚</span>
-            </div>
-            <h4 class="domain-card-name">Healthcare</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="DM" data-color="pink" tabindex="0" role="button" aria-label="Explore Disaster Management Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">DM</span>
-              <span class="domain-card-symbol">▲</span>
-            </div>
-            <h4 class="domain-card-name">Disaster Management</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="CS" data-color="purple" tabindex="0" role="button" aria-label="Explore Cybersecurity Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">CS</span>
-              <span class="domain-card-symbol">🛡</span>
-            </div>
-            <h4 class="domain-card-name">Cybersecurity</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="SC" data-color="cyan" tabindex="0" role="button" aria-label="Explore Smart Cities Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">SC</span>
-              <span class="domain-card-symbol">🏢</span>
-            </div>
-            <h4 class="domain-card-name">Smart City</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="domain-card" data-domain="AG" data-color="green" tabindex="0" role="button" aria-label="Explore Agriculture Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">AG</span>
-              <span class="domain-card-symbol">🌱</span>
-            </div>
-            <h4 class="domain-card-name">Agriculture</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="LC" data-color="amber" tabindex="0" role="button" aria-label="Explore Legal and Compliance Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">LC</span>
-              <span class="domain-card-symbol">⚖</span>
-            </div>
-            <h4 class="domain-card-name">Legal and Compliance</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="SE" data-color="cyan" tabindex="0" role="button" aria-label="Explore Software Engineering Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">SE</span>
-              <span class="domain-card-symbol">⚡</span>
-            </div>
-            <h4 class="domain-card-name">Software Engineering</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="EN" data-color="green" tabindex="0" role="button" aria-label="Explore Environment Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">EN</span>
-              <span class="domain-card-symbol">🍃</span>
-            </div>
-            <h4 class="domain-card-name">Environment</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="domain-card" data-domain="TR" data-color="gold" tabindex="0" role="button" aria-label="Explore Transportation Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">TR</span>
-              <span class="domain-card-symbol">🚆</span>
-            </div>
-            <h4 class="domain-card-name">Transportation</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="BO" data-color="purple" tabindex="0" role="button" aria-label="Explore Business Operations Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">BO</span>
-              <span class="domain-card-symbol">💼</span>
-            </div>
-            <h4 class="domain-card-name">Business / Operations</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="ED" data-color="cyan" tabindex="0" role="button" aria-label="Explore Education Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">ED</span>
-              <span class="domain-card-symbol">🎓</span>
-            </div>
-            <h4 class="domain-card-name">Education</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
-
-          <div class="domain-card" data-domain="FI" data-color="amber" tabindex="0" role="button" aria-label="Explore Finance Domain">
-            <div class="domain-card-top">
-              <span class="domain-card-code">FI</span>
-              <span class="domain-card-symbol">💰</span>
-            </div>
-            <h4 class="domain-card-name">Finance</h4>
-            <div class="domain-card-footer">
-              <span class="domain-card-count">5 PROBLEM STATEMENTS</span>
-              <span class="domain-card-arrow">→</span>
-            </div>
-          </div>
+          <!-- Dynamically populated via script.js -->
         </div>
 
         <!-- STEP 3: STICKY DOMAIN NAVIGATION FILTER BAR -->
         <div class="ps-sticky-filter-wrapper" id="domain-nav-pills-wrap">
           <div class="ps-filter-pills" id="domain-nav-pills" role="tablist" aria-label="Domain Filter Navigation">
-            <button class="ps-filter-pill active-all ghost-pill" data-domain="ALL" data-color="amber" role="tab" aria-selected="true">
-              ✦ ALL 60
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="HC" data-color="cyan" role="tab" aria-selected="false">
-              ✚ HC 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="DM" data-color="pink" role="tab" aria-selected="false">
-              ▲ DM 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="CS" data-color="purple" role="tab" aria-selected="false">
-              🛡 CS 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="SC" data-color="cyan" role="tab" aria-selected="false">
-              🏢 SC 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="AG" data-color="green" role="tab" aria-selected="false">
-              🌱 AG 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="LC" data-color="amber" role="tab" aria-selected="false">
-              ⚖ LC 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="SE" data-color="cyan" role="tab" aria-selected="false">
-              ⚡ SE 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="EN" data-color="green" role="tab" aria-selected="false">
-              🍃 EN 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="TR" data-color="gold" role="tab" aria-selected="false">
-              🚆 TR 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="BO" data-color="purple" role="tab" aria-selected="false">
-              💼 BO 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="ED" data-color="cyan" role="tab" aria-selected="false">
-              🎓 ED 5
-            </button>
-            <button class="ps-filter-pill ghost-pill" data-domain="FI" data-color="amber" role="tab" aria-selected="false">
-              💰 FI 5
-            </button>
+            <!-- Dynamically populated via script.js -->
           </div>
         </div>
 
@@ -1035,7 +860,7 @@
             ALL <span class="accent-teal">HACKSPRINT '26</span> CHALLENGES
           </h3>
           <div class="ps-list-right-actions">
-            <span class="ps-amber-count-badge" id="ps-count-badge">60 PROBLEM STATEMENTS</span>
+            <span class="ps-amber-count-badge" id="ps-count-badge">CHALLENGES</span>
             <div class="ps-pagination-bar">
               <button class="ps-nav-btn" id="ps-page-prev" aria-label="Previous Page" disabled>Prev</button>
               <span class="ps-page-numbers" id="ps-page-numbers">1 / 7</span>
@@ -1051,7 +876,7 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="ps-search-input" class="ps-search-input" placeholder="Search problem statements by ID (e.g. HC-01), title, or keyword…" aria-label="Search problem statements">
+          <input type="text" id="ps-search-input" class="ps-search-input" placeholder="Search problem statements by ID, title, or keyword…" aria-label="Search problem statements">
           <button id="ps-search-clear" class="ps-search-clear" aria-label="Clear Search" style="display: none;">✕</button>
         </div>
 
@@ -1081,10 +906,10 @@
         </button>
         <div class="ps-modal-header">
           <div class="ps-modal-badge-group">
-            <span class="ps-modal-id-badge" id="ps-modal-id">HC-01</span>
-            <span class="ps-modal-domain-tag" id="ps-modal-domain">HEALTHCARE</span>
+            <span class="ps-modal-id-badge" id="ps-modal-id">---</span>
+            <span class="ps-modal-domain-tag" id="ps-modal-domain">CHALLENGE</span>
           </div>
-          <h3 id="ps-modal-title" class="ps-modal-heading">Autonomous Clinical Triage and Emergency Response</h3>
+          <h3 id="ps-modal-title" class="ps-modal-heading">Challenge Statement</h3>
         </div>
         <div class="ps-modal-body">
           <div class="ps-modal-section">
@@ -1094,9 +919,7 @@
           <div class="ps-modal-section">
             <h4>Autonomous System Verification Focus</h4>
             <div class="ps-modal-tags" id="ps-modal-tags">
-              <span class="vector-tech-chip">Autonomous Perception</span>
-              <span class="vector-tech-chip">Self-Healing Replanning</span>
-              <span class="vector-tech-chip">Sandboxed Tool Orchestration</span>
+              <!-- Dynamically populated via script.js -->
             </div>
           </div>
         </div>

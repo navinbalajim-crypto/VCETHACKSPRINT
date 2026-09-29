@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Access Restricted · HackSprint '26</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #030712;
+      color: #f3f4f6;
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .blocked-card {
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      border-radius: 1.25rem;
+      padding: 2.75rem 2.25rem;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(239, 68, 68, 0.15);
+      position: relative;
+      z-index: 1;
+    }
+    .badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      border-radius: 9999px;
+      color: #f87171;
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #ef4444;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #ef4444;
+    }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    p {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+    .code-box {
+      background: rgba(3, 7, 18, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #f59e0b;
+      margin-bottom: 1.75rem;
+      text-align: left;
+    }
+    .code-box span {
+      color: #6b7280;
+    }
+    .btn-return {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.75rem;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    }
+    .btn-return:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="blocked-card">
+    <div class="badge-wrap">
+      <span class="pulse-dot"></span>
+      <span>AUTOMATED SCRAPING DISABLED</span>
+    </div>
+    <h1>Access Restricted</h1>
+    <p>
+      Automated crawlers, scraping bots, and AI indexing agents are restricted from accessing HackSprint '26 challenge architectures to safeguard hackathon problem integrity.
+    </p>
+    <div class="code-box">
+      <div><span>PROTOCOL:</span> ROBOTS_EXCLUSION_ACTIVE</div>
+      <div><span>REASON:</span> AI_SCRAPER_ACCESS_PROHIBITED</div>
+      <div><span>STATUS:</span> 403_FORBIDDEN_TO_AGENTS</div>
+    </div>
+    <a href="/index.html" class="btn-return">Visit HackSprint '26 Homepage</a>
+  </div>
+</body>
+</html>

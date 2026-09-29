@@ -12,11 +12,24 @@ const MIME = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp'
+  '.webp': 'image/webp',
+  '.txt': 'text/plain; charset=utf-8'
 };
 
 const server = http.createServer((req, res) => {
   let reqPath = req.url.split('?')[0];
+
+  // Set Anti-Bot & No-Index Security Headers
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow, noarchive, nosnippet');
+
+  // AI Crawler & Bot Interceptor
+  const ua = req.headers['user-agent'] || '';
+  const isAiBot = /(ClaudeBot|Claude-Web|Anthropic|GPTBot|ChatGPT|Perplexity|CCBot|Bytespider|Diffbot|FacebookBot|Google-Extended|cohere-ai|Amazonbot|Applebot-Extended|Omgilibot|Scrapy|python-requests|aiohttp|httpx)/i.test(ua);
+  if (isAiBot && reqPath !== '/blocked.html' && reqPath !== '/robots.txt') {
+    res.writeHead(302, { 'Location': '/blocked.html' });
+    res.end();
+    return;
+  }
 
   if (req.method === 'POST' && reqPath === '/api/save-logo') {
     let body = '';

@@ -1381,6 +1381,53 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isProblemStatementsEngineInitialized) return;
     isProblemStatementsEngineInitialized = true;
 
+    // Safe HTML string escaping
+    const escapeHtml = (str) => {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    };
+
+    const domainCardsGrid = document.getElementById('domain-cards-grid');
+    const domainNavPillsWrap = document.getElementById('domain-nav-pills');
+    const metricCounterProblems = document.getElementById('metric-counter-problems');
+    const metricCounterDomains = document.getElementById('metric-counter-domains');
+    const psKicker = document.getElementById('ps-kicker');
+
+    const domainCodes = ['HC', 'DM', 'CS', 'SC', 'AG', 'LC', 'SE', 'EN', 'TR', 'BO', 'ED', 'FI'];
+    
+    // Dynamically calculate counts & domain names from decrypted data
+    const domainCounts = {};
+    const domainNames = {};
+    domainCodes.forEach(code => { domainCounts[code] = 0; });
+    psData.forEach(item => {
+      if (item.domainCode) {
+        domainCounts[item.domainCode] = (domainCounts[item.domainCode] || 0) + 1;
+        if (!domainNames[item.domainCode] && item.domain) {
+          domainNames[item.domainCode] = item.domain;
+        }
+      }
+    });
+
+    const DOMAIN_NAME_MAP = {
+      HC: domainNames['HC'] || 'Healthcare',
+      DM: domainNames['DM'] || 'Disaster Management',
+      CS: domainNames['CS'] || 'Cybersecurity',
+      SC: domainNames['SC'] || 'Smart City',
+      AG: domainNames['AG'] || 'Agriculture',
+      LC: domainNames['LC'] || 'Legal and Compliance',
+      SE: domainNames['SE'] || 'Software Engineering',
+      EN: domainNames['EN'] || 'Environment',
+      TR: domainNames['TR'] || 'Transportation',
+      BO: domainNames['BO'] || 'Business / Operations',
+      ED: domainNames['ED'] || 'Education',
+      FI: domainNames['FI'] || 'Finance'
+    };
+
     const DOMAIN_COLOR_MAP = {
       HC: 'cyan',
       DM: 'pink',
@@ -1396,20 +1443,68 @@ document.addEventListener('DOMContentLoaded', () => {
       FI: 'amber'
     };
 
-    const DOMAIN_NAME_MAP = {
-      HC: 'Healthcare',
-      DM: 'Disaster Management',
-      CS: 'Cybersecurity',
-      SC: 'Smart Cities',
-      AG: 'Agriculture',
-      LC: 'Legal & Compliance',
-      SE: 'Software Engineering',
-      EN: 'Environment',
-      TR: 'Transportation',
-      BO: 'Business & Ops',
-      ED: 'Education',
-      FI: 'Finance'
+    const DOMAIN_SYMBOL_MAP = {
+      HC: '✚',
+      DM: '▲',
+      CS: '🛡',
+      SC: '🏢',
+      AG: '🌱',
+      LC: '⚖',
+      SE: '⚡',
+      EN: '🍃',
+      TR: '🚆',
+      BO: '💼',
+      ED: '🎓',
+      FI: '💰'
     };
+
+    // Update statistics header
+    if (metricCounterProblems) metricCounterProblems.textContent = String(psData.length);
+    if (metricCounterDomains) metricCounterDomains.textContent = String(domainCodes.length);
+    if (psKicker) psKicker.textContent = `${psData.length} CHALLENGES · ${domainCodes.length} DOMAINS · ONE 24-HOUR AGENTIC AI SPRINT`;
+
+    // Render 12 Domain Cards dynamically
+    if (domainCardsGrid) {
+      domainCardsGrid.innerHTML = domainCodes.map(code => {
+        const color = DOMAIN_COLOR_MAP[code] || 'cyan';
+        const symbol = DOMAIN_SYMBOL_MAP[code] || '✦';
+        const name = DOMAIN_NAME_MAP[code] || code;
+        const count = domainCounts[code] || 5;
+        return `
+          <div class="domain-card" data-domain="${code}" data-color="${color}" tabindex="0" role="button" aria-label="Explore ${escapeHtml(name)} Domain">
+            <div class="domain-card-top">
+              <span class="domain-card-code">${code}</span>
+              <span class="domain-card-symbol">${symbol}</span>
+            </div>
+            <h4 class="domain-card-name">${escapeHtml(name)}</h4>
+            <div class="domain-card-footer">
+              <span class="domain-card-count">${count} PROBLEM STATEMENTS</span>
+              <span class="domain-card-arrow">→</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Render Filter Pills dynamically
+    if (domainNavPillsWrap) {
+      let pillsHtml = `
+        <button class="ps-filter-pill active-all ghost-pill" data-domain="ALL" data-color="amber" role="tab" aria-selected="true">
+          ✦ ALL ${psData.length}
+        </button>
+      `;
+      domainCodes.forEach(code => {
+        const color = DOMAIN_COLOR_MAP[code] || 'cyan';
+        const symbol = DOMAIN_SYMBOL_MAP[code] || '✦';
+        const count = domainCounts[code] || 5;
+        pillsHtml += `
+          <button class="ps-filter-pill ghost-pill" data-domain="${code}" data-color="${color}" role="tab" aria-selected="false">
+            ${symbol} ${code} ${count}
+          </button>
+        `;
+      });
+      domainNavPillsWrap.innerHTML = pillsHtml;
+    }
 
     const grid = document.getElementById('ps-cards-grid');
     const searchInput = document.getElementById('ps-search-input');
@@ -1430,17 +1525,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const PAGE_SIZE = 9;
     let currentPage = 1;
     let isViewAll = false;
-
-    // Safe HTML string escaping
-    const escapeHtml = (str) => {
-      if (!str) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    };
 
     // Filter dataset based on domain and search
     const getFilteredItems = () => {
@@ -1734,6 +1818,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (psModalDomain) psModalDomain.textContent = item.domain.toUpperCase();
       if (psModalTitle) psModalTitle.textContent = item.title;
       if (psModalDesc) psModalDesc.textContent = item.description;
+
+      const psModalTags = document.getElementById('ps-modal-tags');
+      if (psModalTags) {
+        psModalTags.innerHTML = '';
+        if (Array.isArray(item.tags) && item.tags.length > 0) {
+          item.tags.forEach(tag => {
+            const span = document.createElement('span');
+            span.className = 'vector-tech-chip';
+            span.textContent = tag;
+            psModalTags.appendChild(span);
+          });
+        }
+      }
 
       if (psModalCopyBtn) {
         psModalCopyBtn.textContent = '📋 Copy Problem ID';
