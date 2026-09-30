@@ -331,6 +331,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle direct navigation or incoming hash link to #problem-statements
   if (window.location.hash === '#problem-statements') {
     const psEl = document.getElementById('problem-statements');
+    const isTargetElapsed = HACKSPRINT_CONFIG.getTarget() <= Date.now() || (function() {
+      try { return localStorage.getItem('hacksprint_revealed') === 'true'; } catch(e) { return false; }
+    })();
+    if (isTargetElapsed && psEl) {
+      psEl.style.display = 'block';
+      psEl.classList.add('revealed');
+    }
     const isPsHidden = !psEl || psEl.style.display === 'none' || getComputedStyle(psEl).display === 'none';
     if (isPsHidden) {
       const countdownSec = document.getElementById('countdown');
@@ -354,8 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mode: "production"
     mode: "production",
 
-    // Fixed Final Target: September 30, 2026 at 09:30:00 AM IST
-    productionTarget: new Date('2026-09-30T09:30:00+05:30').getTime(),
+    // Fixed Final Target: September 30, 2026 at 10:00:00 AM IST
+    productionTarget: new Date('2026-09-30T10:00:00+05:30').getTime(),
 
     getTarget: () => {
       const urlParams = new URLSearchParams(window.location.search);
@@ -747,6 +754,10 @@ document.addEventListener('DOMContentLoaded', () => {
         problemSection.classList.add('revealed');
       }
 
+      try {
+        localStorage.setItem('hacksprint_revealed', 'true');
+      } catch (e) {}
+
       if (metricProblemsEl) {
         animateCounter(metricProblemsEl, 60, 1400);
       }
@@ -859,9 +870,68 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   updateDemoTargetBadge();
 
-  // Initial call & recurring ticker
-  updateCountdown();
-  countdownTimerId = setInterval(updateCountdown, 1000);
+  // Check if countdown target has already elapsed or if already revealed
+  const isRevealedStored = (function() {
+    try { return localStorage.getItem('hacksprint_revealed') === 'true'; } catch(e) { return false; }
+  })();
+  const isTargetAlreadyPassed = (currentTargetDate <= Date.now()) || isRevealedStored;
+
+  if (isTargetAlreadyPassed && !window.location.search.includes('demoSeconds=')) {
+    // Reveal permanently and immediately without re-triggering blocking celebration animation
+    countdownFinished = true;
+    if (countdownTimerId) clearInterval(countdownTimerId);
+
+    flipUnit('days', '00');
+    flipUnit('hours', '00');
+    flipUnit('minutes', '00');
+    flipUnit('seconds', '00');
+
+    const countdownSec = document.getElementById('countdown');
+    if (countdownSec) {
+      countdownSec.classList.remove('panel-flash');
+      countdownSec.classList.add('celebrating');
+    }
+    document.body.classList.add('celebrating');
+
+    const clockGrid = document.getElementById('flip-clock');
+    if (clockGrid) {
+      clockGrid.classList.remove('numbers-brighten');
+      clockGrid.classList.add('cards-collapse', 'dissolved');
+    }
+
+    const liveCtaWrap = document.getElementById('countdown-live-cta-wrap');
+    if (liveCtaWrap) {
+      liveCtaWrap.style.display = 'flex';
+      liveCtaWrap.classList.add('revealed');
+    }
+
+    const navBadge = document.getElementById('nav-status-badge');
+    if (navBadge) {
+      navBadge.classList.add('live-active');
+      const dot = navBadge.querySelector('.nav-status-dot');
+      if (dot) dot.className = 'nav-status-dot pulse-green';
+      const txt = navBadge.querySelector('.nav-status-text');
+      if (txt) txt.textContent = 'HACKATHON IS LIVE';
+    }
+
+    const demoStatusText = document.getElementById('demo-status-text');
+    if (demoStatusText) demoStatusText.textContent = 'HACKATHON IS LIVE';
+
+    const problemSection = document.getElementById('problem-statements');
+    if (problemSection) {
+      problemSection.style.display = 'block';
+      problemSection.classList.add('revealed');
+    }
+
+    const metricProblemsEl = document.getElementById('metric-counter-problems');
+    if (metricProblemsEl) metricProblemsEl.textContent = '60';
+
+    ensureProblemStatementsLoaded();
+  } else {
+    // Target is in the future: Initial call & recurring ticker
+    updateCountdown();
+    countdownTimerId = setInterval(updateCountdown, 1000);
+  }
 
   // =========================================================================
   // 4. PROBLEM TRACKS — 3D COVERFLOW CAROUSEL
