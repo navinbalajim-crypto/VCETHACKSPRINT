@@ -7,6 +7,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
+  // Global state for Problem Statements Engine (hoisted to avoid TDZ)
+  var cachedProblemStatements = null;
+  var isProblemStatementsEngineInitialized = false;
+  var psLoadPromise = null;
+
   // =========================================================================
   // 0. DATA DEFINITIONS (PROBLEM TRACKS & SAMPLES)
   // =========================================================================
@@ -1525,10 +1530,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 11. POST-COUNTDOWN PROBLEM STATEMENTS REVEAL & DEMO HUB ENGINE
   // =========================================================================
-  let cachedProblemStatements = null;
-  let isProblemStatementsEngineInitialized = false;
-
-  const initProblemStatementsEngine = (dataset) => {
+  function initProblemStatementsEngine(dataset) {
     const psData = dataset || cachedProblemStatements || window.PROBLEM_STATEMENTS;
     if (!psData || !Array.isArray(psData) || psData.length === 0) {
       return;
@@ -2102,8 +2104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFiltersAndRender();
   };
 
-  let psLoadPromise = null;
-  const ensureProblemStatementsLoaded = async () => {
+  async function ensureProblemStatementsLoaded() {
     if (cachedProblemStatements && cachedProblemStatements.length > 0) {
       return cachedProblemStatements;
     }
