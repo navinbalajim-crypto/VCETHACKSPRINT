@@ -27,11 +27,6 @@
   ],
   "redirects": [
     {
-      "source": "/problemStatements.js",
-      "destination": "/blocked.html",
-      "permanent": false
-    },
-    {
       "source": "/INFO.docx",
       "destination": "/blocked.html",
       "permanent": false

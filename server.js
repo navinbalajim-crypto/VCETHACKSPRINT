@@ -82,8 +82,8 @@ const server = http.createServer((req, res) => {
     res.end();
     return;
   }
-  if (reqPath === '/tracks.html' || reqPath === '/tracks') {
-    res.writeHead(302, { 'Location': '/index.html#theme-showcase' });
+  if (reqPath === '/tracks.html' || reqPath === '/tracks' || reqPath === '/problem-statements' || reqPath === '/problem-statements.html') {
+    res.writeHead(302, { 'Location': '/index.html#problem-statements' });
     res.end();
     return;
   }

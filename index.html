@@ -791,7 +791,7 @@
         </div>
 
         <!-- Live Problem Statements Announcement CTA -->
-        <div class="countdown-live-cta-wrap" id="countdown-live-cta-wrap" style="display: none;">
+        <div class="countdown-live-cta-wrap revealed" id="countdown-live-cta-wrap" style="display: flex;">
           <div class="live-pulse-announcement">
             <span class="live-status-dot"></span>
             <span class="live-status-text">OFFICIAL CHALLENGES RELEASED</span>
@@ -806,7 +806,7 @@
     <!-- ========================================================================= -->
     <!-- 3B. PROGRESSIVE PROBLEM STATEMENT REVEAL SECTION (MASTER ARCHITECTURE) -->
     <!-- ========================================================================= -->
-    <section id="problem-statements" class="problem-statements-section" style="display: none;">
+    <section id="problem-statements" class="problem-statements-section revealed">
       <!-- Ambient Glow Blobs -->
       <div class="ps-ambient-glow glow-left" aria-hidden="true"></div>
       <div class="ps-ambient-glow glow-right" aria-hidden="true"></div>
@@ -1903,7 +1903,9 @@
   <!-- Toast Notification Alert -->
   <div class="toast-container" id="toast-container"></div>
 
-  <!-- Main JavaScript Logic (Encrypted & Dynamically Loaded Data Layer) -->
+  <!-- Problem Statements Data Layer -->
+  <script src="problemStatements.js"></script>
+  <!-- Main JavaScript Logic -->
   <script src="script.js"></script>
 </body>
 

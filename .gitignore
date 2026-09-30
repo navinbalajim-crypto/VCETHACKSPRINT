@@ -1,7 +1,6 @@
 node_modules/
 .DS_Store
 INFO.docx
-problemStatements.js
 countdown-demo/problemStatements.js
 docx_unzipped/
 scratch_docx/

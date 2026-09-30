@@ -184,10 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
         let targetEl = hash ? document.querySelector(hash) : null;
         if (targetEl && hash === '#problem-statements') {
-          const isPsHidden = targetEl.style.display === 'none' || getComputedStyle(targetEl).display === 'none';
-          if (isPsHidden) {
-            targetEl = document.getElementById('countdown') || targetEl;
-          }
+          targetEl.style.display = 'block';
+          targetEl.classList.add('revealed');
+          ensureProblemStatementsLoaded();
         }
         if (targetEl) {
           e.preventDefault();
@@ -306,10 +305,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
           let targetEl = hash ? document.querySelector(hash) : null;
           if (targetEl && hash === '#problem-statements') {
-            const isPsHidden = targetEl.style.display === 'none' || getComputedStyle(targetEl).display === 'none';
-            if (isPsHidden) {
-              targetEl = document.getElementById('countdown') || targetEl;
-            }
+            targetEl.style.display = 'block';
+            targetEl.classList.add('revealed');
+            ensureProblemStatementsLoaded();
           }
           if (targetEl) {
             e.preventDefault();
@@ -331,26 +329,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle direct navigation or incoming hash link to #problem-statements
   if (window.location.hash === '#problem-statements') {
     const psEl = document.getElementById('problem-statements');
-    const isTargetElapsed = HACKSPRINT_CONFIG.getTarget() <= Date.now() || (function() {
-      try { return localStorage.getItem('hacksprint_revealed') === 'true'; } catch(e) { return false; }
-    })();
-    if (isTargetElapsed && psEl) {
+    if (psEl) {
       psEl.style.display = 'block';
       psEl.classList.add('revealed');
-    }
-    const isPsHidden = !psEl || psEl.style.display === 'none' || getComputedStyle(psEl).display === 'none';
-    if (isPsHidden) {
-      const countdownSec = document.getElementById('countdown');
-      if (countdownSec) {
-        setTimeout(() => {
-          const navHeight = navHeader ? navHeader.offsetHeight : 80;
-          const targetY = countdownSec.getBoundingClientRect().top + window.pageYOffset - navHeight + 4;
-          window.scrollTo({
-            top: targetY,
-            behavior: 'smooth'
-          });
-        }, 150);
-      }
+      ensureProblemStatementsLoaded();
+      setTimeout(() => {
+        const navHeader = document.getElementById('main-header');
+        const navHeight = navHeader ? navHeader.offsetHeight : 80;
+        const targetY = psEl.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+        window.scrollTo({
+          top: targetY,
+          behavior: 'smooth'
+        });
+      }, 250);
     }
   }
 
@@ -931,6 +922,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Target is in the future: Initial call & recurring ticker
     updateCountdown();
     countdownTimerId = setInterval(updateCountdown, 1000);
+
+    const problemSection = document.getElementById('problem-statements');
+    if (problemSection) {
+      problemSection.style.display = 'block';
+      problemSection.classList.add('revealed');
+    }
+    const metricProblemsEl = document.getElementById('metric-counter-problems');
+    if (metricProblemsEl) metricProblemsEl.textContent = '60';
+    ensureProblemStatementsLoaded();
   }
 
   // =========================================================================
@@ -2067,14 +2067,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.removeChild(ta);
     };
 
-    // Event delegation on card grid for [VIEW FULL STATEMENT →] clicks
+    // Event delegation on card grid for [VIEW FULL STATEMENT →] and card clicks
     if (grid) {
       grid.addEventListener('click', (e) => {
         const btn = e.target.closest('.ps-view-link');
-        if (btn) {
-          const id = btn.getAttribute('data-id');
-          if (id) openPsModal(id);
-        }
+        const card = e.target.closest('.ps-statement-card');
+        const id = (btn && btn.getAttribute('data-id')) || (card && card.getAttribute('data-id'));
+        if (id) openPsModal(id);
       });
     }
 
@@ -2111,27 +2110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (psLoadPromise) return psLoadPromise;
 
     psLoadPromise = (async () => {
-      // 1. Try server API
-      try {
-        const isDemo = window.location.search.includes('demo=true') ||
-          (!window.location.search.includes('demo=false') && HACKSPRINT_CONFIG.mode === 'demo');
-        const apiUrl = isDemo ? '/api/problem-statements?demo=true' : '/api/problem-statements';
-        const res = await fetch(apiUrl);
-        if (res.ok) {
-          const json = await res.json();
-          if (json.success && Array.isArray(json.data) && json.data.length > 0) {
-            initProblemStatementsEngine(json.data);
-            return json.data;
-          }
-        }
-      } catch (err) {
-        // Fall through to sealed payload
+      // 1. Direct window.PROBLEM_STATEMENTS (instant in-memory data layer)
+      if (typeof window !== 'undefined' && Array.isArray(window.PROBLEM_STATEMENTS) && window.PROBLEM_STATEMENTS.length > 0) {
+        initProblemStatementsEngine(window.PROBLEM_STATEMENTS);
+        return window.PROBLEM_STATEMENTS;
       }
 
-      // 2. Fall back to sealed encrypted payload in assets/challenges.enc
+      // 2. Sealed payload in assets/challenges.enc (with root path fallback)
       try {
-        const encRes = await fetch('assets/challenges.enc');
-        if (encRes.ok) {
+        const encRes = await fetch('assets/challenges.enc').catch(() => fetch('/assets/challenges.enc'));
+        if (encRes && encRes.ok) {
           const b64 = (await encRes.text()).trim();
           const binary = atob(b64);
           const bytes = new Uint8Array(binary.length);
@@ -2153,16 +2141,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Silently handled
       }
 
+      // 3. Try server API
+      try {
+        const isDemo = window.location.search.includes('demo=true') ||
+          (!window.location.search.includes('demo=false') && HACKSPRINT_CONFIG.mode === 'demo');
+        const apiUrl = isDemo ? '/api/problem-statements?demo=true' : '/api/problem-statements';
+        const res = await fetch(apiUrl);
+        if (res.ok) {
+          const json = await res.json();
+          if (json.success && Array.isArray(json.data) && json.data.length > 0) {
+            initProblemStatementsEngine(json.data);
+            return json.data;
+          }
+        }
+      } catch (err) {
+        // Fall through
+      }
+
       return [];
     })();
 
     return psLoadPromise;
   };
 
-  // Only auto-load if countdown already expired before page load
-  if (currentTargetDate <= Date.now()) {
-    ensureProblemStatementsLoaded();
-  }
+  // Always auto-load problem statements dataset so challenges are viewable immediately across all devices & phone views
+  ensureProblemStatementsLoaded();
 
   // =========================================================================
   // 12. DEMO HUB FLOATING CONTROLS & DEV TESTING HARNESS
